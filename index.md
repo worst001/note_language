@@ -52,27 +52,27 @@
 
 #### 详细笔记
 
-[1.1 指针](C/learn-data-structures/1.1 指针/README.md)
+[1.1 指针](C/learn-data-structures/1.1指针/README.md)
 
-[1.2 结构体](C/learn-data-structures/1.2 结构体/README.md)
+[1.2 结构体](C/learn-data-structures/1.2结构体/README.md)
 
-[1.3 内存管理](C/learn-data-structures/1.3 内存管理/README.md)
+[1.3 内存管理](C/learn-data-structures/1.3内存管理/README.md)
 
-[2.1 单链表](C/learn-data-structures/2.1 单链表/README.md)
+[2.1 单链表](C/learn-data-structures/2.1单链表/README.md)
 
-[2.2 栈](C/learn-data-structures/2.2 栈/README.md)
+[2.2 栈](C/learn-data-structures/2.2栈/README.md)
 
-[2.3 队列](C/learn-data-structures/2.3 队列/README.md)
+[2.3 队列](C/learn-data-structures/2.3队列/README.md)
 
-[2.4 双链表](C/learn-data-structures/2.4 双链表/README.md)
+[2.4 双链表](C/learn-data-structures/2.4双链表/README.md)
 
-[2.5 哈希表](C/learn-data-structures/2.5 哈希表/README.md)
+[2.5 哈希表](C/learn-data-structures/2.5哈希表/README.md)
 
-[2.6 二叉树](C/learn-data-structures/2.6 二叉树/README.md)
+[2.6 二叉树](C/learn-data-structures/2.6二叉树/README.md)
 
-[2.7 二叉搜索树](C/learn-data-structures/2.7 二叉搜索树/README.md)
+[2.7 二叉搜索树](C/learn-data-structures/2.7二叉搜索树/README.md)
 
-[2.8 二叉平衡树](C/learn-data-structures/2.8 二叉平衡树/README.md)
+[2.8 二叉平衡树](C/learn-data-structures/2.8二叉平衡树/README.md)
 
 ### 基本介绍
 
@@ -148,43 +148,43 @@ C#是一种功能丰富、易学易用的编程语言，广泛应用于各种领
 
 #### 详细笔记
 
-[开始](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-1 Getting Started/README.md)
+[开始](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-1%20Getting%20Started/README.md)
 
-[变量和基本类型](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-2 Variables and Basic Types/README.md)
+[变量和基本类型](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-2%20Variables%20and%20Basic%20Types/README.md)
 
-[字符串、向量和数组]( Cpp/Cpp-Primer-5th-Notes-CN/Chapter-3 Strings, Vectors, and Arrays/README.md)
+[字符串、向量和数组](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-3%20Strings,%20Vectors,%20and%20Arrays/README.md)
 
-[表达式](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-4 Expressions/README.md)
+[表达式](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-4%20Expressions/README.md)
 
-[语句](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-5 Statements/README.md)
+[语句](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-5%20Statements/README.md)
 
-[函数](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-6 Functions/README.md)
+[函数](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-6%20Functions/README.md)
 
-[类](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-7 Classes/README.md)
+[类](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-7%20Classes/README.md)
 
-[IO库](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-8 The IO Library/README.md)
+[IO库](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-8%20The%20IO%20Library/README.md)
 
-[顺序容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-9 Sequential Containers/README.md)
+[顺序容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-9%20Sequential%20Containers/README.md)
 
-[泛型算法](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-10 Generic Algorithms/README.md)
+[泛型算法](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-10%20Generic%20Algorithms/README.md)
 
-[关联容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-11 Associative Containers/README.md)
+[关联容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-11%20Associative%20Containers/README.md)
 
-[动态内存](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-12 Dynamic Memory/README.md)
+[动态内存](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-12%20Dynamic%20Memory/README.md)
 
-[拷贝控制](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-13 Copy Control/README.md)
+[拷贝控制](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-13%20Copy%20Control/README.md)
 
-[重载运算与类型转换](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-14 Overloaded Operations and Conversions/README.md)
+[重载运算与类型转换](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-14%20Overloaded%20Operations%20and%20Conversions/README.md)
 
-[面向对象程序设计](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-15 Object-Oriented Programming/README.md)
+[面向对象程序设计](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-15%20Object-Oriented%20Programming/README.md)
 
-[模板与泛型编程](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-16 Templates and Generic Programming/README.md)
+[模板与泛型编程](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-16%20Templates%20and%20Generic%20Programming/README.md)
 
-[标准库特殊设施](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-17 Specialized Library Facilities/README.md)
+[标准库特殊设施](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-17%20Specialized%20Library%20Facilities/README.md)
 
-[用于大型程序的工具](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-18 Tools for Large Programs/README.md)
+[用于大型程序的工具](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-18%20Tools%20for%20Large%20Programs/README.md)
 
-[特殊工具与技术](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-19 Specialized Tools and Techniques/README.md)
+[特殊工具与技术](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-19%20Specialized%20Tools%20and%20Techniques/README.md)
 
 ### 基本介绍
 
