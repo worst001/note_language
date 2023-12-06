@@ -68,255 +68,154 @@
 
 ## C 语言
 
-### 参考文档
-
-[C语言文档](http://c.biancheng.net/c/)
++ [C语言文档](http://c.biancheng.net/c/)
 
 #### 详细笔记
 
-[1.1 指针](C/learn-data-structures/1.1指针/README.md)
++ [1.1 指针](C/learn-data-structures/1.1指针/README.md)
++ [1.2 结构体](C/learn-data-structures/1.2结构体/README.md)
++ [1.3 内存管理](C/learn-data-structures/1.3内存管理/README.md)
++ [2.1 单链表](C/learn-data-structures/2.1单链表/README.md)
++ [2.2 栈](C/learn-data-structures/2.2栈/README.md)
++ [2.3 队列](C/learn-data-structures/2.3队列/README.md)
++ [2.4 双链表](C/learn-data-structures/2.4双链表/README.md)
++ [2.5 哈希表](C/learn-data-structures/2.5哈希表/README.md)
++ [2.6 二叉树](C/learn-data-structures/2.6二叉树/README.md)
++ [2.7 二叉搜索树](C/learn-data-structures/2.7二叉搜索树/README.md)
++ [2.8 二叉平衡树](C/learn-data-structures/2.8二叉平衡树/README.md)
 
-[1.2 结构体](C/learn-data-structures/1.2结构体/README.md)
-
-[1.3 内存管理](C/learn-data-structures/1.3内存管理/README.md)
-
-[2.1 单链表](C/learn-data-structures/2.1单链表/README.md)
-
-[2.2 栈](C/learn-data-structures/2.2栈/README.md)
-
-[2.3 队列](C/learn-data-structures/2.3队列/README.md)
-
-[2.4 双链表](C/learn-data-structures/2.4双链表/README.md)
-
-[2.5 哈希表](C/learn-data-structures/2.5哈希表/README.md)
-
-[2.6 二叉树](C/learn-data-structures/2.6二叉树/README.md)
-
-[2.7 二叉搜索树](C/learn-data-structures/2.7二叉搜索树/README.md)
-
-[2.8 二叉平衡树](C/learn-data-structures/2.8二叉平衡树/README.md)
 
 ## C Sharp
 
-### 参考文档
-
-[C Sharp 文档](http://c.biancheng.net/csharp/)
++ [C Sharp 文档](http://c.biancheng.net/csharp/)
 
 
 ## C++
 
-### 参考文档
-
-[C++ 语言文档](http://c.biancheng.net/cplus/)
-
-[C++11新特新](http://c.biancheng.net/cplus/11/)
-
-[STL 用法](http://c.biancheng.net/stl/)
-
-[qt框架](http://c.biancheng.net/qt/)
++ [C++ 语言文档](http://c.biancheng.net/cplus/)
++ [C++11新特新](http://c.biancheng.net/cplus/11/)
++ [STL 用法](http://c.biancheng.net/stl/)
++ [qt框架](http://c.biancheng.net/qt/)
 
 #### 详细笔记
 
-[开始](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-1%20Getting%20Started/README.md)
-
-[变量和基本类型](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-2%20Variables%20and%20Basic%20Types/README.md)
-
-[字符串、向量和数组](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-3%20Strings,%20Vectors,%20and%20Arrays/README.md)
-
-[表达式](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-4%20Expressions/README.md)
-
-[语句](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-5%20Statements/README.md)
-
-[函数](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-6%20Functions/README.md)
-
-[类](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-7%20Classes/README.md)
-
-[IO库](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-8%20The%20IO%20Library/README.md)
-
-[顺序容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-9%20Sequential%20Containers/README.md)
-
-[泛型算法](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-10%20Generic%20Algorithms/README.md)
-
-[关联容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-11%20Associative%20Containers/README.md)
-
-[动态内存](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-12%20Dynamic%20Memory/README.md)
-
-[拷贝控制](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-13%20Copy%20Control/README.md)
-
-[重载运算与类型转换](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-14%20Overloaded%20Operations%20and%20Conversions/README.md)
-
-[面向对象程序设计](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-15%20Object-Oriented%20Programming/README.md)
-
-[模板与泛型编程](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-16%20Templates%20and%20Generic%20Programming/README.md)
-
-[标准库特殊设施](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-17%20Specialized%20Library%20Facilities/README.md)
-
-[用于大型程序的工具](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-18%20Tools%20for%20Large%20Programs/README.md)
-
-[特殊工具与技术](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-19%20Specialized%20Tools%20and%20Techniques/README.md)
++ [开始](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-1%20Getting%20Started/README.md)
++ [变量和基本类型](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-2%20Variables%20and%20Basic%20Types/README.md)
++ [字符串、向量和数组](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-3%20Strings,%20Vectors,%20and%20Arrays/README.md)
++ [表达式](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-4%20Expressions/README.md)
++ [语句](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-5%20Statements/README.md)
++ [函数](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-6%20Functions/README.md)
++ [类](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-7%20Classes/README.md)
++ [IO库](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-8%20The%20IO%20Library/README.md)
++ [顺序容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-9%20Sequential%20Containers/README.md)
++ [泛型算法](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-10%20Generic%20Algorithms/README.md)
++ [关联容器](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-11%20Associative%20Containers/README.md)
++ [动态内存](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-12%20Dynamic%20Memory/README.md)
++ [拷贝控制](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-13%20Copy%20Control/README.md)
++ [重载运算与类型转换](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-14%20Overloaded%20Operations%20and%20Conversions/README.md)
++ [面向对象程序设计](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-15%20Object-Oriented%20Programming/README.md)
++ [模板与泛型编程](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-16%20Templates%20and%20Generic%20Programming/README.md)
++ [标准库特殊设施](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-17%20Specialized%20Library%20Facilities/README.md)
++ [用于大型程序的工具](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-18%20Tools%20for%20Large%20Programs/README.md)
++ [特殊工具与技术](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-19%20Specialized%20Tools%20and%20Techniques/README.md)
 
 
 ## Golang
 
-### 参考文档
-
-[Go 语言文档](http://c.biancheng.net/golang/)
-
-[全技术栈索引](https://github.com/unknwon/go-study-index)
++ [Go 语言文档](http://c.biancheng.net/golang/)
++ [全技术栈索引](https://github.com/unknwon/go-study-index)
 
 #### GO语言圣经
 
-[入门](GO/GO语言圣经/ch1/ch1.md)
-
-[程序结构](GO/GO语言圣经/ch2/ch2.md)
-
-[基础数据类型](GO/GO语言圣经/ch3/ch3.md)
-
-[复合数据类型](GO/GO语言圣经/ch4/ch4.md)
-
-[函数](GO/GO语言圣经/ch5/ch5.md)
-
-[方法](GO/GO语言圣经/ch6/ch6.md)
-
-[接口](GO/GO语言圣经/ch7/ch7.md)
-
-[Goroutines和Channels](GO/GO语言圣经/ch8/ch8.md)
-
-[基于共享变量的并发](GO/GO语言圣经/ch9/ch9.md)
-
-[包和工具](GO/GO语言圣经/ch10/ch10.md)
-
-[测试](GO/GO语言圣经/ch11/ch11.md)
-
-[反射](GO/GO语言圣经/ch12/ch12.md)
-
-[底层编程](GO/GO语言圣经/ch13/ch13.md)
++ [入门](GO/GO语言圣经/ch1/ch1.md)
++ [程序结构](GO/GO语言圣经/ch2/ch2.md)
++ [基础数据类型](GO/GO语言圣经/ch3/ch3.md)
++ [复合数据类型](GO/GO语言圣经/ch4/ch4.md)
++ [函数](GO/GO语言圣经/ch5/ch5.md)
++ [方法](GO/GO语言圣经/ch6/ch6.md)
++ [接口](GO/GO语言圣经/ch7/ch7.md)
++ [Goroutines和Channels](GO/GO语言圣经/ch8/ch8.md)
++ [基于共享变量的并发](GO/GO语言圣经/ch9/ch9.md)
++ [包和工具](GO/GO语言圣经/ch10/ch10.md)
++ [测试](GO/GO语言圣经/ch11/ch11.md)
++ [反射](GO/GO语言圣经/ch12/ch12.md)
++ [底层编程](GO/GO语言圣经/ch13/ch13.md)
 
 
 ## JAVA
 
-### 参考文档
-
-[Java 语言文档](http://c.biancheng.net/java/)
-
-[Maven](http://c.biancheng.net/maven2/)
-
-[开发规范](/JAVA/java开发规范泰山版.pdf)
-
-[JUC入门](/JAVA/JUC/JUC入门.md)
-
-[Spring](https://springdoc.cn/spring/)
-
-[MyBatis](https://mybatis.org/mybatis-3/zh/index.html)
-
-[Annotation](/JAVA/Annotation/Annotation与反射.md)
-
-[Activiti](/JAVA/Activiti/Activiti.md)
-
-[Batch](/JAVA/Batch/Batch.md)
++ [Java 语言文档](http://c.biancheng.net/java/)
++ [Maven](http://c.biancheng.net/maven2/)
++ [开发规范](/JAVA/java开发规范泰山版.pdf)
++ [JUC入门](/JAVA/JUC/JUC入门.md)
++ [Spring](https://springdoc.cn/spring/)
++ [MyBatis](https://mybatis.org/mybatis-3/zh/index.html)
++ [Annotation](/JAVA/Annotation/Annotation与反射.md)
++ [Activiti](/JAVA/Activiti/Activiti.md)
++ [Batch](/JAVA/Batch/Batch.md)
 
 #### JVM
 
-[JVM与Java体系结构](/JAVA/JVM/JVM系列-第1章-JVM与Java体系结构.md)
-
-[类加载子系统](/JAVA/JVM/JVM系列-第2章-类加载子系统.md)
-
-[运行时数据区](/JAVA/JVM/JVM系列-第3章-运行时数据区.md)
-
-[虚拟机栈](/JAVA/JVM/JVM系列-第4章-虚拟机栈.md)
-
-[堆](/JAVA/JVM/JVM系列-第5章-堆.md)
-
-[方法区](/JAVA/JVM/JVM系列-第6章-方法区.md)
-
-[对象的实例化内存布局与访问定位](/JAVA/JVM/JVM系列-第7章-对象的实例化内存布局与访问定位.md)
-
-[执行引擎](/JAVA/JVM/JVM系列-第8章-执行引擎.md)
-
-[StringTable(字符串常量池)](/JAVA/JVM/JVM系列-第9章-StringTable(字符串常量池).md)
-
-[垃圾回收概述和相关算法](/JAVA/JVM/JVM系列-第10章-垃圾回收概述和相关算法.md)
-
-[垃圾回收相关概念](/JAVA/JVM/JVM系列-第11章-垃圾回收相关概念.md)
-
-[垃圾回收器](/JAVA/JVM/JVM系列-第12章-垃圾回收器.md)
++ [JVM与Java体系结构](/JAVA/JVM/JVM系列-第1章-JVM与Java体系结构.md)
++ [类加载子系统](/JAVA/JVM/JVM系列-第2章-类加载子系统.md)
++ [运行时数据区](/JAVA/JVM/JVM系列-第3章-运行时数据区.md)
++ [虚拟机栈](/JAVA/JVM/JVM系列-第4章-虚拟机栈.md)
++ [堆](/JAVA/JVM/JVM系列-第5章-堆.md)
++ [方法区](/JAVA/JVM/JVM系列-第6章-方法区.md)
++ [对象的实例化内存布局与访问定位](/JAVA/JVM/JVM系列-第7章-对象的实例化内存布局与访问定位.md)
++ [执行引擎](/JAVA/JVM/JVM系列-第8章-执行引擎.md)
++ [StringTable(字符串常量池)](/JAVA/JVM/JVM系列-第9章-StringTable(字符串常量池).md)
++ [垃圾回收概述和相关算法](/JAVA/JVM/JVM系列-第10章-垃圾回收概述和相关算法.md)
++ [垃圾回收相关概念](/JAVA/JVM/JVM系列-第11章-垃圾回收相关概念.md)
++ [垃圾回收器](/JAVA/JVM/JVM系列-第12章-垃圾回收器.md)
 
 
 ## Scala
 
-### 参考文档
-
-[Scala 官方文档](https://docs.scala-lang.org/zh-cn/scala3/book/introduction.html)
-
-[Scala 文档](Scala/Scala.md)
-
-[尚硅谷_Scala_pdf](/Scala/笔记/尚硅谷大数据技术之Scala.pdf)
++ [Scala 官方文档](https://docs.scala-lang.org/zh-cn/scala3/book/introduction.html)
++ [Scala 文档](Scala/Scala.md)
++ [尚硅谷_Scala_pdf](/Scala/笔记/尚硅谷大数据技术之Scala.pdf)
 
 
 ## Lua
 
-### 参考文档
-
-[Lua 菜鸟文档](https://www.runoob.com/lua/lua-tutorial.html)
++ [Lua 菜鸟文档](https://www.runoob.com/lua/lua-tutorial.html)
 
 
 ## PHP
 
-### 参考文档
-
-[官方手册](https://www.php.net/manual/zh/index.php)
-
-[Composer](https://getcomposer.org/)
-
-[Laravel](https://learnku.com/docs/laravel/)
-
-[Swoole](https://wiki.swoole.com/#/)
++ [官方手册](https://www.php.net/manual/zh/index.php)
++ [Composer](https://getcomposer.org/)
++ [Laravel](https://learnku.com/docs/laravel/)
++ [Swoole](https://wiki.swoole.com/#/)
 
 
 ## Python
 
-### 参考文档
-
-[Python 语言文档]( http://c.biancheng.net/python/)
-
-[NumPy]( http://c.biancheng.net/numpy/)
-
-[Pandas 数据分析]( http://c.biancheng.net/pandas/)
-
-[机器学习入门]( http://c.biancheng.net/ml_alg/)
++ [Python 语言文档]( http://c.biancheng.net/python/)
++ [NumPy]( http://c.biancheng.net/numpy/)
++ [Pandas 数据分析]( http://c.biancheng.net/pandas/)
++ [机器学习入门]( http://c.biancheng.net/ml_alg/)
 
 #### 详细笔记
 
-[入门与工具]( Python/notes-python/01-python-tools/01-python-tools.md)
-
-[语法与规范]( Python/notes-python/02-python-essentials/02-python-essentials.md)
-
-[Numpy]( Python/notes-python/03-numpy/03-numpy.md)
-
-[Scipy]( Python/notes-python/04-scipy/04-scipy.md)
-
-[模块与修饰符]( Python/notes-python/05-advanced-python/05-advanced-python.md)
-
-[图像绘制]( Python/notes-python/06-matplotlib/06-matplotlib.md)
-
-[扩展与对接其他语言]( Python/notes-python/07-interfacing-with-other-languages/07-interfacing-with-other-languages.md)
-
-[继承与多态继承与多态]( Python/notes-python/08-object-oriented-programming/08-object-oriented-programming.md)
-
-[Theano]( Python/notes-python/09-theano/09-theano.md)
-
-[一些有趣的案例]( Python/notes-python/10-something-interesting/10-something-interesting.md)
-
-[常用的工具类]( Python/notes-python/11-useful-tools/11-useful-tools.md)
-
-[数据分析库pandas]( Python/notes-python/12-pandas/12-pandas.md)
++ [入门与工具]( Python/notes-python/01-python-tools/01-python-tools.md)
++ [语法与规范]( Python/notes-python/02-python-essentials/02-python-essentials.md)
++ [Numpy]( Python/notes-python/03-numpy/03-numpy.md)
++ [Scipy]( Python/notes-python/04-scipy/04-scipy.md)
++ [模块与修饰符]( Python/notes-python/05-advanced-python/05-advanced-python.md)
++ [图像绘制]( Python/notes-python/06-matplotlib/06-matplotlib.md)
++ [扩展与对接其他语言]( Python/notes-python/07-interfacing-with-other-languages/07-interfacing-with-other-languages.md)
++ [继承与多态继承与多态]( Python/notes-python/08-object-oriented-programming/08-object-oriented-programming.md)
++ [Theano]( Python/notes-python/09-theano/09-theano.md)
++ [一些有趣的案例]( Python/notes-python/10-something-interesting/10-something-interesting.md)
++ [常用的工具类]( Python/notes-python/11-useful-tools/11-useful-tools.md)
++ [数据分析库pandas]( Python/notes-python/12-pandas/12-pandas.md)
 
 
 ## Ruby
 
-### 参考文档
-
-[Ruby 菜鸟文档](https://www.runoob.com/ruby/ruby-tutorial.html)
++ [Ruby 菜鸟文档](https://www.runoob.com/ruby/ruby-tutorial.html)
 
 
 -------------------

@@ -281,7 +281,7 @@ Go（又称为Golang）是由Google开发的一种静态类型、编译型的编
 
 [Maven](http://c.biancheng.net/maven2/)
 
-[开发规范](/JAVA/java开发规范泰山版.pdf)
+[开发规范](/JAVA/Direction.md)
 
 [JUC入门](/JAVA/JUC/JUC入门.md)
 
@@ -355,7 +355,7 @@ Java 是一种功能强大、安全可靠且易于学习的编程语言。它具
 
 [Scala 文档](Scala/Scala.md)
 
-[尚硅谷_Scala_pdf](/Scala/笔记/尚硅谷大数据技术之Scala.pdf)
+[尚硅谷_Scala_pdf](/Scala/Direction.md)
 
 ### 基本介绍
 
