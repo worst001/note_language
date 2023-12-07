@@ -273,7 +273,7 @@ Go（又称为Golang）是由Google开发的一种静态类型、编译型的编
 
 ---
 
-## JAVA
+## Java
 
 ### 参考文档
 
@@ -281,45 +281,45 @@ Go（又称为Golang）是由Google开发的一种静态类型、编译型的编
 
 [Maven](http://c.biancheng.net/maven2/)
 
-[开发规范](/JAVA/Direction.md)
+[开发规范](Java/Direction.md)
 
-[JUC入门](/JAVA/JUC/JUC入门.md)
+[JUC入门](Java/JUC/JUC入门.md)
 
 [Spring](https://springdoc.cn/spring/)
 
 [MyBatis](https://mybatis.org/mybatis-3/zh/index.html)
 
-[Annotation](/JAVA/Annotation/Annotation与反射.md)
+[Annotation](Java/Annotation/Annotation与反射.md)
 
-[Activiti](/JAVA/Activiti/Activiti.md)
+[Activiti](Java/Activiti/Activiti.md)
 
-[Batch](/JAVA/Batch/Batch.md)
+[Batch](Java/Batch/Batch.md)
 
 #### JVM
 
-[JVM与Java体系结构](/JAVA/JVM/JVM系列-第1章-JVM与Java体系结构.md)
+[JVM与Java体系结构](Java/JVM/JVM系列-第1章-JVM与Java体系结构.md)
 
-[类加载子系统](/JAVA/JVM/JVM系列-第2章-类加载子系统.md)
+[类加载子系统](Java/JVM/JVM系列-第2章-类加载子系统.md)
 
-[运行时数据区](/JAVA/JVM/JVM系列-第3章-运行时数据区.md)
+[运行时数据区](Java/JVM/JVM系列-第3章-运行时数据区.md)
 
-[虚拟机栈](/JAVA/JVM/JVM系列-第4章-虚拟机栈.md)
+[虚拟机栈](Java/JVM/JVM系列-第4章-虚拟机栈.md)
 
-[堆](/JAVA/JVM/JVM系列-第5章-堆.md)
+[堆](Java/JVM/JVM系列-第5章-堆.md)
 
-[方法区](/JAVA/JVM/JVM系列-第6章-方法区.md)
+[方法区](Java/JVM/JVM系列-第6章-方法区.md)
 
-[对象的实例化内存布局与访问定位](/JAVA/JVM/JVM系列-第7章-对象的实例化内存布局与访问定位.md)
+[对象的实例化内存布局与访问定位](Java/JVM/JVM系列-第7章-对象的实例化内存布局与访问定位.md)
 
-[执行引擎](/JAVA/JVM/JVM系列-第8章-执行引擎.md)
+[执行引擎](Java/JVM/JVM系列-第8章-执行引擎.md)
 
-[StringTable(字符串常量池)](/JAVA/JVM/JVM系列-第9章-StringTable(字符串常量池).md)
+[StringTable(字符串常量池)](Java/JVM/JVM系列-第9章-StringTable(字符串常量池).md)
 
-[垃圾回收概述和相关算法](/JAVA/JVM/JVM系列-第10章-垃圾回收概述和相关算法.md)
+[垃圾回收概述和相关算法](Java/JVM/JVM系列-第10章-垃圾回收概述和相关算法.md)
 
-[垃圾回收相关概念](/JAVA/JVM/JVM系列-第11章-垃圾回收相关概念.md)
+[垃圾回收相关概念](Java/JVM/JVM系列-第11章-垃圾回收相关概念.md)
 
-[垃圾回收器](/JAVA/JVM/JVM系列-第12章-垃圾回收器.md)
+[垃圾回收器](Java/JVM/JVM系列-第12章-垃圾回收器.md)
 
 
 ### 基本介绍
@@ -386,7 +386,7 @@ Scala 是一种多范式的编程语言，结合了面向对象编程和函数�
 
 ### 参考文档
 
-[Lua 菜鸟文档](https://www.runoob.com/lua/lua-tutorial.html)
+[Lua 详细笔记](https://github.com/52fhy/lua-book)
 
 ### 基本介绍
 
@@ -523,7 +523,7 @@ Python 是一种高级、通用的编程语言，由Guido van Rossum于1991年�
 
 ### 参考文档
 
-[Ruby 菜鸟文档](https://www.runoob.com/ruby/ruby-tutorial.html)
+[Ruby 完整手册](https://wang1212.github.io/the-book-of-ruby/#/0-homepage.html)
 
 ### 基本介绍
 
