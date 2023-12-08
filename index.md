@@ -1,3 +1,14 @@
+<!-- PROJECT SHIELDS -->
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![Stargazers][stars-shield]][stars-url]
+<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
+
+<!-- PROJECT LOGO -->
+
 # 语言与编程
 
 ## 基本概念
@@ -550,3 +561,15 @@ Ruby 是一种动态、开源的编程语言，由日本程序员松本行弘（
 总之，Ruby 是一种简洁、优雅且灵活的编程语言。它具有动态类型、面向对象、元编程和高度可扩展性等特点，适合于各种类型的应用程序开发。无论是初学者还是专业开发者，Ruby 都是一个强大而受欢迎的编程语言选择。
 
 
+<!-- links -->
+[your-project-path]:shaojintian/Best_README_template
+[contributors-shield]: https://img.shields.io/github/contributors/worst001/mkdocs_language.svg?style=flat-square
+[contributors-url]: https://github.com/worst001/mkdocs_language/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/worst001/mkdocs_language.svg?style=flat-square
+[forks-url]: https://github.com/worst001/mkdocs_language/network/members
+[stars-shield]: https://img.shields.io/github/stars/worst001/mkdocs_language.svg?style=social
+[stars-url]: https://github.com/worst001/mkdocs_language/stargazers
+[issues-shield]: https://img.shields.io/github/issues/worst001/mkdocs_language.svg?style=flat-square
+[issues-url]: https://img.shields.io/github/issues/worst001/mkdocs_language.svg
+[license-shield]: https://img.shields.io/github/license/worst001/mkdocs_language.svg?style=flat-square
+[license-url]: https://github.com/worst001/mkdocs_language/blob/main/LICENSE.txt
