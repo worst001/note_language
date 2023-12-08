@@ -1,11 +1,11 @@
-# sys 模块简介
+## sys 模块简介
 
 
 ```python
 import sys
 ```
 
-## 命令行参数
+### 命令行参数
 
 `sys.argv` 显示传入的参数：
 
@@ -39,7 +39,7 @@ import os
 os.remove('print_args.py')
 ```
 
-## 异常消息
+### 异常消息
 
 `sys.exc_info()` 可以显示 `Exception` 的信息，返回一个 `(type, value, traceback)` 组成的三元组，可以与 `try/catch` 块一起使用： 
 
@@ -56,17 +56,17 @@ except Exception:
 
 `sys.exc_clear()` 用于清除所有的异常消息。
 
-## 标准输入输出流
+### 标准输入输出流
 
 - sys.stdin
 - sys.stdout
 - sys.stderr
 
-## 退出Python
+### 退出Python
 
 `sys.exit(arg=0)` 用于退出 Python。`0` 或者 `None` 表示正常退出，其他值表示异常。
 
-## Python Path
+### Python Path
 
 `sys.path` 表示 Python 搜索模块的路径和查找顺序：
 
@@ -98,7 +98,7 @@ sys.path
 
 在程序中可以修改，添加新的路径。
 
-## 操作系统信息
+### 操作系统信息
 
 `sys.platform` 显示当前操作系统信息：
 
@@ -134,7 +134,7 @@ sys.getwindowsversion()
 
 标准库中有 `planform` 模块提供更详细的信息。
 
-## Python 版本信息
+### Python 版本信息
 
 
 ```python
@@ -159,7 +159,7 @@ sys.version_info
     sys.version_info(major=2, minor=7, micro=10, releaselevel='final', serial=0)
 
 
-# 与操作系统进行交互：os 模块
+## 与操作系统进行交互：os 模块
 
 `os` 模块提供了对系统文件进行操作的方法：
 
@@ -168,7 +168,7 @@ sys.version_info
 import os
 ```
 
-## 文件路径操作
+### 文件路径操作
 
 - `os.remove(path)` 或 `os.unlink(path)` ：删除指定路径的文件。路径可以是全名，也可以是当前工作目录下的路径。
 - `os.removedirs`：删除文件，并删除中间路径中的空文件夹
@@ -274,13 +274,13 @@ print "test.new.file" in os.listdir(os.curdir)
 os.remove("test.new.file")
 ```
 
-## 系统常量
+### 系统常量
 
 当前操作系统的换行符：
 
 
 ```python
-# windows 为 \r\n
+## windows 为 \r\n
 os.linesep
 ```
 
@@ -319,7 +319,7 @@ os.pathsep
 
 
 
-## 其他
+### 其他
 
 `os.environ` 是一个存储所有环境变量的值的字典，可以修改。
 
@@ -337,7 +337,7 @@ os.environ["USER"]
 
 `os.urandom(len)` 返回指定长度的随机字节。
 
-## os.path 模块
+### os.path 模块
 
 不同的操作系统使用不同的路径规范，这样当我们在不同的操作系统下进行操作时，可能会带来一定的麻烦，而 `os.path` 模块则帮我们解决了这个问题。
 
@@ -346,26 +346,26 @@ os.environ["USER"]
 import os.path
 ```
 
-### 测试
+#### 测试
 
 - `os.path.isfile(path)` ：检测一个路径是否为普通文件
 - `os.path.isdir(path)`：检测一个路径是否为文件夹
 - `os.path.exists(path)`：检测路径是否存在
 - `os.path.isabs(path)`：检测路径是否为绝对路径
 
-### split 和 join
+#### split 和 join
 
 - `os.path.split(path)`：拆分一个路径为 `(head, tail)` 两部分
 - `os.path.join(a, *p)`：使用系统的路径分隔符，将各个部分合成一个路径
 
-### 其他
+#### 其他
 
 - `os.path.abspath()`：返回路径的绝对路径
 - `os.path.dirname(path)`：返回路径中的文件夹部分
 - `os.path.basename(path)`：返回路径中的文件部分
 - `os.path.splitext(path)`：将路径与扩展名分开
 - `os.path.expanduser(path)`：展开 `'~'` 和 `'~user'`
-# CSV 文件和 csv 模块
+## CSV 文件和 csv 模块
 
 标准库中有自带的 `csv` (逗号分隔值) 模块处理 `csv` 格式的文件：
 
@@ -374,7 +374,7 @@ import os.path
 import csv
 ```
 
-## 读 csv 文件
+### 读 csv 文件
 
 假设我们有这样的一个文件：
 
@@ -444,7 +444,7 @@ import os
 os.remove('data.csv')
 ```
 
-## 写 csv 文件
+### 写 csv 文件
 
 可以使用 `csv.writer` 写入文件，不过相应地，传入的应该是以写方式打开的文件，不过一般要用 `'wb'` 即二进制写入方式，防止出现换行不正确的问题：
 
@@ -467,7 +467,7 @@ with open('out.csv', 'wb') as fp:
     two,2,8.0
 
 
-## 更换分隔符
+### 更换分隔符
 
 默认情况下，`csv` 模块默认 `csv` 文件都是由 `excel` 产生的，实际中可能会遇到这样的问题：
 
@@ -514,7 +514,7 @@ os.remove('out.psv')
 os.remove('out.csv')
 ```
 
-## 其他选项
+### 其他选项
 
 `numpy.loadtxt()` 和 `pandas.read_csv()` 可以用来读写包含很多数值数据的 `csv` 文件：
 
@@ -569,9 +569,9 @@ df['Quantity'] * df['Price']
 import os
 os.remove('trades.csv')
 ```
-# 正则表达式和 re 模块
+## 正则表达式和 re 模块
 
-## 正则表达式
+### 正则表达式
 
 [正则表达式](http://baike.baidu.com/view/94238.htm)是用来匹配字符串或者子串的一种模式，匹配的字符串可以很具体，也可以很一般化。
 
@@ -582,7 +582,7 @@ os.remove('trades.csv')
 import re
 ```
 
-## re.match & re.search
+### re.match & re.search
 
 在 `re` 模块中， `re.match` 和 `re.search` 是常用的两个方法：
 
@@ -591,23 +591,23 @@ import re
 
 两者都寻找第一个匹配成功的部分，成功则返回一个 `match` 对象，不成功则返回 `None`，不同之处在于 `re.match` 只匹配字符串的开头部分，而 `re.search` 匹配的则是整个字符串中的子串。
 
-## re.findall & re.finditer
+### re.findall & re.finditer
 
 `re.findall(pattern, string)` 返回所有匹配的对象， `re.finditer` 则返回一个迭代器。
 
-## re.split
+### re.split
 
 `re.split(pattern, string[, maxsplit])` 按照 `pattern` 指定的内容对字符串进行分割。
 
-## re.sub
+### re.sub
 
 `re.sub(pattern, repl, string[, count])` 将 `pattern` 匹配的内容进行替换。
 
-## re.compile
+### re.compile
 
 `re.compile(pattern)` 生成一个 `pattern` 对象，这个对象有匹配，替换，分割字符串的方法。
 
-## 正则表达式规则
+### 正则表达式规则
 
 正则表达式由一些普通字符和一些元字符（metacharacters）组成。普通字符包括大小写的字母和数字，而元字符则具有特殊的含义：
 
@@ -635,7 +635,7 @@ import re
 - `ab\d|ac\d  匹配： ab1, ac9, ...`
 - `([^a-q]bd) 匹配： rbd, 5bd, ...`
 
-## 例子
+### 例子
 
 假设我们要匹配这样的字符串：
 
@@ -743,7 +743,7 @@ print re.split(pattern, path)
 
 如果规则太多复杂，正则表达式不一定是个好选择。
 
-## Numpy 的 fromregex()
+### Numpy 的 fromregex()
 
 
 ```python
@@ -788,7 +788,7 @@ print output['num']
 import os
 os.remove('test.dat')
 ```
-# datetime 模块
+## datetime 模块
 
 
 ```python
@@ -797,7 +797,7 @@ import datetime as dt
 
 `datetime` 提供了基础时间和日期的处理。
 
-## date 对象
+### date 对象
 
 可以使用 `date(year, month, day)` 产生一个 `date` 对象：
 
@@ -854,7 +854,7 @@ print dt.date.today()
     2015-09-10
 
 
-## time 对象
+### time 对象
 
 可以使用 `time(hour, min, sec, us)` 产生一个 `time` 对象：
 
@@ -880,7 +880,7 @@ print t1.strftime('%H:%M:%S, %p')
 
 因为没有具体的日期信息，所以 `time` 对象不支持减法操作。
 
-## datetime 对象
+### datetime 对象
 
 可以使用 `datetime(year, month, day, hr, min, sec, us)` 来创建一个 `datetime` 对象。 
 
@@ -916,7 +916,7 @@ print dt.datetime.strptime('2/10/01', '%m/%d/%y')
     2001-02-10 00:00:00
 
 
-## datetime 格式字符表
+### datetime 格式字符表
 
 字符|含义
 --|--
@@ -937,7 +937,7 @@ print dt.datetime.strptime('2/10/01', '%m/%d/%y')
 `%W` | 一年中的第几个星期，星期一为第一天，`[00,53]`
 `%y` | 没有世纪的年份
 `%Y` | 完整的年份
-# SQL 数据库
+## SQL 数据库
 
 `Python` 提供了一系列标准的数据库的 API，这里我们介绍 sqlite 数据库的用法，其他的数据库的用法大同小异：
 
@@ -1009,7 +1009,7 @@ db.paramstyle
 在 `query` 语句执行之后，我们需要进行 `commit`，否则数据库将不会接受这些变化，如果想撤销某个 `commit`，可以使用 `rollback()` 方法撤销到上一次 `commit()` 的结果：
 
     try:
-        ... # perform some operations
+        ... ## perform some operations
     except:
         connection.rollback()
         raise
@@ -1058,7 +1058,7 @@ cursor.fetchall()
 cursor.close()
 connection.close()
 ```
-# 对象关系映射
+## 对象关系映射
 
 数据库中的记录可以与一个 `Python` 对象对应。
 
@@ -1131,8 +1131,8 @@ order.get_cost()
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine("sqlite:///my_database.sqlite")   # 相当于 connection
-Session = sessionmaker(bind=engine) # 相当于 cursor
+engine = create_engine("sqlite:///my_database.sqlite")   ## 相当于 connection
+Session = sessionmaker(bind=engine) ## 相当于 cursor
 session = Session()
 ```
 
@@ -1187,9 +1187,9 @@ order_2.symbol
     u'MSFT'
 
 
-# 函数进阶：参数传递，高阶函数，lambda 匿名函数，global 变量，递归
+## 函数进阶：参数传递，高阶函数，lambda 匿名函数，global 变量，递归
 
-## 函数是基本类型
+### 函数是基本类型
 
 在 `Python` 中，函数是一种基本类型的对象，这意味着
 
@@ -1237,9 +1237,9 @@ for func in sorted(funcs):
     square 4
 
 
-## 函数参数
+### 函数参数
 
-### 引用传递
+#### 引用传递
 
 `Python` 中的函数传递方式是 `call by reference` 即引用传递，例如，对于这样的用法：
 
@@ -1284,7 +1284,7 @@ print x
     [1, 2, 3]
 
 
-### 默认参数是可变的！
+#### 默认参数是可变的！
 
 函数可以传递默认参数，默认参数的绑定发生在函数定义的时候，以后每次调用默认参数时都会使用同一个引用。
 
@@ -1343,7 +1343,7 @@ print f()
     [1]
 
 
-## 高阶函数
+### 高阶函数
 
 以函数作为参数，或者返回一个函数的函数是高阶函数，常用的例子有 `map` 和 `filter` 函数：
 
@@ -1447,7 +1447,7 @@ import os
 os.remove('foo.txt')
 ```
 
-## 匿名函数
+### 匿名函数
 
 在使用 `map`， `filter`，`reduce` 等函数的时候，为了方便，对一些简单的函数，我们通常使用匿名函数的方式进行处理，其基本形式是：
 
@@ -1495,7 +1495,7 @@ print s2
     285
 
 
-# global 变量
+## global 变量
 
 一般来说，函数中是可以直接使用全局变量的值的：
 
@@ -1551,7 +1551,7 @@ print x
     15
 
 
-## 递归
+### 递归
 
 递归是指函数在执行的过程中调用了本身，一般用于分治法，不过在 `Python` 中这样的用法十分地小，所以一般不怎么使用：
 
@@ -1562,10 +1562,10 @@ Fibocacci 数列：
 def fib1(n):
     """Fib with recursion."""
 
-    # base case
+    ## base case
     if n==0 or n==1:
         return 1
-    # recurssive caae
+    ## recurssive caae
     else:
         return fib1(n-1) + fib1(n-2)
 
@@ -1632,9 +1632,9 @@ print [fib3(i) for i in range(10)]
     The slowest run took 150.16 times longer than the fastest. This could mean that an intermediate result is being cached 
     1000000 loops, best of 3: 230 ns per loop
 
-# 迭代器
+## 迭代器
 
-## 简介
+### 简介
 
 迭代器对象可以在 `for` 循环中使用：
 
@@ -1772,7 +1772,7 @@ print i.next()
     ('a', 1)
 
 
-## 自定义迭代器
+### 自定义迭代器
 
 自定义一个 list 的取反迭代器：
 
@@ -1942,7 +1942,7 @@ for x,y in zip(tree, tree):
     7 7
     8 8
 
-# 生成器
+## 生成器
 
 `while` 循环通常有这样的形式：
 
@@ -1962,7 +1962,7 @@ while True:
 class GenericIterator(object):
     def __init__(self, ...):
         <do setup>
-        # 需要额外储存状态
+        ## 需要额外储存状态
         <store state>
     def next(self): 
         <load state>
@@ -1980,7 +1980,7 @@ def generator(...):
     <do setup>
     while True:
         <generate value>
-        # yield 说明这个函数可以返回多个值！
+        ## yield 说明这个函数可以返回多个值！
         yield value
         if <done>:
             break
@@ -2099,19 +2099,19 @@ class BinaryTree(object):
         self.right = right
 
     def __iter__(self):
-        # 将迭代器设为生成器方法
+        ## 将迭代器设为生成器方法
         return self.inorder()
     
     def inorder(self):
-        # traverse the left branch
+        ## traverse the left branch
         if self.left is not None:
             for value in self.left:
                 yield value
                 
-        # yield node's value
+        ## yield node's value
         yield self.value
         
-        # traverse the right branch
+        ## traverse the right branch
         if self.right is not None:
             for value in self.right:
                 yield value
@@ -2157,16 +2157,16 @@ for value in tree:
 
     1 2 3 4 5 6 7 8
 
-# with 语句和上下文管理器
+## with 语句和上下文管理器
 
 ```python
-# create/aquire some resource
+## create/aquire some resource
 ...
 try:
-    # do something with the resource
+    ## do something with the resource
     ...
 finally:
-    # destroy/release the resource
+    ## destroy/release the resource
     ...
 ```
 
@@ -2177,7 +2177,7 @@ finally:
 
 ```python
 with open('my_file', 'w') as fp:
-    # do stuff with fp
+    ## do stuff with fp
     data = fp.write("Hello world")
 ```
 
@@ -2187,13 +2187,13 @@ with open('my_file', 'w') as fp:
 ```python
 fp = open('my_file', 'w')
 try:
-    # do stuff with f
+    ## do stuff with f
     data = fp.write("Hello world")
 finally:
     fp.close()
 ```
 
-## 上下文管理器
+### 上下文管理器
 
 其基本用法如下：
 ```
@@ -2266,7 +2266,7 @@ with ContextManager():
     ZeroDivisionError: integer division or modulo by zero
 
 
-## `__`enter`__` 的返回值
+### `__`enter`__` 的返回值
 
 如果在 `__enter__` 方法下添加了返回值，那么我们可以使用 `as` 把这个返回值传给某个参数：
 
@@ -2338,7 +2338,7 @@ with ContextManager() as value:
     Exiting
 
 
-## 错误处理
+### 错误处理
 
 上下文管理器对象将错误处理交给 `__exit__` 进行，可以将错误类型，错误值和 `traceback` 等内容作为参数传递给 `__exit__` 函数：
 
@@ -2410,7 +2410,7 @@ with ContextManager():
 
 在这种情况下，错误就不会被向上抛出。
 
-## 数据库的例子
+### 数据库的例子
 
 对于数据库的 transaction 来说，如果没有错误，我们就将其 `commit` 进行保存，如果有错误，那么我们将其回滚到上一次成功的状态。
 
@@ -2426,10 +2426,10 @@ class Transaction(object):
     
     def __exit__(self, exc_type, exc_value, traceback):
         if exc_value is None:
-            # transaction was OK, so commit
+            ## transaction was OK, so commit
             self.connection.commit()
         else:
-            # transaction had a problem, so rollback
+            ## transaction had a problem, so rollback
             self.connection.rollback()
 ```
 
@@ -2504,7 +2504,7 @@ for row in cursor:
     (3, u'Supreme Business Park', u'Hiranandani Gardens, Powai, Mumbai', u'Maharashtra', u'India', u'400076')
 
 
-## contextlib 模块
+### contextlib 模块
 
 很多的上下文管理器有很多相似的地方，为了防止写入很多重复的模式，可以使用 `contextlib` 模块来进行处理。
 
@@ -2607,9 +2607,9 @@ def transaction(connection):
     else:
         connection.commit()
 ```
-# 修饰符
+## 修饰符
 
-## 函数是一种对象
+### 函数是一种对象
 
 在 `Python` 中，函数是也是一种对象。
 
@@ -2705,7 +2705,7 @@ bar(foo, 4)
     5
 
 
-## 修饰符
+### 修饰符
 
 修饰符是这样的一种函数，它接受一个函数作为输入，通常输出也是一个函数：
 
@@ -2774,7 +2774,7 @@ loudlen([10, 20, 30])
 
 
 
-## 用 @ 来使用修饰符
+### 用 @ 来使用修饰符
 
 `Python` 使用 `@` 符号来将某个函数替换为修饰符之后的函数： 
 
@@ -2831,7 +2831,7 @@ foo(42)
     return value is None
 
 
-## 例子
+### 例子
 
 定义两个修饰器函数，一个将原来的函数值加一，另一个乘二：
 
@@ -2870,7 +2870,7 @@ foo(13)
 
 
 
-## 修饰器工厂
+### 修饰器工厂
 
 `decorators factories` 是返回修饰器的函数，例如：
 
@@ -2894,7 +2894,7 @@ def super_loud(filename):
     def loud(f):
         def new_func(*args, **kw):
             fp.write('calling with' + str(args) + str(kw))
-            # 确保内容被写入
+            ## 确保内容被写入
             fp.flush()
             fp.close()
             rtn = f(*args, **kw)
@@ -2938,9 +2938,9 @@ with open('test.txt') as fp:
 import os
 os.remove('test.txt')
 ```
-# 修饰符的使用
+## 修饰符的使用
 
-## @classmethod 修饰符
+### @classmethod 修饰符
 
 在 `Python` 标准库中，有很多自带的修饰符，例如 `classmethod` 将一个对象方法转换了类方法： 
 
@@ -2966,7 +2966,7 @@ Foo.bar(12)
     the input is 12
 
 
-## @property 修饰符
+### @property 修饰符
 
 有时候，我们希望像 __Java__ 一样支持 `getters` 和 `setters` 的方法，这时候就可以使用 `property` 修饰符：
 
@@ -3052,7 +3052,7 @@ print foo.x
     1
 
 
-## Numpy 的 @vectorize 修饰符
+### Numpy 的 @vectorize 修饰符
 
 `numpy` 的 `vectorize` 函数讲一个函数转换为 `ufunc`，事实上它也是一个修饰符：
 
@@ -3078,7 +3078,7 @@ f(arange(-10.0,10.0))
 
 
 
-## 注册一个函数
+### 注册一个函数
 
 来看这样的一个例子，定义一个类：
 
@@ -3140,7 +3140,7 @@ registry.greeting
 
 [flask](http://flask.pocoo.org) ，一个常用的网络应用，处理 url 的机制跟这个类似。
 
-## 使用 @wraps
+### 使用 @wraps
 
 一个通常的问题在于：
 
@@ -3197,12 +3197,12 @@ print square.__doc__, square.__name__
 
 现在这个问题解决了，所以在自定义修饰符方法的时候为了避免出现不必要的麻烦，尽量使用 `wraps` 来修饰修饰符！
 
-## Class 修饰符
+### Class 修饰符
 
 与函数修饰符类似，类修饰符是这样一类函数，接受一个类作为参数，通常返回一个新的类。
-# operator, functools, itertools, toolz, fn, funcy 模块
+## operator, functools, itertools, toolz, fn, funcy 模块
 
-## operator 模块
+### operator 模块
 
 
 ```python
@@ -3237,13 +3237,13 @@ print reduce(op.mul, range(1,10))
 ```python
 my_list = [('a', 1), ('bb', 4), ('ccc', 2), ('dddd', 3)]
 
-# 标准排序
+## 标准排序
 print sorted(my_list)
 
-# 使用元素的第二个元素排序
+## 使用元素的第二个元素排序
 print sorted(my_list, key=op.itemgetter(1))
 
-# 使用第一个元素的长度进行排序：
+## 使用第一个元素的长度进行排序：
 print sorted(my_list, key=lambda x: len(x[0]))
 ```
 
@@ -3252,7 +3252,7 @@ print sorted(my_list, key=lambda x: len(x[0]))
     [('a', 1), ('bb', 4), ('ccc', 2), ('dddd', 3)]
 
 
-## functools 模块
+### functools 模块
 
 `functools` 包含很多跟函数相关的工具，比如之前看到的 `wraps` 函数，不过最常用的是 `partial` 函数，这个函数允许我们使用一个函数中生成一个新函数，这个函数使用原来的函数，不过某些参数被指定了：
 
@@ -3260,10 +3260,10 @@ print sorted(my_list, key=lambda x: len(x[0]))
 ```python
 from functools import partial
 
-# 将 reduce 的第一个参数指定为加法，得到的是类似求和的函数
+## 将 reduce 的第一个参数指定为加法，得到的是类似求和的函数
 sum_ = partial(reduce, op.add)
 
-# 将 reduce 的第一个参数指定为乘法，得到的是类似求连乘的函数
+## 将 reduce 的第一个参数指定为乘法，得到的是类似求连乘的函数
 prod_ = partial(reduce, op.mul)
 
 print sum_([1,2,3,4])
@@ -3276,7 +3276,7 @@ print prod_([1,2,3,4])
 
 `partial` 函数还可以按照键值对传入固定参数。
 
-## itertools 模块
+### itertools 模块
 
 `itertools` 包含很多与迭代器对象相关的工具，其中比较常用的是排列组合生成器 `permutations` 和 `combinations`，还有在数据分析中常用的 `groupby` 生成器：
 
@@ -3302,7 +3302,7 @@ print list(islice(cycle('abcd'), 0, 10))
 animals = sorted(['pig', 'cow', 'giraffe', 'elephant',
                   'dog', 'cat', 'hippo', 'lion', 'tiger'], key=len)
 
-# 按照长度进行分组
+## 按照长度进行分组
 for k, g in groupby(animals, key=len):
     print k, list(g)
 print
@@ -3336,10 +3336,10 @@ print [list(c) for c in combinations([1,2,3,4], r=2)]
     [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
 
 
-## toolz, fn 和 funcy 模块
+### toolz, fn 和 funcy 模块
 
 这三个模块的作用是方便我们在编程的时候使用函数式编程的风格。
-# 作用域
+## 作用域
 
 在函数中，`Python` 从命名空间中寻找变量的顺序如下：
 
@@ -3350,7 +3350,7 @@ print [list(c) for c in combinations([1,2,3,4], r=2)]
 
 例子：
 
-# local 作用域
+## local 作用域
 
 
 ```python
@@ -3361,7 +3361,7 @@ def foo(a,b):
 
 这里所有的变量都在 `local` 作用域。
 
-## global 作用域
+### global 作用域
 
 
 ```python
@@ -3372,7 +3372,7 @@ def foo(a,b):
 
 这里的 `c` 就在 `global` 作用域。
 
-## global 关键词
+### global 关键词
 
 使用 `global` 关键词可以在 `local` 作用域中修改 `global` 作用域的值。
 
@@ -3411,7 +3411,7 @@ print c
     1
 
 
-## built-in 作用域
+### built-in 作用域
 
 
 ```python
@@ -3441,7 +3441,7 @@ __builtin__.len
 
 
 
-## class 中的作用域
+### class 中的作用域
 
 Global | MyClass
 ---|---
@@ -3449,11 +3449,11 @@ Global | MyClass
 
 
 ```python
-# global
+## global
 var = 0
 
 class MyClass(object):
-    # class variable
+    ## class variable
     var = 1
     
     def access_class_c(self):
@@ -3550,7 +3550,7 @@ MyClass.var
 
 `MyClass` 中的 `var` 并没有改变。
 
-## 词法作用域
+### 词法作用域
 
 对于嵌套函数：
 
@@ -3589,27 +3589,27 @@ print 'a (1):', func()
 
 
 func() 函数中调用的 `a` 要从它定义的地方开始寻找，而不是在 `func` 所在的作用域寻找。
-# 动态编译
+## 动态编译
 
-## 标准编程语言
+### 标准编程语言
 
 对于 **C** 语言，代码一般要先编译，再执行。
 
     .c -> .exe
 
-## 解释器语言
+### 解释器语言
 
 shell 脚本
 
     .sh -> interpreter
 
-## Byte Code 编译
+### Byte Code 编译
 
 **Python, Java** 等语言先将代码编译为 byte code（不是机器码），然后再处理：
 
     .py -> .pyc -> interpreter
 
-## eval 函数
+### eval 函数
 
     eval(statement, glob, local)
 
@@ -3647,7 +3647,7 @@ eval("a+1", glob, local)
 
 这里 `local` 中的 `a` 先被找到。
 
-## exec 函数
+### exec 函数
 
     exec(statement, glob, local)
 
@@ -3679,11 +3679,11 @@ print local
 
 执行之后，`b` 在 `local` 命名空间中。
 
-## 警告
+### 警告
 
 动态执行的时候要注意，不要执行不信任的用户输入，因为它们拥有 `Python` 的全部权限。
 
-## compile 函数生成 byte code
+### compile 函数生成 byte code
 
     compile(str, filename, mode)
 
@@ -3718,7 +3718,7 @@ b
 
 
 
-## abstract syntax trees
+### abstract syntax trees
 
 
 ```python

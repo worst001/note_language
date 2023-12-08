@@ -1,6 +1,6 @@
-# 简介
+## 简介
 
-## 属性 attributes
+### 属性 attributes
 
 属性是与对象绑定的一组数据，可以只读，只写，或者读写，使用时不加括号，例如：
 
@@ -75,7 +75,7 @@ f.mode()
     TypeError: 'str' object is not callable
 
 
-##  方法 method
+###  方法 method
 
 方法是与属性绑定的一组函数，需要使用括号，作用于对象本身：
 
@@ -92,7 +92,7 @@ f.close()
 !rm new_file
 ```
 
-## 使用 OPP 的原因
+### 使用 OPP 的原因
 
 - 构建自己的类型来模拟真实世界的对象
 - 处理抽象对象
@@ -100,7 +100,7 @@ f.close()
 - 理解其他 OPP 代码
 - GUI 通常使用 OPP 规则编写
 - ...
-# 使用 OOP 对森林火灾建模
+## 使用 OOP 对森林火灾建模
 
 
 ```python
@@ -110,7 +110,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-## 对森林建模
+### 对森林建模
 
 
 ```python
@@ -219,7 +219,7 @@ plt.show()
     
 
 
-## 模拟森林生长和火灾的过程
+### 模拟森林生长和火灾的过程
 
 经过一段时间：
 
@@ -278,7 +278,7 @@ plt.show()
 ![png](08.02-using-oop-model-a-forest-fire_files/08.02-using-oop-model-a-forest-fire_17_0.png)
     
 
-# 什么是对象？
+## 什么是对象？
 
 在 `Python` 中，几乎所有的东西都是对象。
 
@@ -430,9 +430,9 @@ id(+)
     SyntaxError: invalid syntax
 
 
-# 定义 class
+## 定义 class
 
-## 基本形式
+### 基本形式
 
 `class` 定义如下：
 ```python
@@ -493,7 +493,7 @@ forest
 
 
 
-## 添加方法和属性
+### 添加方法和属性
 
 可以直接添加属性（有更好的替代方式）：
 
@@ -571,7 +571,7 @@ forest.number(12)
     the tree is growing!
     there are 12 trees.
 
-# 特殊方法
+## 特殊方法
 
 **Python** 使用 `__` 开头的名字来定义特殊的方法和属性，它们有：
 
@@ -587,7 +587,7 @@ forest.number(12)
 - `__class__`
 - `__name__`
 
-## 构造方法 `__init__()`
+### 构造方法 `__init__()`
 
 之前说到，在产生对象之后，我们可以向对象中添加属性。事实上，还可以通过构造方法，在构造对象的时候直接添加属性：
 
@@ -735,7 +735,7 @@ Leaf.__init__(my_new_leaf)
 leaf = my_new_leaf
 ```
 
-## 表示方法 `__repr__()` 和 `__str__()`
+### 表示方法 `__repr__()` 和 `__str__()`
 
 
 ```python
@@ -854,9 +854,9 @@ forest.__class__.__name__
     'Forest'
 
 
-# 属性
+## 属性
 
-## 只读属性
+### 只读属性
 
 只读属性，顾名思义，指的是只可读不可写的属性，之前我们定义的属性都是可读可写的，对于只读属性，我们需要使用 `@property` 修饰符来得到：
 
@@ -866,7 +866,7 @@ class Leaf(object):
     def __init__(self, mass_mg):
         self.mass_mg = mass_mg
     
-    # 这样 mass_oz 就变成属性了
+    ## 这样 mass_oz 就变成属性了
     @property
     def mass_oz(self):
         return self.mass_mg * 3.53e-5
@@ -1033,7 +1033,7 @@ small_forest.fire_fraction
 
 
 
-## 可读写的属性
+### 可读写的属性
 
 对于 `@property` 生成的只读属性，我们可以使用相应的 `@attr.setter` 修饰符来使得这个属性变成可写的：
 
@@ -1043,12 +1043,12 @@ class Leaf(object):
     def __init__(self, mass_mg):
         self.mass_mg = mass_mg
     
-    # 这样 mass_oz 就变成属性了
+    ## 这样 mass_oz 就变成属性了
     @property
     def mass_oz(self):
         return self.mass_mg * 3.53e-5
     
-    # 使用 mass_oz.setter 修饰符
+    ## 使用 mass_oz.setter 修饰符
     @mass_oz.setter
     def mass_oz(self, m_oz):
         self.mass_mg = m_oz / 3.53e-5
@@ -1095,11 +1095,11 @@ class Leaf(object):
         
     mass_oz = property(get_mass_oz, set_mass_oz)
 ```
-# 森林火灾模拟
+## 森林火灾模拟
 
 之前我们已经构建好了一些基础，但是还没有开始对火灾进行模拟。
 
-## 随机生长
+### 随机生长
 
 - 在原来的基础上,我们要先让树生长，即定义 `grow_trees()` 方法
 - 定义方法之前，我们要先指定两个属性：
@@ -1178,7 +1178,7 @@ print forest.tree_fraction
     0.00293333333333
 
 
-## 火灾模拟
+### 火灾模拟
 
 - 定义 `start_fires()`：
     - 按照给定的概率生成被闪电击中的位置
@@ -1325,7 +1325,7 @@ plt.show()
 ![png](08.07-forest-fire-simulation_files/08.07-forest-fire-simulation_14_0.png)
     
 
-# 继承
+## 继承
 
 一个类定义的基本形式如下：
 ```python
@@ -1445,7 +1445,7 @@ print mleaf.color
     Plunk!
     red
 
-# super() 函数
+## super() 函数
 
     super(CurrentClassName, instance)
     
@@ -1695,7 +1695,7 @@ print forest2
 
     BurnableForest
 
-# 重定义森林火灾模拟
+## 重定义森林火灾模拟
 
 在前面的例子中，我们定义了一个 `BurnableForest`，实现了一个循序渐进的生长和燃烧过程。
 
@@ -1808,13 +1808,13 @@ class SlowBurnForest(BurnableForest):
 
 class InstantBurnForest(BurnableForest):
     def burn_trees(self):
-        # 起火点
+        ## 起火点
         strikes = self.fires
-        # 找到连通区域
+        ## 找到连通区域
         groves, num_groves = label(self.trees)
         fires = set(groves[strikes])
         self.fires.fill(False)
-        # 将与着火点相连的区域都烧掉
+        ## 将与着火点相连的区域都烧掉
         for fire in fires:
             self.fires[groves == fire] = True
         self.trees[self.fires] = False
@@ -1859,7 +1859,7 @@ plt.show()
 ![png](08.10-refactoring-the-forest-fire-simutation_files/08.10-refactoring-the-forest-fire-simutation_6_0.png)
     
 
-# 接口
+## 接口
 
 在 `Python` 中，鸭子类型（`duck typing`）是一种动态类型的风格。所谓鸭子类型，来自于 `James Whitcomb Riley` 的“鸭子测试”：
 
@@ -2030,13 +2030,13 @@ class SlowBurnForest(BurnableForest):
 
 class InstantBurnForest(BurnableForest):
     def burn_trees(self):
-        # 起火点
+        ## 起火点
         strikes = self.fires
-        # 找到连通区域
+        ## 找到连通区域
         groves, num_groves = label(self.trees)
         fires = set(groves[strikes])
         self.fires.fill(False)
-        # 将与着火点相连的区域都烧掉
+        ## 将与着火点相连的区域都烧掉
         for fire in fires:
             self.fires[groves == fire] = True
         self.trees[self.fires] = False
@@ -2082,7 +2082,7 @@ plt.show()
 ![png](08.11-interfaces_files/08.11-interfaces_15_0.png)
     
 
-# 共有，私有和特殊方法和属性
+## 共有，私有和特殊方法和属性
 
 - 我们之前已经见过 `special` 方法和属性，即以 `__` 开头和结尾的方法和属性
 - 私有方法和属性，以 `_` 开头，不过不是真正私有，而是可以调用的，但是不会被代码自动完成所记录（即 Tab 键之后不会显示）
@@ -2135,7 +2135,7 @@ m._MyClass__really_special()
 
     I'm really special!
 
-# 多重继承
+## 多重继承
 
 多重继承，指的是一个类别可以同时从多于一个父类继承行为与特征的功能，`Python` 是支持多重继承的：
 

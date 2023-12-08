@@ -1,4 +1,4 @@
-# SCIentific PYthon 简介
+## SCIentific PYthon 简介
 
 **`Ipython`** 提供了一个很好的解释器界面。
 
@@ -14,7 +14,7 @@
 
 **`Scikits`** 以 **`Scipy`** 为基础，提供如 **`scikits-learn` 机器学习**和**`scikits-image` 图像处理**等高级用法。
 
-## Scipy
+### Scipy
 
 **`Scipy`** 由不同科学计算领域的子模块组成：
 
@@ -181,7 +181,7 @@ np.lookfor("remove path", module="os")
     os.walk
         Directory tree generator.
 
-# 插值
+## 插值
 
 
 ```python
@@ -202,11 +202,11 @@ np.set_printoptions(precision=2, suppress=True)
 
 ```python
 data = np.genfromtxt("JANAF_CH4.txt", 
-                  delimiter="\t", # TAB 分隔
-                  skiprows=1,     # 忽略首行
-                  names=True,     # 读入属性
-                  missing_values="INFINITE",  # 缺失值
-                  filling_values=np.inf)      # 填充缺失值
+                  delimiter="\t", ## TAB 分隔
+                  skiprows=1,     ## 忽略首行
+                  names=True,     ## 读入属性
+                  missing_values="INFINITE",  ## 缺失值
+                  filling_values=np.inf)      ## 填充缺失值
 ```
 
 显示部分数据：
@@ -245,7 +245,7 @@ y = plt.ylabel(r"$C_p$ ($\frac{kJ}{kg K}$)")
     
 
 
-## 插值
+### 插值
 
 假设我们要对这组数据进行插值。
 
@@ -318,7 +318,7 @@ ch4_cp(8752)
 
 
     d:\Miniconda\lib\site-packages\scipy\interpolate\interpolate.pyc in _evaluate(self, x_new)
-        496         #    The behavior is set by the bounds_error variable.
+        496         ##    The behavior is set by the bounds_error variable.
         497         x_new = asarray(x_new)
     --> 498         out_of_bounds = self._check_bounds(x_new)
         499         y_new = self._call(self, x_new)
@@ -378,7 +378,7 @@ ch4_cp(8752)
 
 
 
-### 线性插值
+#### 线性插值
 
 `interp1d` 默认的插值方法是线性，关于线性插值的定义，请参见：
 
@@ -404,7 +404,7 @@ p = plt.plot(data['TK'][1:7], data['Cp'][1:7], 'ro', markersize=8)
 
 其中红色的圆点为原来的数据点，黑色的十字点为对应的插值点，可以明显看到，相邻的数据点的插值在一条直线上。
 
-### 多项式插值
+#### 多项式插值
 
 我们可以通过 `kind` 参数来调节使用的插值方法，来得到不同的结果：
 
@@ -506,7 +506,7 @@ from scipy.interpolate import interp2d, interpnd
 
 其使用方法与一维类似。
 
-### 径向基函数
+#### 径向基函数
 
 关于径向基函数，可以参阅：
 - 维基百科-Radial basis fucntion：https://en.wikipedia.org/wiki/Radial_basis_function
@@ -564,7 +564,7 @@ t = plt.title("Inverse Multiquadric")
     
 
 
-### 径向基函数插值
+#### 径向基函数插值
 
 对于径向基函数，其插值的公式为：
 
@@ -626,7 +626,7 @@ p = plt.plot(data['TK'], cp_rbf(data['TK']), 'r-')
 
 不同的 `RBF` 核的结果也不同。
 
-### 高维 `RBF` 插值
+#### 高维 `RBF` 插值
 
 
 ```python
@@ -688,9 +688,9 @@ ax.plot_surface(xx,yy,zz(xx,yy),rstride=1, cstride=1, cmap=plt.cm.jet)
 ![png](04.02-interpolation-with-scipy_files/04.02-interpolation-with-scipy_72_1.png)
     
 
-# 概率统计方法
+## 概率统计方法
 
-## 简介
+### 简介
 
 **`Python`** 中常用的统计工具有 **`Numpy, Pandas, PyMC, StatsModels`** 等。
 
@@ -738,10 +738,10 @@ import scipy.stats.stats as st
 
 
 ```python
-print 'median, ', st.nanmedian(heights)    # 忽略nan值之后的中位数
-print 'mode, ', st.mode(heights)           # 众数及其出现次数
-print 'skewness, ', st.skew(heights)       # 偏度
-print 'kurtosis, ', st.kurtosis(heights)   # 峰度
+print 'median, ', st.nanmedian(heights)    ## 忽略nan值之后的中位数
+print 'mode, ', st.mode(heights)           ## 众数及其出现次数
+print 'skewness, ', st.skew(heights)       ## 偏度
+print 'kurtosis, ', st.kurtosis(heights)   ## 峰度
 print 'and so many more...'
 ```
 
@@ -752,7 +752,7 @@ print 'and so many more...'
     and so many more...
 
 
-## 概率分布
+### 概率分布
 
 常见的[连续概率分布](https://zh.wikipedia.org/wiki/Category:%E8%BF%9E%E7%BB%AD%E5%88%86%E5%B8%83)有：
 
@@ -771,9 +771,9 @@ print 'and so many more...'
 
 这些都可以在 `scipy.stats` 中找到。
 
-## 连续分布
+### 连续分布
 
-### 正态分布
+#### 正态分布
 
 以[正态分布](https://zh.wikipedia.org/wiki/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83)为例，先导入正态分布：
 
@@ -934,7 +934,7 @@ p = plot(x, norm(loc=-0.5, scale=.5).pdf(x))
     
 
 
-### 其他连续分布
+#### 其他连续分布
 
 
 ```python
@@ -1022,7 +1022,7 @@ legend()
     
 
 
-## 离散分布
+### 离散分布
 
 导入离散分布：
 
@@ -1041,7 +1041,7 @@ high = 10
 low = -10
 
 x = arange(low, high+1, 0.5)
-p = stem(x, randint(low, high).pmf(x))  # 杆状图
+p = stem(x, randint(low, high).pmf(x))  ## 杆状图
 ```
 
 
@@ -1102,7 +1102,7 @@ legend()
     
 
 
-## 自定义离散分布
+### 自定义离散分布
 
 导入要用的函数：
 
@@ -1166,7 +1166,7 @@ stem(xk, loaded.pmf(xk), markerfmt='ro', linefmt='r-')
     
 
 
-## 假设检验
+### 假设检验
 
 导入相关的函数：
 
@@ -1185,7 +1185,7 @@ from scipy.stats import ttest_ind, ttest_rel, ttest_1samp
 from scipy.stats import t
 ```
 
-### 独立样本 t 检验
+#### 独立样本 t 检验
 
 两组参数不同的正态分布：
 
@@ -1259,7 +1259,7 @@ print 'p-value = {}'.format(p)
 
 `p` 值小，说明这两个样本有显著性差异。
 
-### 配对样本 t 检验
+#### 配对样本 t 检验
 
 配对样本指的是两组样本之间的元素一一对应，例如，假设我们有一组病人的数据：
 
@@ -1342,13 +1342,13 @@ print 'p-value = {}'.format(p)
 
 配对 `t` 检验的结果说明，配对样本之间存在显著性差异，说明治疗时有效的，符合我们的预期。
 
-### `p` 值计算原理 
+#### `p` 值计算原理 
 
 `p` 值对应的部分是下图中的红色区域，边界范围由 `t` 值决定。 
 
 
 ```python
-my_t = t(pop_size) # 传入参数为自由度，这里自由度为50
+my_t = t(pop_size) ## 传入参数为自由度，这里自由度为50
 
 p = plot(x, my_t.pdf(x), 'b-')
 lower_x = x[x<= -abs(t_val)]
@@ -1363,7 +1363,7 @@ p = fill_between(upper_x, my_t.pdf(upper_x), color='red')
 ![png](04.03-statistics-with-scipy_files/04.03-statistics-with-scipy_100_0.png)
     
 
-# 曲线拟合
+## 曲线拟合
 
 导入基础包：
 
@@ -1374,7 +1374,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 ```
 
-## 多项式拟合
+### 多项式拟合
 
 导入线多项式拟合工具：
 
@@ -1485,7 +1485,7 @@ print f + 2 * f ** 2
     31.03 x + 29.05 x + 6.674
 
 
-## 多项式拟合正弦函数
+### 多项式拟合正弦函数
 
 正弦函数：
 
@@ -1528,7 +1528,7 @@ a = plt.axis([-3 * np.pi, 3 * np.pi, -1.25, 1.25])
 
 黑色为原始的图形，可以看到，随着多项式拟合的阶数的增加，曲线与拟合数据的吻合程度在逐渐增大。
 
-## 最小二乘拟合
+### 最小二乘拟合
 
 导入相关的模块：
 
@@ -1574,7 +1574,7 @@ x_M^{N-1} & \dots & x_M & 1
 \left[ \begin{matrix} C_{N-1} \\\ \dots \\\ C_1 \\\ C_0 \end{matrix} \right] =
 \left[ \begin{matrix} y_0 \\\ y_1 \\\ \dots \\\ y_M \end{matrix} \right]$$
 
-### Scipy.linalg.lstsq 最小二乘解
+#### Scipy.linalg.lstsq 最小二乘解
 
 要得到 `C` ，可以使用 `scipy.linalg.lstsq` 求最小二乘解。
 
@@ -1636,7 +1636,7 @@ print "singular values of X = {}".format(s)
     
 
 
-### Scipy.stats.linregress 线性回归
+#### Scipy.stats.linregress 线性回归
 
 对于上面的问题，还可以使用线性回归进行求解：
 
@@ -1675,7 +1675,7 @@ print "Root mean squared error of the fit = {:.3f}".format(np.sqrt(stderr))
 
 可以看到，两者求解的结果是一致的，但是出发的角度是不同的。
 
-## 更高级的拟合
+### 更高级的拟合
 
 
 ```python
@@ -1724,7 +1724,7 @@ p = plt.plot(x, y_noisy, 'rx')
     
 
 
-### Scipy.optimize.leastsq
+#### Scipy.optimize.leastsq
 
 定义误差函数，将要优化的参数放在前面：
 
@@ -1763,7 +1763,7 @@ p = plt.plot(x, function(x, *c), 'k--')
     
 
 
-### Scipy.optimize.curve_fit
+#### Scipy.optimize.curve_fit
 
 更高级的做法：
 
@@ -1821,9 +1821,9 @@ print np.sqrt(err_est.diagonal()) / p_est
        a	  b	 f	phi
     [ 0.09606473  0.0488661   0.02974528  0.19056043]
 
-# 最小化函数
+## 最小化函数
 
-## minimize 函数
+### minimize 函数
 
 
 ```python
@@ -1908,7 +1908,7 @@ print result
           jac: array([ 0.])
 
 
-## Rosenbrock 函数
+### Rosenbrock 函数
 
 Rosenbrock 函数是一个用来测试优化函数效果的一个非凸函数：
 
@@ -1977,9 +1977,9 @@ print result.x
 
 对于 `N > 3`，函数的最小值为 $(x_1,x_2, ..., x_N) = (1,1,...,1)$，不过有一个局部极小值点 $(x_1,x_2, ..., x_N) = (-1,1,...,1)$，所以随机初始值如果选的不好的话，有可能返回的结果是局部极小值点：
 
-## 优化方法
+### 优化方法
 
-### BFGS 算法
+#### BFGS 算法
 
 `minimize` 函数默认根据问题是否有界或者有约束，使用 `'BFGS', 'L-BFGS-B', 'SLSQP'` 中的一种。
 
@@ -2374,7 +2374,7 @@ rosen_min = ax.plot([1],[1],[0],"ro")
     
 
 
-## Nelder-Mead Simplex 算法
+### Nelder-Mead Simplex 算法
 
 改变 `minimize` 使用的算法，使用 [Nelder–Mead 单纯形算法](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method)：
 
@@ -2409,7 +2409,7 @@ rosen_min = ax.plot([1],[1],[0],"ro")
     
 
 
-### Powell 算法
+#### Powell 算法
 
 使用 [Powell 算法](https://en.wikipedia.org/wiki/Powell%27s_method)
 
@@ -2443,9 +2443,9 @@ rosen_min = ax.plot([1],[1],[0],"ro")
 ![png](04.05-minimization-in-python_files/04.05-minimization-in-python_44_0.png)
     
 
-# 积分
+## 积分
 
-## 符号积分
+### 符号积分
 
 积分与求导的关系：
 
@@ -2664,7 +2664,7 @@ t = plt.title(r'$Y(x) = \int_0^x sin^2(\theta) d\theta$')
     
 
 
-## 数值积分
+### 数值积分
 
 数值积分：
 
@@ -2696,7 +2696,7 @@ p = plt.plot(x, f(x), 'k-')
     
 
 
-### `quad` 函数
+#### `quad` 函数
 
 Quadrature 积分的原理参见：
 
@@ -2754,7 +2754,7 @@ p = plt.fill_between(x, f(x), where=f(x)<0, color="red", interpolate=True)
     
 
 
-### 积分到无穷
+#### 积分到无穷
 
 
 ```python
@@ -2786,7 +2786,7 @@ print "upper bound on error: {:.1e}".format(max_err)
     
 
 
-### 双重积分
+#### 双重积分
 
 假设我们要进行如下的积分：
 
@@ -2858,9 +2858,9 @@ I_n([0.5, 1.0, 2.0, 5])
 
 
 
-## 采样点积分
+### 采样点积分
 
-### trapz 方法 和 simps 方法
+#### trapz 方法 和 simps 方法
 
 
 ```python
@@ -2907,7 +2907,7 @@ print "Trapezoidal Integration over 100 points : {:.3f}".format(result)
     Trapezoidal Integration over 100 points : 2.000
 
 
-### 使用 ufunc 进行积分
+#### 使用 ufunc 进行积分
 
 `Numpy` 中有很多 `ufunc` 对象：
 
@@ -2935,7 +2935,7 @@ np.info(np.add.accumulate)
     For a one-dimensional array, accumulate produces results equivalent to::
     
       r = np.empty(len(A))
-      t = op.identity        # op = the ufunc being applied to A's  elements
+      t = op.identity        ## op = the ufunc being applied to A's  elements
       for i in range(len(A)):
           t = op(t, A[i])
           r[i] = t
@@ -2988,7 +2988,7 @@ np.info(np.add.accumulate)
     >>> np.add.accumulate(I, 0)
     array([[ 1.,  0.],
            [ 1.,  1.]])
-    >>> np.add.accumulate(I) # no axis specified = axis zero
+    >>> np.add.accumulate(I) ## no axis specified = axis zero
     array([[ 1.,  0.],
            [ 1.,  1.]])
     
@@ -3018,7 +3018,7 @@ p = plt.plot(x, result_np)
     
 
 
-### 速度比较
+#### 速度比较
 
 计算积分：$$\int_0^x sin \theta d\theta$$
 
@@ -3103,7 +3103,7 @@ print y4
     100 loops, best of 3: 6.86 ms per loop
     0
 
-# 解微分方程
+## 解微分方程
 
 
 ```python
@@ -3113,9 +3113,9 @@ print y4
     Populating the interactive namespace from numpy and matplotlib
 
 
-## 积分求解
+### 积分求解
 
-### 简单的例子
+#### 简单的例子
 
 $$\frac{dy}{dt} = sin(t)$$
 
@@ -3152,7 +3152,7 @@ xl = xlabel("t")
     
 
 
-### 高阶微分方程
+#### 高阶微分方程
 
 抛物运动（竖直方向）：
 
@@ -3232,7 +3232,7 @@ print "cumulative number of time steps", infodict['nst']
       64  64  65  65  65  66  66  67  67  67  68  68  69  69  69  70  70  71
       71  72  72  72  73  75 130 133 133]
 
-# 稀疏矩阵
+## 稀疏矩阵
 
 `Scipy` 提供了稀疏矩阵的支持（`scipy.sparse`）。
 
@@ -3253,7 +3253,7 @@ print "cumulative number of time steps", infodict['nst']
 - COO 格式在构建矩阵时比较高效
 - CSC 和 CSR 格式在乘法计算时比较高效
 
-## 构建稀疏矩阵
+### 构建稀疏矩阵
 
 
 ```python
@@ -3405,7 +3405,7 @@ print C
       (3, 3)	1
 
 
-## 求解微分方程
+### 求解微分方程
 
 
 ```python
@@ -3456,7 +3456,7 @@ err
 
 
 
-## sparse.find 函数
+### sparse.find 函数
 
 返回一个三元组，表示稀疏矩阵中非零元素的 `(row, col, value)`：
 
@@ -3471,7 +3471,7 @@ print row, col, val
     [0 0 1 3] [0 2 1 3] [3 1 2 1]
 
 
-## sparse.issparse 函数
+### sparse.issparse 函数
 
 查看一个对象是否为稀疏矩阵：
 
@@ -3526,7 +3526,7 @@ sparse.isspmatrix_csr(B)
     False
 
 
-# 线性代数
+## 线性代数
 
 `numpy` 和 `scipy` 中，负责进行线性代数部分计算的模块叫做 `linalg`。
 
@@ -3542,7 +3542,7 @@ from scipy import linalg
 %matplotlib inline
 ```
 
-## numpy.linalg VS scipy.linalg
+### numpy.linalg VS scipy.linalg
 
 一方面`scipy.linalg` 包含 `numpy.linalg` 中的所有函数，同时还包含了很多 `numpy.linalg` 中没有的函数。
 
@@ -3562,11 +3562,11 @@ print "number of items in scipy.linalg:", len(dir(scipy.linalg))
     number of items in scipy.linalg: 115
 
 
-## numpy.matrix VS 2D numpy.ndarray
+### numpy.matrix VS 2D numpy.ndarray
 
 线性代数的基本操作对象是矩阵，而矩阵的表示方法主要有两种：`numpy.matrix` 和 2D `numpy.ndarray`。
 
-### numpy.matrix
+#### numpy.matrix
 
 `numpy.matrix` 是一个矩阵类，提供了一些方便的矩阵操作：
 - 支持类似 `MATLAB` 创建矩阵的语法
@@ -3616,7 +3616,7 @@ print repr(A * b)
             [39]])
 
 
-### 2 维 numpy.ndarray
+#### 2 维 numpy.ndarray
 
 虽然 `numpy.matrix` 有着上面的好处，但是一般不建议使用，而是用 2 维 `numpy.ndarray` 对象替代，这样可以避免一些不必要的困惑。
 
@@ -3671,9 +3671,9 @@ print repr(A * b)
 
 `scipy.linalg` 的操作可以作用到两种类型的对象上，没有区别。
 
-## 基本操作
+### 基本操作
 
-### 求逆
+#### 求逆
 
 矩阵 $\mathbf{A}$ 的逆 $\mathbf{B}$ 满足：$\mathbf{BA}=\mathbf{AB}=I$，记作 $\mathbf{B} = \mathbf{A}^{-1}$。
 
@@ -3694,7 +3694,7 @@ print A.dot(scipy.linalg.inv(A))
      [  8.88178420e-16   1.00000000e+00]]
 
 
-### 求解线性方程组
+#### 求解线性方程组
 
 例如，下列方程组
 $$
@@ -3747,7 +3747,7 @@ print "solve: {} s".format(time.time() - tic)
     solve: 0.0284671783447 s
 
 
-### 计算行列式
+#### 计算行列式
 
 方阵的行列式为
 $$
@@ -3779,7 +3779,7 @@ print linalg.det(A)
     -25.0
 
 
-### 计算矩阵或向量的模
+#### 计算矩阵或向量的模
 
 矩阵的模定义如下：
 $$
@@ -3801,13 +3801,13 @@ A = np.array([[1, 2],
 
 print linalg.norm(A)
 
-print linalg.norm(A,'fro') # frobenius norm 默认值
+print linalg.norm(A,'fro') ## frobenius norm 默认值
 
-print linalg.norm(A,1) # L1 norm 最大列和
+print linalg.norm(A,1) ## L1 norm 最大列和
 
-print linalg.norm(A,-1) # L -1 norm 最小列和
+print linalg.norm(A,-1) ## L -1 norm 最小列和
 
-print linalg.norm(A,np.inf) # L inf norm 最大行和
+print linalg.norm(A,np.inf) ## L inf norm 最大行和
 ```
 
     5.47722557505
@@ -3817,9 +3817,9 @@ print linalg.norm(A,np.inf) # L inf norm 最大行和
     7
 
 
-### 最小二乘解和伪逆
+#### 最小二乘解和伪逆
 
-#### 问题描述
+##### 问题描述
 
 所谓最小二乘问题的定义如下：
 
@@ -3856,7 +3856,7 @@ $$
 
 矩阵 $\mathbf{A}^{\dagger}$ 叫做 $\mathbf{A}$ 的伪逆。
 
-#### 问题求解
+##### 问题求解
 
 注意到，我们的模型可以写为：
 $$
@@ -3867,7 +3867,7 @@ $$
 
 在给定 $\mathbf{A}$ 的情况下，我们可以使用 `linalg.pinv` 或者 `linalg.pinv2` 求解 $\mathbf{A}^{\dagger}$。
 
-####  例子
+#####  例子
 
 假设我们的数据满足：
 $$
@@ -3942,15 +3942,15 @@ plt.show()
     
 
 
-### 广义逆
+#### 广义逆
 
 `linalg.pinv` 或 `linalg.pinv2` 可以用来求广义逆，其区别在于前者使用求最小二乘解的算法，后者使用求奇异值的算法求解。
 
-## 矩阵分解
+### 矩阵分解
 
-### 特征值和特征向量
+#### 特征值和特征向量
 
-#### 问题描述
+##### 问题描述
 
 对于给定的 $N \times N$ 矩阵 $\mathbf A$，特征值和特征向量问题相当与寻找标量 $\lambda$ 和对应的向量 $\mathbf v$ 使得：
 $$
@@ -3964,7 +3964,7 @@ $$
 
 然后利用这些特征值求（归一化的）特征向量。
 
-#### 问题求解
+##### 问题求解
 
 - `linalg.eig(A)` 
     - 返回矩阵的特征值与特征向量
@@ -3973,7 +3973,7 @@ $$
 - `linalg.eig(A, B)`
     - 求解 $\mathbf{Av} = \lambda\mathbf{Bv}$ 的问题
 
-#### 例子
+##### 例子
 
 矩阵为
 $$
@@ -4001,15 +4001,15 @@ la, v = linalg.eig(A)
 print la
 
 
-# 验证是否归一化
+## 验证是否归一化
 print np.sum(abs(v**2),axis=0)
 
-# 第一个特征值
+## 第一个特征值
 l1 = la[0]
-# 对应的特征向量
+## 对应的特征向量
 v1 = v[:, 0].T
 
-# 验证是否为特征值和特征向量对
+## 验证是否为特征值和特征向量对
 print linalg.norm(A.dot(v1)-l1*v1)
 ```
 
@@ -4018,9 +4018,9 @@ print linalg.norm(A.dot(v1)-l1*v1)
     3.23301824835e-15
 
 
-### 奇异值分解
+#### 奇异值分解
 
-#### 问题描述
+##### 问题描述
 
 $M \times N$ 矩阵 $\mathbf A$ 的奇异值分解为：
 $$
@@ -4032,14 +4032,14 @@ $$
 其具体原理可以查看维基百科：
 https://en.wikipedia.org/wiki/Singular_value_decomposition
 
-#### 问题求解
+##### 问题求解
 
 - `U,s,Vh = linalg.svd(A)` 
     - 返回 $U$ 矩阵，奇异值 $s$，$V^H$ 矩阵
 - `Sig = linalg.diagsvd(s,M,N)`
     - 从奇异值恢复 $\boldsymbol{\Sigma}$ 矩阵
 
-#### 例子
+##### 例子
 
 奇异值分解：
 
@@ -4078,7 +4078,7 @@ print U.dot(Sig.dot(Vh))
      [ 4.  5.  6.]]
 
 
-### LU 分解
+#### LU 分解
 
 $M \times N$ 矩阵 $\mathbf A$ 的 `LU` 分解为：
 $$
@@ -4115,7 +4115,7 @@ print P.dot(L).dot(U)
      [ 4.  5.  6.]]
 
 
-### Cholesky 分解
+#### Cholesky 分解
 
 `Cholesky` 分解是一种特殊的 `LU` 分解，此时要求 $\mathbf A$ 为 Hermitian 正定矩阵 （$\mathbf A = \mathbf{A^H}$）。
 
@@ -4130,7 +4130,7 @@ $$
 
 可以用 `linalg.cholesky` 求解。
 
-### QR 分解
+#### QR 分解
 
 $M×N$ 矩阵 $\mathbf A$ 的 `QR` 分解为：
 $$
@@ -4144,7 +4144,7 @@ https://en.wikipedia.org/wiki/QR_decomposition
 
 可以用 `linalg.qr` 求解。
 
-### Schur 分解
+#### Schur 分解
 
 对于 $N\times N$ 方阵 $\mathbf A$, `Schur` 分解要求找到满足下式的矩阵：
 $$
@@ -4182,7 +4182,7 @@ print Z.dot(T).dot(Z.T)
      [ 2.  3.  6.]]
 
 
-## 矩阵函数
+### 矩阵函数
 
 考虑函数 $f(x)$ 的泰勒展开：
 $$
@@ -4196,9 +4196,9 @@ $$
 
 这也是计算矩阵函数的最好的方式。
 
-### 指数和对数函数
+#### 指数和对数函数
 
-#### 指数
+##### 指数
 
 指数可以定义如下：
 $$
@@ -4252,7 +4252,7 @@ print linalg.expm(A)
      [ 112.10484685  164.07380305]]
 
 
-#### 对数
+##### 对数
 
 指数的逆运算，可以用 `linalg.logm` 实现：
 
@@ -4268,7 +4268,7 @@ print linalg.logm(linalg.expm(A))
      [ 3.  4.]]
 
 
-### 三角函数
+#### 三角函数
 
 根据欧拉公式，其定义为：
 $$
@@ -4290,7 +4290,7 @@ $$
 - `linalg.cosm`
 - `linalg.tanm`
 
-### 双曲三角函数
+#### 双曲三角函数
 
 \begin{eqnarray*} \sinh\left(\mathbf{A}\right) & = & \frac{e^{\mathbf{A}}-e^{-\mathbf{A}}}{2}\\ \cosh\left(\mathbf{A}\right) & = & \frac{e^{\mathbf{A}}+e^{-\mathbf{A}}}{2}\\ \tanh\left(\mathbf{A}\right) & = & \left[\cosh\left(\mathbf{A}\right)\right]^{-1}\sinh\left(\mathbf{A}\right).\end{eqnarray*}
 
@@ -4299,12 +4299,12 @@ $$
 - `linalg.coshm`
 - `linalg.tanhm`
 
-## 特殊矩阵
+### 特殊矩阵
 
 `Scipy` 提供了一些特殊矩阵的实现，具体可以参考：
 
 http://docs.scipy.org/doc/scipy/reference/tutorial/linalg.html#special-matrices
-# 稀疏矩阵的线性代数
+## 稀疏矩阵的线性代数
 
 对于稀疏矩阵来说，其线性代数操作可以使用 `scipy.sparse.linalg` 实现：
 
@@ -4313,26 +4313,26 @@ http://docs.scipy.org/doc/scipy/reference/tutorial/linalg.html#special-matrices
 import scipy.sparse.linalg
 ```
 
-## 矩阵操作
+### 矩阵操作
 
 - `scipy.sparse.linalg.inv`
     - 稀疏矩阵求逆
 - `scipy.sparse.linalg.expm`
     - 求稀疏矩阵的指数函数
 
-## 矩阵范数
+### 矩阵范数
 
 - `scipy.sparse.linalg.norm`
     - 稀疏矩阵求范数
 
-## 线性方程组求解
+### 线性方程组求解
 
 提供了一系列求解方法：
 http://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#solving-linear-problems
 
 主要使用的是迭代方法求解。
 
-## 特征值分解和奇异值分解
+### 特征值分解和奇异值分解
 
 对于特别大的矩阵，原来的方法可能需要太大的内存，考虑使用这两个方法替代：
 
@@ -4341,4 +4341,4 @@ http://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#solving-linear-prob
 - `scipy.sparse.linalg.svds`
     - 返回前 k 大的奇异值和奇异向量
 
-## <font color="red">所有的这些操作既可以在稀疏矩阵上使用，也可以在普通矩阵上使用。</font>
+### <font color="red">所有的这些操作既可以在稀疏矩阵上使用，也可以在普通矩阵上使用。</font>

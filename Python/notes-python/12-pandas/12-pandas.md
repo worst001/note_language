@@ -1,4 +1,4 @@
-# 十分钟上手 Pandas
+## 十分钟上手 Pandas
 
 `pandas` 是一个 `Python Data Analysis Library`。
 
@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-## 产生 Pandas 对象
+### 产生 Pandas 对象
 
 `pandas` 中有三种基本结构：
 
@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 - `Panel`
     - General 3D labeled, also size-mutable array
 
-### Series
+#### Series
 
 一维 `Series` 可以用一维列表初始化：
 
@@ -46,7 +46,7 @@ print s
 
 默认情况下，`Series` 的下标都是数字（可以使用额外参数指定），类型是统一的。
 
-### DataFrame
+#### DataFrame
 
 `DataFrame` 则是个二维结构，这里首先构造一组时间序列，作为我们第一维的下标：
 
@@ -231,9 +231,9 @@ df2.dtypes
 
 
 
-## 查看数据
+### 查看数据
 
-### 头尾数据
+#### 头尾数据
 
 `head` 和 `tail` 方法可以分别查看最前面几行和最后面几行的数据（默认为 5）：
 
@@ -347,7 +347,7 @@ df.tail(3)
 
 
 
-### 下标，列标，数据
+#### 下标，列标，数据
 
 下标使用 `index` 属性查看：
 
@@ -398,7 +398,7 @@ df.values
 
 
 
-### 统计数据
+#### 统计数据
 
 查看简单的统计数据：
 
@@ -484,7 +484,7 @@ df.describe()
 
 
 
-### 转置
+#### 转置
 
 
 ```python
@@ -550,7 +550,7 @@ df.T
 
 
 
-## 排序
+### 排序
 
 `sort_index(axis=0, ascending=True)` 方法按照下标大小进行排序，`axis=0` 表示按第 0 维进行排序。
 
@@ -760,11 +760,11 @@ df.sort_values(by="B")
 
 
 
-## 索引
+### 索引
 
 虽然 `DataFrame` 支持 `Python/Numpy` 的索引语法，但是推荐使用 `.at, .iat, .loc, .iloc 和 .ix` 方法进行索引。
 
-### 读取数据
+#### 读取数据
 
 选择单列数据：
 
@@ -904,7 +904,7 @@ df["20130101":"20130103"]
 
 
 
-### 使用 `label` 索引
+#### 使用 `label` 索引
 
 `loc` 可以方便的使用 `label` 进行索引：
 
@@ -1066,7 +1066,7 @@ print df.at[dates[0],'B']
     -0.861657519028
 
 
-### 使用位置索引
+#### 使用位置索引
 
 `iloc` 使用位置进行索引：
 
@@ -1296,7 +1296,7 @@ df.iat[1,1]
 
 
 
-### 布尔型索引
+#### 布尔型索引
 
 所有 `A` 列大于 0 的行：
 
@@ -1540,7 +1540,7 @@ df2[df2['E'].isin(['two','four'])]
 
 
 
-### 设定数据的值
+#### 设定数据的值
 
 
 ```python
@@ -1957,7 +1957,7 @@ df2
 
 
 
-## 缺失数据
+### 缺失数据
 
 
 ```python
@@ -2197,9 +2197,9 @@ pd.isnull(df1)
 
 
 
-## 计算操作
+### 计算操作
 
-### 统计信息
+#### 统计信息
 
 每一列的均值：
 
@@ -2335,7 +2335,7 @@ df.sub(s, axis='index')
 
 
 
-### apply 操作
+#### apply 操作
 
 与 `R` 中的 `apply` 操作类似，接收一个函数，默认是对将函数作用到每一列上：
 
@@ -2433,7 +2433,7 @@ df.apply(lambda x: x.max() - x.min())
 
 
 
-### 直方图
+#### 直方图
 
 
 ```python
@@ -2483,7 +2483,7 @@ h = s.hist()
     
 
 
-### 字符串方法
+#### 字符串方法
 
 当 `Series` 或者 `DataFrame` 的某一列是字符串时，我们可以用 `.str` 对这个字符串数组进行字符串的基本操作： 
 
@@ -2506,9 +2506,9 @@ print s.str.lower()
     dtype: object
 
 
-## 合并
+### 合并
 
-### 连接
+#### 连接
 
 
 ```python
@@ -2680,7 +2680,7 @@ pd.concat(pieces)
 
 
 
-### 数据库中的 Join
+#### 数据库中的 Join
 
 `merge` 可以实现数据库中的 `join` 操作：
 
@@ -2750,7 +2750,7 @@ pd.merge(left, right, on='key')
 
 
 
-### append
+#### append
 
 向 `DataFrame` 中添加行：
 
@@ -2931,7 +2931,7 @@ df.append(s, ignore_index=True)
 
 
 
-### Grouping
+#### Grouping
 
 
 ```python
@@ -3128,9 +3128,9 @@ df.groupby(['A', 'B']).sum()
 
 
 
-## 改变形状
+### 改变形状
 
-### Stack
+#### Stack
 
 产生一个多 `index` 的 `DataFrame`：
 
@@ -3354,7 +3354,7 @@ stacked.unstack(1)
 
 
 
-## 时间序列
+### 时间序列
 
 金融分析中常用到时间序列数据：
 
@@ -3423,7 +3423,7 @@ ts_utc.tz_convert('US/Eastern')
 
 
 
-## Categoricals
+### Categoricals
 
 
 ```python
@@ -3569,7 +3569,7 @@ df.groupby("grade").size()
 
 
 
-## 绘图
+### 绘图
 
 使用 `ggplot` 风格：
 
@@ -3610,9 +3610,9 @@ p = plt.legend(loc="best")
     
 
 
-## 文件读写
+### 文件读写
 
-### csv
+#### csv
 
 写入文件：
 
@@ -3690,7 +3690,7 @@ pd.read_csv('foo.csv').head()
 
 
 
-### hdf5
+#### hdf5
 
 写入文件：
 
@@ -3762,7 +3762,7 @@ pd.read_hdf('foo.h5','df').head()
 
 
 
-### excel
+#### excel
 
 写入文件：
 
@@ -3844,7 +3844,7 @@ import os
 for f in glob.glob("foo*"):
     os.remove(f)
 ```
-# 一维数据结构：Series
+## 一维数据结构：Series
 
 
 ```python
@@ -3866,7 +3866,7 @@ import pandas as pd
 
 `index` 是一维坐标轴的索引列表。
 
-## 从 ndarray 构建
+### 从 ndarray 构建
 
 如果 `data` 是个 `ndarray`，那么 `index` 的长度必须跟 `data` 一致：
 
@@ -3922,7 +3922,7 @@ pd.Series(np.random.randn(5))
 
 
 
-## 从字典中构造
+### 从字典中构造
 
 如果 `data` 是个 `dict`，如果不给定 `index`，那么 `index` 将使用 `dict` 的 `key` 排序之后的结果：
 
@@ -3960,7 +3960,7 @@ pd.Series(d, index=['b', 'd', 'a'])
 
 
 
-## 从标量值构造
+### 从标量值构造
 
 如果 `data` 是标量，那么 `index` 值必须被指定，得到一个值为 `data` 与 `index` 等长的 `Series`：
 
@@ -3981,7 +3981,7 @@ pd.Series(5., index=['a', 'b', 'c', 'd', 'e'])
 
 
 
-## 像 ndarray 一样使用 Series
+### 像 ndarray 一样使用 Series
 
 
 ```python
@@ -4083,7 +4083,7 @@ np.exp(s)
 
 
 
-## 像字典一样使用 Series
+### 像字典一样使用 Series
 
 也可以像字典一样使用 `Series`：
 
@@ -4160,7 +4160,7 @@ s.get("f", np.nan)
 
 
 
-## 向量化操作
+### 向量化操作
 
 简单的向量操作与 `ndarray` 的表现一致：
 
@@ -4219,7 +4219,7 @@ s[1:] + s[:-1]
 
 对于上面两个不能完全对齐的 `Series`，结果的 `index` 是两者 `index` 的并集，同时不能对齐的部分当作缺失值处理。
 
-## Name 属性
+### Name 属性
 
 可以在定义时指定 `name` 属性：
 
@@ -4235,7 +4235,7 @@ s.name
     'something'
 
 
-# 二维数据结构：DataFrame
+## 二维数据结构：DataFrame
 
 
 ```python
@@ -4255,7 +4255,7 @@ import pandas as pd
 
 `index` 用于指定行的 `label`，`columns` 用于指定列的 `label`，如果参数不传入，那么会按照传入的内容进行设定。
 
-## 从 Series 字典中构造
+### 从 Series 字典中构造
 
 可以使用值为 `Series` 的字典进行构造：
 
@@ -4421,7 +4421,7 @@ df.columns
 
 
 
-## 从 ndarray 或者 list 字典中构造
+### 从 ndarray 或者 list 字典中构造
 
 如果字典是 `ndarray` 或者 `list`，那么它们的长度要严格保持一致：
 
@@ -4523,7 +4523,7 @@ pd.DataFrame(d, index=['a', 'b', 'c', 'd'])
 
 
 
-## 从结构数组中构造
+### 从结构数组中构造
 
 `numpy` 支持结构数组的构造：
 
@@ -4656,7 +4656,7 @@ pd.DataFrame(data, columns=['C', 'A', 'B'])
 
 
 
-## 从字典列表中构造
+### 从字典列表中构造
 
 字典中同一个键的值会被合并到同一列：
 
@@ -4770,11 +4770,11 @@ pd.DataFrame(data2, columns=['a', 'b'])
 
 
 
-## 从 Series 中构造
+### 从 Series 中构造
 
 相当于将 Series 二维化。
 
-## 其他构造方法
+### 其他构造方法
 
 `DataFrame.from_dict` 从现有的一个字典中构造，`DataFrame.from_records` 从现有的一个记录数组中构造：
 
@@ -4858,7 +4858,7 @@ pd.DataFrame.from_items([('A', [1, 2, 3]), ('B', [4, 5, 6])])
 
 
 
-## 列操作
+### 列操作
 
 `DataFrame` 可以类似于字典一样对列进行操作：
 
@@ -5230,7 +5230,7 @@ df.assign(test=df["one"] + df["bar"])
 
 
 
-## 索引和选择
+### 索引和选择
 
 基本操作：
 

@@ -1,6 +1,6 @@
-# Python 简介
+## Python 简介
 
-## **Python** 历史
+### **Python** 历史
 
 `Python` 的创始人为荷兰人吉多·范罗苏姆（`Guido van Rossum`）。1989年的圣诞节期间，吉多·范罗苏姆为了在阿姆斯特丹打发时间，决心开发一个新的脚本解释程序，作为 ABC 语言的一种继承。之所以选中 `Python` 作为程序的名字，是因为他是 BBC 电视剧——蒙提·派森的飞行马戏团（`Monty Python's Flying Circus`）的爱好者。
 
@@ -10,7 +10,7 @@
 
 `Python 3.0` 于 2008 年 12 月 3 日发布，此版不完全兼容之前的 `Python` 源代码。不过，很多新特性后来也被移植到旧的 `Python 2.6/2.7` 版本。
 
-## 第一行Python代码
+### 第一行Python代码
 
 安装好 `Python` 之后，在命令行下输入：
 
@@ -36,7 +36,7 @@ print "hello world!"
 
 也会输出 `"hello world!"` 的结果。
 
-## Python 之禅
+### Python 之禅
 
 在 **Python** 解释器下输入 
 
@@ -130,9 +130,9 @@ print "".join([d.get(c, c) for c in s])
 
 
 > Life is short. Use Python.
-# Ipython 解释器
+## Ipython 解释器
 
-## 进入ipython
+### 进入ipython
 
 通常我们并不使用**Python**自带的解释器，而是使用另一个比较方便的解释器——**ipython**解释器，命令行下输入：
 
@@ -176,7 +176,7 @@ a
 b = [1, 2, 3]
 ```
 
-## ipython magic命令
+### ipython magic命令
 
 **ipython**解释器提供了很多以百分号`%`开头的`magic`命令，这些命令很像linux系统下的命令行命令（事实上有些是一样的）。
 
@@ -380,7 +380,7 @@ os.remove('hello_world.py')
     %hist
 
 
-## ipython 使用
+### ipython 使用
 
 使用 `?` 查看函数的帮助：
 
@@ -393,9 +393,9 @@ sum?
 
 
 ```python
-# 导入numpy和matplotlib两个包
+## 导入numpy和matplotlib两个包
 %pylab
-# 查看其中sort函数的帮助
+## 查看其中sort函数的帮助
 sort??
 ```
 
@@ -470,7 +470,7 @@ _ + 13
 
     TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
-# Ipython notebook
+## Ipython notebook
 
 在命令行下输入命令：
 
@@ -484,11 +484,11 @@ _ + 13
 * Code
 
 这里不做过多介绍。
-# 使用 Anaconda
+## 使用 Anaconda
 
 [Anaconda](http://www.continuum.io/downloads)是一个很好用的Python IDE，它集成了很多科学计算需要使用的**python**第三方工具包。
 
-## conda 的使用 
+### conda 的使用 
 
 根据自己的操作系统安装好[Anaconda](http://www.continuum.io/downloads)后，在命令行下输入：
 
@@ -501,7 +501,7 @@ _ + 13
 !conda list
 ```
 
-    # packages in environment at C:\Anaconda:
+    ## packages in environment at C:\Anaconda:
     #
     _license                  1.1                      py27_0  
     alabaster                 0.7.3                    py27_0  
@@ -711,7 +711,7 @@ source activate py34 #(linux, mac)
 
 此时，我们的 **Python** 版本便是 **`python 3.4`**了。
 
-## spyder 编辑器
+### spyder 编辑器
 
 `Anaconda` 默认使用的编辑器是 `spyder`，可以在命令行下输入：
 

@@ -1,6 +1,6 @@
 # 使用 basemap 画地图
 
-# 安装 basemap
+## 安装 basemap
 
 最简单的方式是通过 [conda](http://conda.pydata.org/miniconda.html) 来进行安装：
 
@@ -8,7 +8,7 @@
 
 也可以下载下来自己编译。
 
-## 简单使用
+### 简单使用
 
 绘制一幅世界地图：
 
@@ -19,8 +19,8 @@
 from mpl_toolkits.basemap import Basemap
 import numpy as np
 import matplotlib.pyplot as plt
-# lon_0 is central longitude of projection.
-# resolution = 'c' means use crude resolution coastlines.
+## lon_0 is central longitude of projection.
+## resolution = 'c' means use crude resolution coastlines.
 f = plt.figure(figsize=(16,9))
 m = Basemap(projection='robin',lon_0=0,resolution='c')
 m.shadedrelief(scale=0.2)
@@ -33,9 +33,9 @@ plt.show()
 ![png](10.01-maps-using-basemap_files/10.01-maps-using-basemap_6_0.png)
     
 
-# 使用 cartopy 画地图
+## 使用 cartopy 画地图
 
-## 安装 cartopy
+### 安装 cartopy
 
 最简单的方式是通过 [conda](http://conda.pydata.org/miniconda.html) 来进行安装：
 
@@ -43,7 +43,7 @@ plt.show()
 
 也可以下载下来自己编译。
 
-## 简单使用
+### 简单使用
 
 绘制一幅世界地图：
 
@@ -66,7 +66,7 @@ plt.show()
 ![png](10.02-maps-using-cartopy_files/10.02-maps-using-cartopy_6_0.png)
     
 
-# 探索 NBA 数据
+## 探索 NBA 数据
 
 我们首先安装 `Goldsberry` 包，项目源地址：
 
@@ -98,7 +98,7 @@ gb.__version__
 
 
 
-## 球员信息
+### 球员信息
 
 获得 `2015-2016` 赛季运动员的名单：
 
@@ -391,7 +391,7 @@ gsw_players[["DISPLAY_LAST_COMMA_FIRST", "FROM_YEAR", "TEAM_ABBREVIATION", "TEAM
 
 
 
-## 球员比赛数据
+### 球员比赛数据
 
 通过 `DISPLAY_LAST_COMMA_FIRST`，我们来查询宣布本赛季之后退役的科比布莱恩特（`Kobe, Bryant`）的信息：
 
@@ -461,7 +461,7 @@ kobe_logs = gb.player.game_logs(kobe_id)
 
 kobe_logs = pd.DataFrame(kobe_logs.logs())
 
-# 最近五场比赛
+## 最近五场比赛
 kobe_logs.head()
 ```
 
@@ -809,7 +809,7 @@ show_season_high(curry_career)
     5  JAN 25 2016  STL           5  San Antonio        Spurs
 
 
-## 比赛信息
+### 比赛信息
 
 
 ```python
@@ -978,7 +978,7 @@ game_ids.head()
 
 
 
-## 获得运动员的头像
+### 获得运动员的头像
 
 
 ```python
@@ -1010,7 +1010,7 @@ Image("http://stats.nba.com/media/players/230x185/"+str(curry_id)+".png")
 
 
 
-## More
+### More
 
 修改了 `goldsberry\player\_Player.py` 代码中的错误，使之能够查询退役球员的信息，修改后的代码在本文件夹下，放到安装目录之后下面的代码均可以运行：
 
@@ -1111,7 +1111,7 @@ Image("http://stats.nba.com/media/players/230x185/"+str(jordan_id)+".png")
     
 
 
-# 金庸的武侠世界
+## 金庸的武侠世界
 
 金庸老爷子一共写了15部武侠小说，它们分别是：
 
@@ -1133,7 +1133,7 @@ Image("http://stats.nba.com/media/players/230x185/"+str(jordan_id)+".png")
 
 我们现在就用 `Python` 来探索一下金庸小说中的武侠世界吧。
 
-## 准备工作
+### 准备工作
 
 再处理小说之前，我们需要先做一些准备工作。
 
@@ -1212,7 +1212,7 @@ plt.show()
     
 
 
-## 小说概览
+### 小说概览
 
 我们从网上找到金庸小说的 txt 全文，放在 `novels` 文件夹中：
 
@@ -1231,7 +1231,7 @@ plt.show()
 
 ```python
 with open('novels/鸳鸯刀.txt') as f:
-    # 去掉结尾的换行符
+    ## 去掉结尾的换行符
     data = [line.strip().decode('utf8') for line in f.readlines()]
 
 for line in data[:13]:
@@ -1248,7 +1248,7 @@ for line in data[:13]:
     　　瞧着这个闭目抽烟的病夫，陕西西安府威信镖局的总镖头、“铁鞭镇八方”周威信不由得深自踌躇起来，不由自主的伸手去摸了一摸背上的包袱。
 
 
-## 出场人物
+### 出场人物
 
 接着，我们先找到金庸小说中所有出场的人物，放到 names.txt 文件中，其格式为：
 
@@ -1265,7 +1265,7 @@ for line in data[:13]:
 
 ```python
 with open('names.txt') as f:
-    # 去掉结尾的换行符
+    ## 去掉结尾的换行符
     data = [line.strip().decode('utf8') for line in f.readlines()]
 
 novels = data[::2]
@@ -1299,7 +1299,7 @@ for name in novel_names['天龙八部'][:20]:
     云岛主
 
 
-## 寻找主角光环
+### 寻找主角光环
 
 我们来看看人物在小说中的出场次数统计。
 
@@ -1366,7 +1366,7 @@ find_main_charecters("倚天屠龙记")
     
 
 
-## Word2Vec
+### Word2Vec
 
 接下来，我们将使用一些机器学习的观点来处理这些小说。
 
@@ -1391,7 +1391,7 @@ import gensim
     Using gpu device 1: Tesla C2075 (CNMeM is disabled, CuDNN not available)
 
 
-## 中文分词
+### 中文分词
 
 虽然我们安装了 `gensim`，但我们还不可以直接使用它来进行 `Word2Vec` 的操作，因为 `Word2Vec` 中的词默认是用空格分隔的，而中文小说显然不符合这个要求，为此，我们需要对中文进行分词。
 
@@ -1489,7 +1489,7 @@ for novel in novels:
     处理：鹿鼎记
 
 
-## 训练模型
+### 训练模型
 
 默认参数进行训练：
 
@@ -1512,7 +1512,7 @@ model.save("louis_cha.model")
 model = gensim.models.Word2Vec.load("louis_cha.model")
 ```
 
-## 相似度结果
+### 相似度结果
 
 有了模型，我们可以进行一些简单而有趣的测试。
 
@@ -1624,13 +1624,13 @@ find_relationship("段誉", "段公子", "乔峰")
 
 
 ```python
-# 情侣对
+## 情侣对
 find_relationship("郭靖", "黄蓉", "杨过")
 
-# 岳父女婿
+## 岳父女婿
 find_relationship("令狐冲", "任我行", "郭靖")
 
-# 非情侣
+## 非情侣
 find_relationship("郭靖", "华筝", "杨过")
 ```
 
@@ -1643,7 +1643,7 @@ find_relationship("郭靖", "华筝", "杨过")
 
 
 ```python
-# 韦小宝
+## 韦小宝
 find_relationship("杨过", "小龙女", "韦小宝")
 find_relationship("令狐冲", "盈盈", "韦小宝")
 find_relationship("张无忌", "赵敏", "韦小宝")
@@ -1668,7 +1668,7 @@ find_relationship("任我行", "魔教", "令狐冲")
     给定“任我行”与“魔教”，“令狐冲”和“恒山派”有类似的关系
 
 
-## 人物聚类分析
+### 人物聚类分析
 
 之前我们对文本进行 `Word2Vec` 的结果，是将一个中文词组，映射到了一个向量空间，因此，我们可以利用这个向量表示的空间，对这些词进行聚类分析。
 
@@ -1690,7 +1690,7 @@ for name in novel_names["天龙八部"]:
 all_names = np.array(all_names)
 ```
 
-### KMeans
+#### KMeans
 
 聚类我们可以使用很多方法，这里我们用 scikit-learn 自带的几种聚类方法进行聚类。
 
@@ -1781,7 +1781,7 @@ for c in range(N):
 
 可以看到，段家的儿子和女儿倾向于聚在一起，而反派角色则倾向于被聚在一起。
 
-### 层级聚类
+#### 层级聚类
 
 换一本小说：
 
@@ -1836,7 +1836,7 @@ plt.show()
 
 而红色聚类区的下半部分主要是明教与武当中与张无忌相关的部分。
 
-### 门派和武功
+#### 门派和武功
 
 除了人物，我们还可以考虑对武功进行聚类分析：
 
@@ -1914,7 +1914,7 @@ plt.show()
 
 比较少的这一类，基本都是在某几部小说中出现的主要门派，而大多数门派都是打酱油的。
 
-## 总结
+### 总结
 
 > 飞雪连天射白鹿，笑书神侠倚碧鸳。
 

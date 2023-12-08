@@ -1,12 +1,12 @@
-# Pyplot 教程
+## Pyplot 教程
 
-## Matplotlib 简介
+### Matplotlib 简介
 
 **`matplotlib`** 是一个 **`Python`** 的 `2D` 图形包。
 
 在线文档：http://matplotlib.org ，提供了 [Examples](http://matplotlib.org/examples/index.html), [FAQ](http://matplotlib.org/faq/index.html), [API](http://matplotlib.org/contents.html), [Gallery](http://matplotlib.org/gallery.html)，其中 [Gallery](http://matplotlib.org/gallery.html) 是很有用的一个部分，因为它提供了各种画图方式的可视化，方便用户根据需求进行选择。
 
-## 使用 Pyplot
+### 使用 Pyplot
 
 导入相关的包：
 
@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 下文中，以 `plt` 作为 `matplotlib.pyplot` 的省略。
 
-## plt.show() 函数
+### plt.show() 函数
 
 默认情况下，`matplotlib.pyplot` 不会直接显示图像，只有调用 `plt.show()` 函数时，图像才会显示出来。
 
@@ -40,9 +40,9 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-## plt.plot() 函数
+### plt.plot() 函数
 
-### 例子
+#### 例子
 
 `plt.plot()` 函数可以用来绘图：
 
@@ -60,7 +60,7 @@ plt.show()
     
 
 
-### 基本用法
+#### 基本用法
 
 `plot` 函数基本的用法有以下四种：
 
@@ -98,7 +98,7 @@ plt.plot([1,2,3,4], [1,4,9,16])
     
 
 
-### 字符参数
+#### 字符参数
 
 和 **`MATLAB`** 中类似，我们还可以用字符来指定绘图的格式：
 
@@ -149,7 +149,7 @@ plt.show()
 
 可以看出，有两个点在图像的边缘，因此，我们需要改变轴的显示范围。
 
-### 显示范围
+#### 显示范围
 
 与 **`MATLAB`** 类似，这里可以使用 `axis` 函数指定坐标轴显示的范围：
 
@@ -158,7 +158,7 @@ plt.show()
 
 ```python
 plt.plot([1,2,3,4], [1,4,9,16], 'ro')
-# 指定 x 轴显示区域为 0-6，y 轴为 0-20
+## 指定 x 轴显示区域为 0-6，y 轴为 0-20
 plt.axis([0,6,0,20])
 plt.show()
 ```
@@ -169,7 +169,7 @@ plt.show()
     
 
 
-### 传入 `Numpy` 数组
+#### 传入 `Numpy` 数组
 
 之前我们传给 `plot` 的参数都是列表，事实上，向 `plot` 中传入 `numpy` 数组是更常用的做法。事实上，如果传入的是列表，`matplotlib` 会在内部将它转化成数组再进行处理：
 
@@ -178,10 +178,10 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-# evenly sampled time at 200ms intervals
+## evenly sampled time at 200ms intervals
 t = np.arange(0., 5., 0.2)
 
-# red dashes, blue squares and green triangles
+## red dashes, blue squares and green triangles
 plt.plot(t, t, 'r--', 
          t, t**2, 'bs', 
          t, t**3, 'g^')
@@ -195,13 +195,13 @@ plt.show()
     
 
 
-### 传入多组数据
+#### 传入多组数据
 
 事实上，在上面的例子中，我们不仅仅向 `plot` 函数传入了数组，还传入了多组 `(x,y,format_str)` 参数，它们在同一张图上显示。
 
 这意味着我们不需要使用多个 `plot` 函数来画多组数组，只需要可以将这些组合放到一个 `plot` 函数中去即可。
 
-### 线条属性
+#### 线条属性
 
 之前提到，我们可以用字符串来控制线条的属性，事实上还可以通过关键词来改变线条的性质，例如 `linwidth` 可以改变线条的宽度，`color` 可以改变线条的颜色：
 
@@ -221,7 +221,7 @@ plt.show()
     
 
 
-### 使用 plt.plot() 的返回值来设置线条属性
+#### 使用 plt.plot() 的返回值来设置线条属性
 
 `plot` 函数返回一个 `Line2D` 对象组成的列表，每个对象代表输入的一对组合，例如：
 
@@ -237,10 +237,10 @@ plt.show()
 
 
 ```python
-# 加逗号 line 中得到的是 line2D 对象，不加逗号得到的是只有一个 line2D 对象的列表
+## 加逗号 line 中得到的是 line2D 对象，不加逗号得到的是只有一个 line2D 对象的列表
 line, = plt.plot(x, y, 'r-')
 
-# 将抗锯齿关闭
+## 将抗锯齿关闭
 line.set_antialiased(False)
 
 plt.show()
@@ -252,7 +252,7 @@ plt.show()
     
 
 
-### plt.setp() 修改线条性质
+#### plt.setp() 修改线条性质
 
 更方便的做法是使用 `plt` 的 `setp` 函数：
 
@@ -260,10 +260,10 @@ plt.show()
 ```python
 lines = plt.plot(x, y)
 
-# 使用键值对
+## 使用键值对
 plt.setp(lines, color='r', linewidth=2.0)
 
-# 或者使用 MATLAB 风格的字符串对
+## 或者使用 MATLAB 风格的字符串对
 plt.setp(lines, 'color', 'r', 'linewidth', 2.0)
 
 plt.show()
@@ -326,7 +326,7 @@ plt.setp(lines)
       zorder: any number         
 
 
-## 子图
+### 子图
 
 `figure()` 函数会产生一个指定编号为 `num` 的图：
 
@@ -363,7 +363,7 @@ plt.show()
     
 
 
-## 图形上加上文字
+### 图形上加上文字
 
 `plt.hist()` 可以用来画直方图。
 
@@ -372,7 +372,7 @@ plt.show()
 mu, sigma = 100, 15
 x = mu + sigma * np.random.randn(10000)
 
-# the histogram of the data
+## the histogram of the data
 n, bins, patches = plt.hist(x, 50, normed=1, facecolor='g', alpha=0.75)
 
 
@@ -429,7 +429,7 @@ plt.show()
 ![png](06.01-pyplot-tutorial_files/06.01-pyplot-tutorial_47_0.png)
     
 
-# 使用 style 来配置 pyplot 风格
+## 使用 style 来配置 pyplot 风格
 
 
 ```python
@@ -566,7 +566,7 @@ ytick.labelsize : 16
 假设我们将其保存为 `mpl_configdir/stylelib/presentation.mplstyle`，那么使用这个风格的时候只需要调用：
 
     plt.style.use('presentation')
-# 处理文本（基础）
+## 处理文本（基础）
 
 
 ```python
@@ -577,7 +577,7 @@ import numpy as np
 
 `matplotlib` 对文本的支持十分完善，包括数学公式，`Unicode` 文字，栅格和向量化输出，文字换行，文字旋转等一系列操作。
 
-## 基础文本函数
+### 基础文本函数
 
 在 `matplotlib.pyplot` 中，基础的文本函数如下：
 
@@ -591,52 +591,52 @@ import numpy as np
 
 
 ```python
-# -*- coding: utf-8 -*-
+## -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 %matplotlib inline
 
-# plt.figure() 返回一个 Figure() 对象
+## plt.figure() 返回一个 Figure() 对象
 fig = plt.figure(figsize=(12, 9))
 
-# 设置这个 Figure 对象的标题
-# 事实上，如果我们直接调用 plt.suptitle() 函数，它会自动找到当前的 Figure 对象
+## 设置这个 Figure 对象的标题
+## 事实上，如果我们直接调用 plt.suptitle() 函数，它会自动找到当前的 Figure 对象
 fig.suptitle('bold figure suptitle', fontsize=14, fontweight='bold')
 
-# Axes 对象表示 Figure 对象中的子图
-# 这里只有一幅图像，所以使用 add_subplot(111)
+## Axes 对象表示 Figure 对象中的子图
+## 这里只有一幅图像，所以使用 add_subplot(111)
 ax = fig.add_subplot(111)
 fig.subplots_adjust(top=0.85)
 
-# 可以直接使用 set_xxx 的方法来设置标题
+## 可以直接使用 set_xxx 的方法来设置标题
 ax.set_title('axes title')
-# 也可以直接调用 title()，因为会自动定位到当前的 Axes 对象
-# plt.title('axes title')
+## 也可以直接调用 title()，因为会自动定位到当前的 Axes 对象
+## plt.title('axes title')
 
 ax.set_xlabel('xlabel')
 ax.set_ylabel('ylabel')
 
-# 添加文本，斜体加文本框
+## 添加文本，斜体加文本框
 ax.text(3, 8, 'boxed italics text in data coords', style='italic',
         bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
 
-# 数学公式，用 $$ 输入 Tex 公式
+## 数学公式，用 $$ 输入 Tex 公式
 ax.text(2, 6, r'an equation: $E=mc^2$', fontsize=15)
 
-# Unicode 支持
+## Unicode 支持
 ax.text(3, 2, unicode('unicode: Institut f\374r Festk\366rperphysik', 'latin-1'))
 
-# 颜色，对齐方式
+## 颜色，对齐方式
 ax.text(0.95, 0.01, 'colored text in axes coords',
         verticalalignment='bottom', horizontalalignment='right',
         transform=ax.transAxes,
         color='green', fontsize=15)
 
-# 注释文本和箭头
+## 注释文本和箭头
 ax.plot([2], [1], 'o')
 ax.annotate('annotate', xy=(2, 1), xytext=(3, 4),
             arrowprops=dict(facecolor='black', shrink=0.05))
 
-# 设置显示范围
+## 设置显示范围
 ax.axis([0, 10, 0, 10])
 
 plt.show()
@@ -648,7 +648,7 @@ plt.show()
     
 
 
-## 文本属性和布局
+### 文本属性和布局
 
 我们可以通过下列关键词，在文本函数中设置文本的属性：
 
@@ -693,7 +693,7 @@ zorder	|		    any number
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-# build a rectangle in axes coords
+## build a rectangle in axes coords
 left, width = .25, .5
 bottom, height = .25, .5
 right = left + width
@@ -702,7 +702,7 @@ top = bottom + height
 fig = plt.figure(figsize=(10,7))
 ax = fig.add_axes([0,0,1,1])
 
-# axes coordinates are 0,0 is bottom left and 1,1 is upper right
+## axes coordinates are 0,0 is bottom left and 1,1 is upper right
 p = patches.Rectangle(
     (left, bottom), width, height,
     fill=False, transform=ax.transAxes, clip_on=False
@@ -784,7 +784,7 @@ plt.show()
     
 
 
-## 注释文本
+### 注释文本
 
 `text()` 函数在 Axes 对象的指定位置添加文本，而 `annotate()` 则是对某一点添加注释文本，需要考虑两个位置：一是注释点的坐标 `xy` ，二是注释文本的位置坐标 `xytext`：
 
@@ -850,7 +850,7 @@ plt.show()
     
 
 
-## 极坐标系注释文本
+### 极坐标系注释文本
 
 产生极坐标系需要在 `subplot` 的参数中设置 `polar=True`：
 
@@ -866,8 +866,8 @@ ind = 800
 thisr, thistheta = r[ind], theta[ind]
 ax.plot([thistheta], [thisr], 'o')
 ax.annotate('a polar annotation',
-            xy=(thistheta, thisr),  # theta, radius
-            xytext=(0.05, 0.05),    # fraction, fraction
+            xy=(thistheta, thisr),  ## theta, radius
+            xytext=(0.05, 0.05),    ## fraction, fraction
             textcoords='figure fraction',
             arrowprops=dict(facecolor='black', shrink=0.05),
             horizontalalignment='left',
@@ -881,7 +881,7 @@ plt.show()
 ![png](06.03-working-with-text---basic_files/06.03-working-with-text---basic_16_0.png)
     
 
-# 处理文本（数学表达式）
+## 处理文本（数学表达式）
 
 在字符串中使用一对 `$$` 符号可以利用 `Tex` 语法打出数学表达式，而且并不需要预先安装 `Tex`。在使用时我们通常加上 `r` 标记表示它是一个原始字符串（raw string）
 
@@ -894,7 +894,7 @@ import numpy as np
 
 
 ```python
-# plain text
+## plain text
 plt.title('alpha > beta')
 
 plt.show()
@@ -908,7 +908,7 @@ plt.show()
 
 
 ```python
-# math text
+## math text
 plt.title(r'$\alpha > \beta$')
 
 plt.show()
@@ -920,7 +920,7 @@ plt.show()
     
 
 
-## 上下标
+### 上下标
 
 使用 `_` 和 `^` 表示上下标：
 
@@ -937,7 +937,7 @@ $\sum\limits_{i=0}^\infty x_i$：
 - 希腊字母和特殊符号可以用 '\ + 对应的名字' 来显示
 - `{}` 中的内容属于一个部分；要打出花括号是需要使用 `\{\}`
 
-## 分数，二项式系数，stacked numbers
+### 分数，二项式系数，stacked numbers
 
 $\frac{3}{4}, \binom{3}{4}, \stackrel{3}{4}$：
 
@@ -957,7 +957,7 @@ $\left(\frac{5 - \frac{1}{x}}{4}\right)$：
 
     r'$\left(\frac{5 - \frac{1}{x}}{4}\right)$'
 
-## 根号
+### 根号
 
 $\sqrt{2}$：
 
@@ -967,7 +967,7 @@ $\sqrt[3]{x}$：
 
     r'$\sqrt[3]{x}$'
 
-## 特殊字体
+### 特殊字体
 
 默认显示的字体是斜体，不过可以使用以下方法显示不同的字体：
 
@@ -990,7 +990,7 @@ $s(t) = \mathcal{A}\ \sin(2 \omega t)$：
 - Tex 语法默认忽略空格，要打出空格使用 `'\ '`
 - \sin 默认显示为 Roman 字体
 
-## 音调
+### 音调
 
 命令|结果
 --|--
@@ -1007,11 +1007,11 @@ $s(t) = \mathcal{A}\ \sin(2 \omega t)$：
 `\widehat{xyz}`|$\widehat{xyz}$
 `\widetilde{xyz}`|$\widetilde{xyz}$
 
-## 特殊字符表
+### 特殊字符表
 
 参见：http://matplotlib.org/users/mathtext.html#symbols
 
-## 例子
+### 例子
 
 
 ```python
@@ -1035,7 +1035,7 @@ plt.show()
 ![png](06.04-working-with-text---math-expression_files/06.04-working-with-text---math-expression_18_0.png)
     
 
-# 图像基础
+## 图像基础
 
 导入相应的包：
 
@@ -1049,7 +1049,7 @@ import numpy as np
 
 ![臭虫](stinkbug.png)
 
-## 导入图像
+### 导入图像
 
 我们首先导入上面的图像，注意 `matplotlib` 默认只支持 `PNG` 格式的图像，我们可以使用 `mpimg.imread` 方法读入这幅图像：
 
@@ -1084,7 +1084,7 @@ img.dtype
 
 
 
-## 显示图像
+### 显示图像
 
 使用 `plt.imshow()` 可以显示图像：
 
@@ -1099,7 +1099,7 @@ imgplot = plt.imshow(img)
     
 
 
-## 伪彩色图像
+### 伪彩色图像
 
 从单通道模拟彩色图像：
 
@@ -1115,7 +1115,7 @@ imgplot = plt.imshow(lum_img)
     
 
 
-## 改变 colormap
+### 改变 colormap
 
 
 ```python
@@ -1157,7 +1157,7 @@ plt.show()
     
 
 
-## 限制显示范围
+### 限制显示范围
 
 先查看直方图：
 
@@ -1187,7 +1187,7 @@ imgplot.set_clim(0.0,0.7)
     
 
 
-## resize 操作
+### resize 操作
 
 
 ```python
@@ -1231,9 +1231,9 @@ imgplot.set_interpolation('bicubic')
 ![png](06.05-image-tutorial_files/06.05-image-tutorial_30_0.png)
     
 
-# 注释
+## 注释
 
-## 使用文本框进行注释
+### 使用文本框进行注释
 
 先看一个简单的例子：
 
@@ -1257,14 +1257,14 @@ y2 = 1. + numpy.random.randn(100)
 ax.scatter(x1, y1, color="r")
 ax.scatter(x2, y2, color="g")
 
-# 加上两个文本框
+## 加上两个文本框
 bbox_props = dict(boxstyle="round", fc="w", ec="0.5", alpha=0.9)
 ax.text(-2, -2, "Sample A", ha="center", va="center", size=20,
         bbox=bbox_props)
 ax.text(2, 2, "Sample B", ha="center", va="center", size=20,
         bbox=bbox_props)
 
-# 加上一个箭头文本框
+## 加上一个箭头文本框
 bbox_props = dict(boxstyle="rarrow", fc=(0.8,0.9,0.9), ec="b", lw=2)
 t = ax.text(0, 0, "Direction", ha="center", va="center", rotation=45,
             size=15,
@@ -1330,7 +1330,7 @@ for i, (stylename, styleclass) in enumerate(styles.items()):
               transform=fig1.transFigure,
               bbox=dict(boxstyle=stylename, fc="w", ec="k"))
 
-# 去掉轴的显示
+## 去掉轴的显示
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 ax.spines['left'].set_color('none')
@@ -1349,7 +1349,7 @@ plt.show()
 
 各个风格的文本框如上图所示。
 
-## 使用箭头进行注释
+### 使用箭头进行注释
 
 
 ```python
@@ -1662,7 +1662,7 @@ def to_texstring(s):
 
 for i, (stylename, styleclass) in enumerate(sorted(styles.items())):
     x = 3.2 + (i//nrow)*4
-    y = (figheight - 0.7 - i%nrow) # /figheight
+    y = (figheight - 0.7 - i%nrow) ## /figheight
     p = mpatches.Circle((x, y), 0.2, fc="w")
     ax.add_patch(p)
 
@@ -1694,7 +1694,7 @@ plt.show()
 ![png](06.06-annotating-axes_files/06.06-annotating-axes_14_0.png)
     
 
-# 标签
+## 标签
 
 
 ```python
@@ -1712,7 +1712,7 @@ import matplotlib.pyplot as plt
 - legend label - key 的说明
 - legend handle - 一个 entry 在图上对应的对象
 
-## 使用 legend
+### 使用 legend
 
 调用 `legend()` 会自动获取当前的 `Axes` 对象，并且得到这些 handles 和 labels，相当于：
 
@@ -1751,7 +1751,7 @@ plt.show()
     
 
 
-## 产生特殊形状的 marker key
+### 产生特殊形状的 marker key
 
 有时我们可以产生一些特殊形状的 marker：
 
@@ -1793,7 +1793,7 @@ plt.show()
     
 
 
-## 指定 legend 的位置
+### 指定 legend 的位置
 
 `bbox_to_anchor` 关键词可以指定 `legend` 放置的位置，例如放到图像的右上角：
 
@@ -1820,15 +1820,15 @@ plt.show()
 plt.subplot(211)
 plt.plot([1,2,3], label="test1")
 plt.plot([3,2,1], label="test2")
-# Place a legend above this legend, expanding itself to
-# fully use the given bounding box.
+## Place a legend above this legend, expanding itself to
+## fully use the given bounding box.
 plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
            ncol=2, mode="expand", borderaxespad=0.)
 
 plt.subplot(223)
 plt.plot([1,2,3], label="test1")
 plt.plot([3,2,1], label="test2")
-# Place a legend to the right of this smaller figure.
+## Place a legend to the right of this smaller figure.
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 
 plt.show()
@@ -1840,7 +1840,7 @@ plt.show()
     
 
 
-## 同一个 Axes 中的多个 legend
+### 同一个 Axes 中的多个 legend
 
 可以这样添加多个 `legend`：
 
@@ -1849,13 +1849,13 @@ plt.show()
 line1, = plt.plot([1,2,3], label="Line 1", linestyle='--')
 line2, = plt.plot([3,2,1], label="Line 2", linewidth=4)
 
-# Create a legend for the first line.
+## Create a legend for the first line.
 first_legend = plt.legend(handles=[line1], loc=1)
 
-# Add the legend manually to the current Axes.
+## Add the legend manually to the current Axes.
 ax = plt.gca().add_artist(first_legend)
 
-# Create another legend for the second line.
+## Create another legend for the second line.
 plt.legend(handles=[line2], loc=4)
 
 plt.show()
@@ -1883,7 +1883,7 @@ loc string | loc code
 `'upper center'` |   9
 `'center'`          |10
 
-## 更多用法
+### 更多用法
 
 多个 `handle` 可以通过括号组合在一个 entry 中：
 
@@ -1894,7 +1894,7 @@ from numpy.random import randn
 z = randn(10)
 
 red_dot, = plt.plot(z, "ro", markersize=15)
-# Put a white cross over some of the data.
+## Put a white cross over some of the data.
 white_cross, = plt.plot(z[:5], "w+", markeredgewidth=3, markersize=15)
 
 plt.legend([red_dot, (red_dot, white_cross)], ["Attr A", "Attr A+B"])
@@ -1975,9 +1975,9 @@ plt.show()
 ![png](06.07-legend_files/06.07-legend_28_0.png)
     
 
-# figures, subplots, axes 和 ticks 对象
+## figures, subplots, axes 和 ticks 对象
 
-## figures, axes 和 ticks 的关系
+### figures, axes 和 ticks 的关系
 
 这些对象的关系可以用下面的图来表示：
 
@@ -1989,7 +1989,7 @@ plt.show()
 
 <img src="./artists_tree.png" width = "600" height = "400" alt="图2" align=left />
 
-## figure 对象
+### figure 对象
 
 `figure` 对象是最外层的绘图单位，默认是以 `1` 开始编号（**MATLAB** 风格，`Figure 1, Figure 2, ...`），可以用 `plt.figure()` 产生一幅图像，除了默认参数外，可以指定的参数有：
 
@@ -2002,9 +2002,9 @@ plt.show()
 
 这些属性也可以通过 `Figure` 对象的 `set_xxx` 方法来改变。
 
-## subplot 和 axes 对象
+### subplot 和 axes 对象
 
-### subplot
+#### subplot
 
 `subplot` 主要是使用网格排列子图：
 
@@ -2069,7 +2069,7 @@ show()
     
 
 
-## axes 对象
+### axes 对象
 
 `subplot` 返回的是 `Axes` 对象，但是 `Axes` 对象相对于 `subplot` 返回的对象来说要更自由一点。`Axes` 对象可以放置在图像中的任意位置：
 
@@ -2121,10 +2121,10 @@ show()
 
 后面的 `Axes` 对象会覆盖前面的内容。
 
-## ticks 对象
+### ticks 对象
 
 ticks 用来注释轴的内容，我们可以通过控制它的属性来决定在哪里显示轴、轴的内容是什么等等。
-# 不要迷信默认设置
+## 不要迷信默认设置
 
 导入相关的包：
 
@@ -2142,17 +2142,17 @@ x = np.linspace(-np.pi, np.pi)
 c, s = np.cos(x), np.sin(x)
 ```
 
-## 默认绘图
+### 默认绘图
 
 
 ```python
 %matplotlib inline
 
-# 画图
+## 画图
 p = plt.plot(x,c)
 p = plt.plot(x,s)
 
-# 在脚本中需要加上这句才会显示图像
+## 在脚本中需要加上这句才会显示图像
 plt.show()
 ```
 
@@ -2164,7 +2164,7 @@ plt.show()
 
 默认效果如图所示，我们可以修改默认的属性来得到更漂亮的结果。
 
-# 图
+## 图
 
 图像以 `Figure #` 为窗口标题，并且数字从 1 开始，`figure()` 函数的主要参数如下：
 
@@ -2179,18 +2179,18 @@ plt.show()
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 f = plt.figure(figsize=(10,6), dpi=80)
 
-# 画图
+## 画图
 p = plt.plot(x,c)
 p = plt.plot(x,s)
 
-# 在脚本中需要加上这句才会显示图像
+## 在脚本中需要加上这句才会显示图像
 plt.show()
 ```
 
-### 设置线条颜色，粗细，类型
+#### 设置线条颜色，粗细，类型
 
 首先，我们使用 figure() 函数来创建一幅新图像，并且指定它的大小，使得长宽比更合适。
 
@@ -2198,15 +2198,15 @@ plt.show()
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 f = plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 p = plt.plot(x, c, color="blue", linewidth=2.5, linestyle="-")
 p = plt.plot(x, s, color="red",  linewidth=2.5, linestyle="-")
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2250,15 +2250,15 @@ p = plt.plot(x, s, color="red",  linewidth=2.5, linestyle="-")
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 f = plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 p = plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2267,29 +2267,29 @@ p = plt.plot(x, c, 'b-',
     
 
 
-### 设置横轴纵轴的显示区域
+#### 设置横轴纵轴的显示区域
 
 我们希望将坐标轴的显示区域放大一些，这样可以看到所有的点，可以使用 `plt` 中的 `xlim` 和 `ylim` 来设置：
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 p = plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 p = plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
 ########################################################################
 
-# 设置显示范围
+## 设置显示范围
 p = plt.xlim(x.min() * 1.1, x.max() * 1.1)
 p = plt.ylim(c.min() * 1.1, c.max() * 1.1)
 
 ########################################################################
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2298,33 +2298,33 @@ p = plt.ylim(c.min() * 1.1, c.max() * 1.1)
     
 
 
-### 设置刻度
+#### 设置刻度
 
 对于三教函数来说，我们希望将 `x` 轴的刻度设为与 $\pi$ 有关的点，可以使用 `plt` 中的 `xticks` 和 `yticks` 函数，将需要的刻度传入：
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 f = plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 p = plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
-# 设置显示范围
+## 设置显示范围
 plt.xlim(x.min() * 1.1, x.max() * 1.1)
 plt.ylim(c.min() * 1.1, c.max() * 1.1)
 
 ###########################################################################
 
-# 设置刻度
+## 设置刻度
 p = plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi])
 p = plt.yticks([-1, 0, 1])
 
 ###########################################################################
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2333,31 +2333,31 @@ p = plt.yticks([-1, 0, 1])
     
 
 
-### 设定 x 轴 y 轴标题
+#### 设定 x 轴 y 轴标题
 
 我们想让刻度的位置显示的是含有 $\pi$ 的标识而不是浮点数，可以在 `xticks` 中传入第二组参数，这组参数代表对应刻度的显示标识。这里，我们使用 `latex` 的语法来显示特殊符号（使用 `$$` 包围的部分）：
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 f = plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 p = plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
-# 设置显示范围
+## 设置显示范围
 plt.xlim(x.min() * 1.1, x.max() * 1.1)
 plt.ylim(c.min() * 1.1, c.max() * 1.1)
 
-# 设置刻度及其标识
+## 设置刻度及其标识
 p = plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi], 
                ['$-\pi$', '$-\pi/2$', '$0$', '$\pi/2$', '$\pi$'], fontsize ='xx-large')
 p = plt.yticks([-1, 0, 1], 
                ['$-1$', '$0$', '$+1$'], fontsize ='xx-large')
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2366,52 +2366,52 @@ p = plt.yticks([-1, 0, 1],
     
 
 
-### 移动坐标轴的位置
+#### 移动坐标轴的位置
 
 现在坐标轴的位置是在边界上，而且有上下左右四条，我们现在想将下面和左边的两条移动到中间，并将右边和上面的两条去掉：
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 f = plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
-# 设置显示范围
+## 设置显示范围
 plt.xlim(x.min() * 1.1, x.max() * 1.1)
 plt.ylim(c.min() * 1.1, c.max() * 1.1)
 
-# 得到轴的句柄
+## 得到轴的句柄
 ax = plt.gca()
-# ax.spines参数表示四个坐标轴线
-# 将右边和上边的颜色设为透明
+## ax.spines参数表示四个坐标轴线
+## 将右边和上边的颜色设为透明
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 
 ###################################################################################
 
-# 将 x 轴的刻度设置在下面的坐标轴上
+## 将 x 轴的刻度设置在下面的坐标轴上
 ax.xaxis.set_ticks_position('bottom')
-# 设置位置
+## 设置位置
 ax.spines['bottom'].set_position(('data',0))
 
-# 将 y 轴的刻度设置在左边的坐标轴上
+## 将 y 轴的刻度设置在左边的坐标轴上
 ax.yaxis.set_ticks_position('left')
-# 设置位置
+## 设置位置
 ax.spines['left'].set_position(('data',0))
 
 ###################################################################################
 
-# 设置刻度及其标识
+## 设置刻度及其标识
 p = plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi], 
            ['$-\pi$', '$-\pi/2$', '$0$', '$\pi/2$', '$\pi$'], fontsize ='xx-large')
 p = plt.yticks([-1, 0, 1], 
            ['$-1$', '$0$', '$+1$'], fontsize ='xx-large')
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2420,42 +2420,42 @@ p = plt.yticks([-1, 0, 1],
     
 
 
-### 加入图例
+#### 加入图例
 
 使用 legend() 加入图例：
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
-# 设置显示范围
+## 设置显示范围
 plt.xlim(x.min() * 1.1, x.max() * 1.1)
 plt.ylim(c.min() * 1.1, c.max() * 1.1)
 
-# 得到画图的句柄
+## 得到画图的句柄
 ax = plt.gca()
 
-# ax.spines参数表示四个坐标轴线
-# 将右边和上边的颜色设为透明
+## ax.spines参数表示四个坐标轴线
+## 将右边和上边的颜色设为透明
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 
-# 将 x 轴的刻度设置在下面的坐标轴上
+## 将 x 轴的刻度设置在下面的坐标轴上
 ax.xaxis.set_ticks_position('bottom')
-# 设置位置
+## 设置位置
 ax.spines['bottom'].set_position(('data',0))
 
-# 将 y 轴的刻度设置在左边的坐标轴上
+## 将 y 轴的刻度设置在左边的坐标轴上
 ax.yaxis.set_ticks_position('left')
-# 设置位置
+## 设置位置
 ax.spines['left'].set_position(('data',0))
 
-# 设置刻度及其标识
+## 设置刻度及其标识
 plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi], 
            ['$-\pi$', '$-\pi/2$', '$0$', '$\pi/2$', '$\pi$'], fontsize ='xx-large')
 plt.yticks([-1, 0, 1], 
@@ -2463,13 +2463,13 @@ plt.yticks([-1, 0, 1],
 
 ##################################################################################################
 
-# 加入图例，frameon表示去掉图例周围的边框
+## 加入图例，frameon表示去掉图例周围的边框
 l = plt.legend(['cosine', 'sine'], loc='upper left', frameon=False)
 
 ##################################################################################################
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2478,77 +2478,77 @@ l = plt.legend(['cosine', 'sine'], loc='upper left', frameon=False)
     
 
 
-### 注释特殊点
+#### 注释特殊点
 
 我们可以使用 `annotate` 函数来注释特殊的点，假设我们要显示的点是 $2\pi/3$：
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
-# 设置显示范围
+## 设置显示范围
 plt.xlim(x.min() * 1.1, x.max() * 1.1)
 plt.ylim(c.min() * 1.1, c.max() * 1.1)
 
-# 得到画图的句柄
+## 得到画图的句柄
 ax = plt.gca()
 
-# ax.spines参数表示四个坐标轴线
-# 将右边和上边的颜色设为透明
+## ax.spines参数表示四个坐标轴线
+## 将右边和上边的颜色设为透明
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 
-# 将 x 轴的刻度设置在下面的坐标轴上
+## 将 x 轴的刻度设置在下面的坐标轴上
 ax.xaxis.set_ticks_position('bottom')
-# 设置位置
+## 设置位置
 ax.spines['bottom'].set_position(('data',0))
 
-# 将 y 轴的刻度设置在左边的坐标轴上
+## 将 y 轴的刻度设置在左边的坐标轴上
 ax.yaxis.set_ticks_position('left')
-# 设置位置
+## 设置位置
 ax.spines['left'].set_position(('data',0))
 
-# 设置刻度及其标识
+## 设置刻度及其标识
 plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi], 
            ['$-\pi$', '$-\pi/2$', '$0$', '$\pi/2$', '$\pi$'], fontsize ='xx-large')
 plt.yticks([-1, 0, 1], 
            ['$-1$', '$0$', '$+1$'], fontsize ='xx-large')
 
-# 加入图例，frameon表示图例周围是否需要边框
+## 加入图例，frameon表示图例周围是否需要边框
 l = plt.legend(['cosine', 'sine'], loc='upper left', frameon=False)
 
 ####################################################################################
 
-# 数据点
+## 数据点
 t = 2 * np.pi / 3
 
-# 蓝色虚线
+## 蓝色虚线
 plt.plot([t,t],[0,np.cos(t)], color ='blue', linewidth=2.5, linestyle="--")
 
-# 该点处的 cos 值
+## 该点处的 cos 值
 plt.scatter([t,],[np.cos(t),], 50, color ='blue')
 
-# 在对应的点显示文本
-plt.annotate(r'$\sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$', # 文本
-             xy=(t, np.sin(t)), # 数据点坐标位置
-             xycoords='data',   # 坐标相对于数据
-             xytext=(+10, +30), # 文本位置坐标
-             textcoords='offset points', # 坐标相对于数据点的坐标
-             fontsize=16,       # 文本大小
-             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2")) # 箭头
+## 在对应的点显示文本
+plt.annotate(r'$\sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$', ## 文本
+             xy=(t, np.sin(t)), ## 数据点坐标位置
+             xycoords='data',   ## 坐标相对于数据
+             xytext=(+10, +30), ## 文本位置坐标
+             textcoords='offset points', ## 坐标相对于数据点的坐标
+             fontsize=16,       ## 文本大小
+             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2")) ## 箭头
 
-# 红色虚线
+## 红色虚线
 p = plt.plot([t,t],[0,np.sin(t)], color ='red', linewidth=2.5, linestyle="--")
 
-# 该点处的 sin 值
+## 该点处的 sin 值
 p = plt.scatter([t,],[np.sin(t),], 50, color ='red')
 
-# 显示文本
+## 显示文本
 p = plt.annotate(r'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$',
              xy=(t, np.cos(t)), xycoords='data',
              xytext=(-90, -50), textcoords='offset points', fontsize=16,
@@ -2557,8 +2557,8 @@ p = plt.annotate(r'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$',
 
 #####################################################################################
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2567,75 +2567,75 @@ p = plt.annotate(r'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$',
     
 
 
-### 最后调整
+#### 最后调整
 
 调整刻度值的大小，并让其显示在曲线上方。
 
 
 ```python
-# 设置图像大小
+## 设置图像大小
 plt.figure(figsize=(10,6), dpi=80)
 
-# 画图，指定颜色，线宽，类型
+## 画图，指定颜色，线宽，类型
 plt.plot(x, c, 'b-', 
          x, s, 'r-', linewidth=2.5)
 
-# 设置显示范围
+## 设置显示范围
 plt.xlim(x.min() * 1.1, x.max() * 1.1)
 plt.ylim(c.min() * 1.1, c.max() * 1.1)
 
-# 得到画图的句柄
+## 得到画图的句柄
 ax = plt.gca()
 
-# ax.spines参数表示四个坐标轴线
-# 将右边和上边的颜色设为透明
+## ax.spines参数表示四个坐标轴线
+## 将右边和上边的颜色设为透明
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 
-# 将 x 轴的刻度设置在下面的坐标轴上
+## 将 x 轴的刻度设置在下面的坐标轴上
 ax.xaxis.set_ticks_position('bottom')
-# 设置位置
+## 设置位置
 ax.spines['bottom'].set_position(('data',0))
 
-# 将 y 轴的刻度设置在左边的坐标轴上
+## 将 y 轴的刻度设置在左边的坐标轴上
 ax.yaxis.set_ticks_position('left')
-# 设置位置
+## 设置位置
 ax.spines['left'].set_position(('data',0))
 
-# 设置刻度及其标识
+## 设置刻度及其标识
 plt.xticks([-np.pi, -np.pi/2, 0, np.pi/2, np.pi], 
            ['$-\pi$', '$-\pi/2$', '$0$', '$\pi/2$', '$\pi$'], fontsize ='xx-large')
 plt.yticks([-1, 0, 1], 
            ['$-1$', '$0$', '$+1$'], fontsize ='xx-large')
 
-# 加入图例，frameon表示图例周围是否需要边框
+## 加入图例，frameon表示图例周围是否需要边框
 l = plt.legend(['cosine', 'sine'], loc='upper left', frameon=False)
 
-# 数据点
+## 数据点
 t = 2 * np.pi / 3
 
-# 蓝色虚线
+## 蓝色虚线
 plt.plot([t,t],[0,np.cos(t)], color ='blue', linewidth=2.5, linestyle="--")
 
-# 该点处的 cos 值
+## 该点处的 cos 值
 plt.scatter([t,],[np.cos(t),], 50, color ='blue')
 
-# 在对应的点显示文本
-plt.annotate(r'$\sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$', # 文本
-             xy=(t, np.sin(t)), # 数据点坐标位置
-             xycoords='data',   # 坐标相对于数据
-             xytext=(+10, +30), # 文本位置坐标
-             textcoords='offset points', # 坐标相对于数据点的坐标
-             fontsize=16,       # 文本大小
-             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2")) # 箭头
+## 在对应的点显示文本
+plt.annotate(r'$\sin(\frac{2\pi}{3})=\frac{\sqrt{3}}{2}$', ## 文本
+             xy=(t, np.sin(t)), ## 数据点坐标位置
+             xycoords='data',   ## 坐标相对于数据
+             xytext=(+10, +30), ## 文本位置坐标
+             textcoords='offset points', ## 坐标相对于数据点的坐标
+             fontsize=16,       ## 文本大小
+             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2")) ## 箭头
 
-# 红色虚线
+## 红色虚线
 p = plt.plot([t,t],[0,np.sin(t)], color ='red', linewidth=2.5, linestyle="--")
 
-# 该点处的 sin 值
+## 该点处的 sin 值
 p = plt.scatter([t,],[np.sin(t),], 50, color ='red')
 
-# 显示文本
+## 显示文本
 p = plt.annotate(r'$\cos(\frac{2\pi}{3})=-\frac{1}{2}$',
              xy=(t, np.cos(t)), xycoords='data',
              xytext=(-90, -50), textcoords='offset points', fontsize=16,
@@ -2650,8 +2650,8 @@ for label in ax.get_xticklabels() + ax.get_yticklabels():
 
 ####################################################################################
 
-# 在脚本中需要加上这句才会显示图像
-# plt.show()
+## 在脚本中需要加上这句才会显示图像
+## plt.show()
 ```
 
 
@@ -2661,9 +2661,9 @@ for label in ax.get_xticklabels() + ax.get_yticklabels():
 
 
 > The devil is in the details.
-# 各种绘图实例
+## 各种绘图实例
 
-## 简单绘图
+### 简单绘图
 
 `plot` 函数：
 
@@ -2691,7 +2691,7 @@ plt.show()
     
 
 
-## 子图
+### 子图
 
 `subplot` 函数：
 
@@ -2725,7 +2725,7 @@ plt.show()
     
 
 
-## 直方图
+### 直方图
 
 `hist` 函数：
 
@@ -2735,22 +2735,22 @@ import numpy as np
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 
-# example data
-mu = 100 # mean of distribution
-sigma = 15 # standard deviation of distribution
+## example data
+mu = 100 ## mean of distribution
+sigma = 15 ## standard deviation of distribution
 x = mu + sigma * np.random.randn(10000)
 
 num_bins = 50
-# the histogram of the data
+## the histogram of the data
 n, bins, patches = plt.hist(x, num_bins, normed=1, facecolor='green', alpha=0.5)
-# add a 'best fit' line
+## add a 'best fit' line
 y = mlab.normpdf(bins, mu, sigma)
 plt.plot(bins, y, 'r--')
 plt.xlabel('Smarts')
 plt.ylabel('Probability')
 plt.title(r'Histogram of IQ: $\mu=100$, $\sigma=15$')
 
-# Tweak spacing to prevent clipping of ylabel
+## Tweak spacing to prevent clipping of ylabel
 plt.subplots_adjust(left=0.15)
 plt.show()
 ```
@@ -2761,7 +2761,7 @@ plt.show()
     
 
 
-## 路径图
+### 路径图
 
 `matplotlib.path` 包：
 
@@ -2790,7 +2790,7 @@ path = mpath.Path(verts, codes)
 patch = mpatches.PathPatch(path, facecolor='r', alpha=0.5)
 ax.add_patch(patch)
 
-# plot control points and connecting lines
+## plot control points and connecting lines
 x, y = zip(*path.vertices)
 line, = ax.plot(x, y, 'go-')
 
@@ -2805,7 +2805,7 @@ plt.show()
     
 
 
-## 三维绘图
+### 三维绘图
 
 导入 `Axex3D`：
 
@@ -2842,7 +2842,7 @@ plt.show()
     
 
 
-## 流向图
+### 流向图
 
 主要函数：`plt.streamplot`
 
@@ -2880,7 +2880,7 @@ plt.show()
     
 
 
-## 椭圆
+### 椭圆
 
 `Ellipse` 对象：
 
@@ -2914,7 +2914,7 @@ show()
     
 
 
-## 条状图
+### 条状图
 
 `bar` 函数：
 
@@ -2970,7 +2970,7 @@ plt.show()
     
 
 
-## 饼状图
+### 饼状图
 
 `pie` 函数：
 
@@ -2979,15 +2979,15 @@ plt.show()
 import matplotlib.pyplot as plt
 
 
-# The slices will be ordered and plotted counter-clockwise.
+## The slices will be ordered and plotted counter-clockwise.
 labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
 sizes = [15, 30, 45, 10]
 colors = ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral']
-explode = (0, 0.1, 0, 0) # only "explode" the 2nd slice (i.e. 'Hogs')
+explode = (0, 0.1, 0, 0) ## only "explode" the 2nd slice (i.e. 'Hogs')
 
 plt.pie(sizes, explode=explode, labels=labels, colors=colors,
         autopct='%1.1f%%', shadow=True, startangle=90)
-# Set aspect ratio to be equal so that pie is drawn as a circle.
+## Set aspect ratio to be equal so that pie is drawn as a circle.
 plt.axis('equal')
 
 plt.show()
@@ -2999,7 +2999,7 @@ plt.show()
     
 
 
-## 图像中的表格 
+### 图像中的表格 
 
 `table` 函数：
 
@@ -3021,34 +3021,34 @@ rows = ['%d year' % x for x in (100, 50, 20, 10, 5)]
 values = np.arange(0, 2500, 500)
 value_increment = 1000
 
-# Get some pastel shades for the colors
+## Get some pastel shades for the colors
 colors = plt.cm.BuPu(np.linspace(0, 0.5, len(columns)))
 n_rows = len(data)
 
 index = np.arange(len(columns)) + 0.3
 bar_width = 0.4
 
-# Initialize the vertical-offset for the stacked bar chart.
+## Initialize the vertical-offset for the stacked bar chart.
 y_offset = np.array([0.0] * len(columns))
 
-# Plot bars and create text labels for the table
+## Plot bars and create text labels for the table
 cell_text = []
 for row in range(n_rows):
     plt.bar(index, data[row], bar_width, bottom=y_offset, color=colors[row])
     y_offset = y_offset + data[row]
     cell_text.append(['%1.1f' % (x/1000.0) for x in y_offset])
-# Reverse colors and text labels to display the last value at the top.
+## Reverse colors and text labels to display the last value at the top.
 colors = colors[::-1]
 cell_text.reverse()
 
-# Add a table at the bottom of the axes
+## Add a table at the bottom of the axes
 the_table = plt.table(cellText=cell_text,
                       rowLabels=rows,
                       rowColours=colors,
                       colLabels=columns,
                       loc='bottom')
 
-# Adjust layout to make room for the table:
+## Adjust layout to make room for the table:
 plt.subplots_adjust(left=0.2, bottom=0.2)
 
 plt.ylabel("Loss in ${0}'s".format(value_increment))
@@ -3065,7 +3065,7 @@ plt.show()
     
 
 
-## 散点图
+### 散点图
 
 `scatter` 函数：
 
@@ -3075,17 +3075,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cbook as cbook
 
-# Load a numpy record array from yahoo csv data with fields date,
-# open, close, volume, adj_close from the mpl-data/example directory.
-# The record array stores python datetime.date as an object array in
-# the date column
+## Load a numpy record array from yahoo csv data with fields date,
+## open, close, volume, adj_close from the mpl-data/example directory.
+## The record array stores python datetime.date as an object array in
+## the date column
 datafile = cbook.get_sample_data('goog.npy')
 price_data = np.load(datafile).view(np.recarray)
-price_data = price_data[-250:] # get the most recent 250 trading days
+price_data = price_data[-250:] ## get the most recent 250 trading days
 
 delta1 = np.diff(price_data.adj_close)/price_data.adj_close[:-1]
 
-# Marker size in units of points^2
+## Marker size in units of points^2
 volume = (15 * price_data.volume[:-2] / price_data.volume[0])**2
 close = 0.003 * price_data.close[:-2] / 0.003 * price_data.open[:-2]
 
@@ -3108,7 +3108,7 @@ plt.show()
     
 
 
-## 设置按钮
+### 设置按钮
 
 `matplotlib.widgets` 模块：
 
@@ -3165,7 +3165,7 @@ plt.show()
     
 
 
-## 填充曲线
+### 填充曲线
 
 `fill` 函数：
 
@@ -3189,7 +3189,7 @@ plt.show()
     
 
 
-## 时间刻度
+### 时间刻度
 
 
 ```python
@@ -3211,14 +3211,14 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.cbook as cbook
 
-years    = mdates.YearLocator()   # every year
-months   = mdates.MonthLocator()  # every month
+years    = mdates.YearLocator()   ## every year
+months   = mdates.MonthLocator()  ## every month
 yearsFmt = mdates.DateFormatter('%Y')
 
-# load a numpy record array from yahoo csv data with fields date,
-# open, close, volume, adj_close from the mpl-data/example directory.
-# The record array stores python datetime.date as an object array in
-# the date column
+## load a numpy record array from yahoo csv data with fields date,
+## open, close, volume, adj_close from the mpl-data/example directory.
+## The record array stores python datetime.date as an object array in
+## the date column
 datafile = cbook.get_sample_data('goog.npy')
 r = np.load(datafile).view(np.recarray)
 
@@ -3226,7 +3226,7 @@ fig, ax = plt.subplots()
 ax.plot(r.date, r.adj_close)
 
 
-# format the ticks
+## format the ticks
 ax.xaxis.set_major_locator(years)
 ax.xaxis.set_major_formatter(yearsFmt)
 ax.xaxis.set_minor_locator(months)
@@ -3235,14 +3235,14 @@ datemin = datetime.date(r.date.min().year, 1, 1)
 datemax = datetime.date(r.date.max().year+1, 1, 1)
 ax.set_xlim(datemin, datemax)
 
-# format the coords message box
+## format the coords message box
 def price(x): return '$%1.2f'%x
 ax.format_xdata = mdates.DateFormatter('%Y-%m-%d')
 ax.format_ydata = price
 ax.grid(True)
 
-# rotates and right aligns the x labels, and moves the bottom of the
-# axes up to make room for them
+## rotates and right aligns the x labels, and moves the bottom of the
+## axes up to make room for them
 fig.autofmt_xdate()
 
 plt.show()
@@ -3254,7 +3254,7 @@ plt.show()
     
 
 
-## 金融数据
+### 金融数据
 
 
 ```python
@@ -3275,7 +3275,7 @@ ticker = 'SPY'
 
 
 fh = finance.fetch_historical_yahoo(ticker, startdate, enddate)
-# a numpy record array with fields: date, open, high, low, close, volume, adj_close)
+## a numpy record array with fields: date, open, high, low, close, volume, adj_close)
 
 r = mlab.csv2rec(fh); fh.close()
 r.sort()
@@ -3317,7 +3317,7 @@ def relative_strength(prices, n=14):
     rsi[:n] = 100. - 100./(1.+rs)
 
     for i in range(n, len(prices)):
-        delta = deltas[i-1] # cause the diff is 1 shorter
+        delta = deltas[i-1] ## cause the diff is 1 shorter
 
         if delta>0:
             upval = delta
@@ -3355,7 +3355,7 @@ rect3 = [left, 0.1, width, 0.2]
 
 
 fig = plt.figure(facecolor='white')
-axescolor  = '#f6f6f6'  # the axes background color
+axescolor  = '#f6f6f6'  ## the axes background color
 
 ax1 = fig.add_axes(rect1, axisbg=axescolor)  #left, bottom, width, height
 ax2 = fig.add_axes(rect2, axisbg=axescolor, sharex=ax1)
@@ -3364,7 +3364,7 @@ ax3  = fig.add_axes(rect3, axisbg=axescolor, sharex=ax1)
 
 
 
-### plot the relative strength indicator
+#### plot the relative strength indicator
 prices = r.adj_close
 rsi = relative_strength(prices)
 fillcolor = 'darkgoldenrod'
@@ -3381,7 +3381,7 @@ ax1.set_yticks([30,70])
 ax1.text(0.025, 0.95, 'RSI (14)', va='top', transform=ax1.transAxes, fontsize=textsize)
 ax1.set_title('%s daily'%ticker)
 
-### plot the price and volume data
+#### plot the price and volume data
 dx = r.adj_close - r.close
 low = r.low + dx
 high = r.high + dx
@@ -3412,14 +3412,14 @@ leg = ax2.legend(loc='center left', shadow=True, fancybox=True, prop=props)
 leg.get_frame().set_alpha(0.5)
 
 
-volume = (r.close*r.volume)/1e6  # dollar volume in millions
+volume = (r.close*r.volume)/1e6  ## dollar volume in millions
 vmax = volume.max()
 poly = ax2t.fill_between(r.date, volume, 0, label='Volume', facecolor=fillcolor, edgecolor=fillcolor)
 ax2t.set_ylim(0, 5*vmax)
 ax2t.set_yticks([])
 
 
-### compute the MACD indicator
+#### compute the MACD indicator
 fillcolor = 'darkslategrey'
 nslow = 26
 nfast = 12
@@ -3435,7 +3435,7 @@ ax3.text(0.025, 0.95, 'MACD (%d, %d, %d)'%(nfast, nslow, nema), va='top',
          transform=ax3.transAxes, fontsize=textsize)
 
 #ax3.set_yticks([])
-# turn off upper axis tick labels, rotate the lower ones, etc
+## turn off upper axis tick labels, rotate the lower ones, etc
 for ax in ax1, ax2, ax2t, ax3:
     if ax!=ax3:
         for label in ax.get_xticklabels():
@@ -3456,8 +3456,8 @@ class MyLocator(mticker.MaxNLocator):
     def __call__(self, *args, **kwargs):
         return mticker.MaxNLocator.__call__(self, *args, **kwargs)
 
-# at most 5 ticks, pruning the upper and lower so they don't overlap
-# with other ticks
+## at most 5 ticks, pruning the upper and lower so they don't overlap
+## with other ticks
 #ax2.yaxis.set_major_locator(mticker.MaxNLocator(5, prune='both'))
 #ax3.yaxis.set_major_locator(mticker.MaxNLocator(5, prune='both'))
 
@@ -3473,7 +3473,7 @@ plt.show()
     
 
 
-## basemap 画地图
+### basemap 画地图
 
 需要安装 `basemap` 包：
 
@@ -3490,46 +3490,46 @@ except ImportError:
 
 
 def plotmap():
-    # create figure
+    ## create figure
     fig = plt.figure(figsize=(8,8))
-    # set up orthographic map projection with
-    # perspective of satellite looking down at 50N, 100W.
-    # use low resolution coastlines.
+    ## set up orthographic map projection with
+    ## perspective of satellite looking down at 50N, 100W.
+    ## use low resolution coastlines.
     map = Basemap(projection='ortho',lat_0=50,lon_0=-100,resolution='l')
-    # lat/lon coordinates of five cities.
+    ## lat/lon coordinates of five cities.
     lats=[40.02,32.73,38.55,48.25,17.29]
     lons=[-105.16,-117.16,-77.00,-114.21,-88.10]
     cities=['Boulder, CO','San Diego, CA',
             'Washington, DC','Whitefish, MT','Belize City, Belize']
-    # compute the native map projection coordinates for cities.
+    ## compute the native map projection coordinates for cities.
     xc,yc = map(lons,lats)
-    # make up some data on a regular lat/lon grid.
+    ## make up some data on a regular lat/lon grid.
     nlats = 73; nlons = 145; delta = 2.*np.pi/(nlons-1)
     lats = (0.5*np.pi-delta*np.indices((nlats,nlons))[0,:,:])
     lons = (delta*np.indices((nlats,nlons))[1,:,:])
     wave = 0.75*(np.sin(2.*lats)**8*np.cos(4.*lons))
     mean = 0.5*np.cos(2.*lats)*((np.sin(2.*lats))**2 + 2.)
-    # compute native map projection coordinates of lat/lon grid.
-    # (convert lons and lats to degrees first)
+    ## compute native map projection coordinates of lat/lon grid.
+    ## (convert lons and lats to degrees first)
     x, y = map(lons*180./np.pi, lats*180./np.pi)
-    # draw map boundary
+    ## draw map boundary
     map.drawmapboundary(color="0.9")
-    # draw graticule (latitude and longitude grid lines)
+    ## draw graticule (latitude and longitude grid lines)
     map.drawmeridians(np.arange(0,360,30),color="0.9")
     map.drawparallels(np.arange(-90,90,30),color="0.9")
-    # plot filled circles at the locations of the cities.
+    ## plot filled circles at the locations of the cities.
     map.plot(xc,yc,'wo')
-    # plot the names of five cities.
+    ## plot the names of five cities.
     for name,xpt,ypt in zip(cities,xc,yc):
         plt.text(xpt+100000,ypt+100000,name,fontsize=9,color='w')
-    # contour data over the map.
+    ## contour data over the map.
     cs = map.contour(x,y,wave+mean,15,linewidths=1.5)
-    # draw blue marble image in background.
-    # (downsample the image by 50% for speed)
+    ## draw blue marble image in background.
+    ## (downsample the image by 50% for speed)
     map.bluemarble(scale=0.5)
 
 def plotempty():
-    # create figure
+    ## create figure
     fig = plt.figure(figsize=(8,8))
     fig.text(0.5, 0.5, "Sorry, could not import Basemap",
                                 horizontalalignment='center')
@@ -3548,7 +3548,7 @@ plt.show()
     
 
 
-## 对数图
+### 对数图
 
 `loglog, semilogx, semilogy, errorbar` 函数：
 
@@ -3560,25 +3560,25 @@ import matplotlib.pyplot as plt
 plt.subplots_adjust(hspace=0.4)
 t = np.arange(0.01, 20.0, 0.01)
 
-# log y axis
+## log y axis
 plt.subplot(221)
 plt.semilogy(t, np.exp(-t/5.0))
 plt.title('semilogy')
 plt.grid(True)
 
-# log x axis
+## log x axis
 plt.subplot(222)
 plt.semilogx(t, np.sin(2*np.pi*t))
 plt.title('semilogx')
 plt.grid(True)
 
-# log x and y axis
+## log x and y axis
 plt.subplot(223)
 plt.loglog(t, 20*np.exp(-t/10.0), basex=2)
 plt.grid(True)
 plt.title('loglog base 4 on x')
 
-# with errorbars: clip non-positive values
+## with errorbars: clip non-positive values
 ax = plt.subplot(224)
 ax.set_xscale("log", nonposx='clip')
 ax.set_yscale("log", nonposy='clip')
@@ -3599,7 +3599,7 @@ plt.show()
     
 
 
-## 极坐标
+### 极坐标
 
 设置 `polar=True`：
 
@@ -3627,7 +3627,7 @@ plt.show()
     
 
 
-## 标注
+### 标注
 
 `legend` 函数：
 
@@ -3636,19 +3636,19 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Make some fake data.
+## Make some fake data.
 a = b = np.arange(0,3, .02)
 c = np.exp(a)
 d = c[::-1]
 
-# Create plots with pre-defined labels.
+## Create plots with pre-defined labels.
 plt.plot(a, c, 'k--', label='Model length')
 plt.plot(a, d, 'k:', label='Data length')
 plt.plot(a, c+d, 'k', label='Total message length')
 
 legend = plt.legend(loc='upper center', shadow=True, fontsize='x-large')
 
-# Put a nicer background color on the legend.
+## Put a nicer background color on the legend.
 legend.get_frame().set_facecolor('#00FFCC')
 
 plt.show()
@@ -3660,7 +3660,7 @@ plt.show()
     
 
 
-## 数学公式
+### 数学公式
 
 
 ```python
@@ -3671,7 +3671,7 @@ import sys
 import re
 import gc
 
-# Selection of features following "Writing mathematical expressions" tutorial
+## Selection of features following "Writing mathematical expressions" tutorial
 mathtext_titles = {
     0: "Header demo",
     1: "Subscripts and superscripts",
@@ -3683,7 +3683,7 @@ mathtext_titles = {
     7: "Delimiters, functions and Symbols"}
 n_lines = len(mathtext_titles)
 
-# Randomly picked examples
+## Randomly picked examples
 mathext_demos = {
     0: r"$W^{3\beta}_{\delta_1 \rho_1 \sigma_2} = "
     r"U^{3\beta}_{\delta_1 \rho_1} + \frac{1}{8 \pi 2} "
@@ -3717,12 +3717,12 @@ mathext_demos = {
 
 
 def doall():
-    # Colors used in mpl online documentation.
+    ## Colors used in mpl online documentation.
     mpl_blue_rvb = (191./255., 209./256., 212./255.)
     mpl_orange_rvb = (202/255., 121/256., 0./255.)
     mpl_grey_rvb = (51./255., 51./255., 51./255.)
 
-    # Creating figure and axis.
+    ## Creating figure and axis.
     plt.figure(figsize=(6, 7))
     plt.axes([0.01, 0.01, 0.98, 0.90], axisbg="white", frameon=True)
     plt.gca().set_xlim(0., 1.)
@@ -3732,17 +3732,17 @@ def doall():
     plt.gca().set_xticklabels("", visible=False)
     plt.gca().set_yticklabels("", visible=False)
 
-    # Gap between lines in axes coords
+    ## Gap between lines in axes coords
     line_axesfrac = (1. / (n_lines))
 
-    # Plotting header demonstration formula
+    ## Plotting header demonstration formula
     full_demo = mathext_demos[0]
     plt.annotate(full_demo,
                  xy=(0.5, 1. - 0.59*line_axesfrac),
                  xycoords='data', color=mpl_orange_rvb, ha='center',
                  fontsize=20)
 
-    # Plotting features demonstration formulae
+    ## Plotting features demonstration formulae
     for i_line in range(1, n_lines):
         baseline = 1. - (i_line)*line_axesfrac
         baseline_next = baseline - line_axesfrac*1.
@@ -3766,8 +3766,8 @@ def doall():
     plt.show()
 
 if '--latex' in sys.argv:
-    # Run: python mathtext_examples.py --latex
-    # Need amsmath and amssymb packages.
+    ## Run: python mathtext_examples.py --latex
+    ## Need amsmath and amssymb packages.
     fd = open("mathtext_examples.ltx", "w")
     fd.write("\\documentclass{article}\n")
     fd.write("\\usepackage{amsmath, amssymb}\n")

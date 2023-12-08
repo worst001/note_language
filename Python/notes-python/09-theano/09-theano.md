@@ -1,6 +1,6 @@
 # Theano 简介及其安装
 
-# 简介
+## 简介
 
 `Theano` 是一个 `Python` 科学计算库，允许我们进行符号运算，并在 `CPU` 和 `GPU` 上执行。
 
@@ -14,7 +14,7 @@
 - 速度和稳定性
 - 动态生成 **C** 代码
 
-## 使用 anaconda 安装 theano
+### 使用 anaconda 安装 theano
 
 `windows` 下，使用 `anaconda` 安装 `theano` 的命令为：
 
@@ -94,7 +94,7 @@ theano.test()
 这里我已经在本地 `Windows` 配好了 `GPU` 的设置，如果没有配好，显示的结果可能不一样。
 
 `Windows` 下第一次运行可能会显示 `DEBUG: nvcc STDOUT` 等内容，**`Just ignore it!`**
-# Theano 基础
+## Theano 基础
 
 
 ```python
@@ -109,7 +109,7 @@ import matplotlib.pyplot as plt
 ```python
 import theano
 
-# 一般都把 `tensor` 子模块导入并命名为 T
+## 一般都把 `tensor` 子模块导入并命名为 T
 import theano.tensor as T
 ```
 
@@ -118,7 +118,7 @@ import theano.tensor as T
 
 `tensor` 模块包含很多我们常用的数学操作，所以为了方便，将其命名为 T。
 
-## 符号计算
+### 符号计算
 
 `theano` 中，所有的算法都是用符号计算的，所以某种程度上，用 `theano` 写算法更像是写数学（之前在[04.06 积分](../04-scipy/04-scipy.md)06 一节中接触过用 `sympy` 定义的符号变量）。
 
@@ -173,7 +173,7 @@ print foo.type
     TensorType(float32, scalar)
 
 
-## theano 函数
+### theano 函数
 
 有了符号变量，自然可以用符号变量来定义函数，`theano.function()` 函数用来生成符号函数：
 
@@ -208,7 +208,7 @@ print bar.eval({foo: 3})
     9.0
 
 
-## theano.tensor
+### theano.tensor
 
 除了 `T.scalar()` 标量之外，`Theano` 中还有很多符号变量类型，这些都包含在 `tensor`（张量）子模块中，而且 `tensor` 中也有很多函数对它们进行操作。
 
@@ -339,7 +339,7 @@ print linear_mix_default(np.array([[1, 2, 3],
     [array([ 18.,  37.], dtype=float32), array(91.0, dtype=float32)]
 
 
-## 共享的变量
+### 共享的变量
 
 `Theano` 中可以定义共享的变量，它们可以在多个函数中被共享，共享变量类似于普通函数定义时候使用的全局变量，同时加上了 `global` 的属性以便在函数中修改这个全局变量的值。
 
@@ -434,7 +434,7 @@ print shared_var.get_value()
      [ 2.  3.]]
 
 
-## 导数
+### 导数
 
 `Theano` 的一大好处在于它对符号变量计算导数的能力。
 
@@ -442,7 +442,7 @@ print shared_var.get_value()
 
 
 ```python
-bar_grad = T.grad(bar, foo)  # 表示 bar (x^2) 关于 foo (x) 的导数
+bar_grad = T.grad(bar, foo)  ## 表示 bar (x^2) 关于 foo (x) 的导数
 
 print bar_grad.eval({foo: 10})
 ```
@@ -467,7 +467,7 @@ print y_J.eval({A: np.array([[9.0, 8, 7], [4, 5, 6]], dtype=theano.config.floatX
 
 `theano.gradient.jacobian` 用来计算雅可比矩阵，而 `theano.gradient.hessian` 可以用来计算 `Hessian` 矩阵。
 
-## `R-op` 和 `L-op`
+### `R-op` 和 `L-op`
 
 Rop 用来计算 $\frac{\partial f}{\partial x}v$，Lop 用来计算 $v\frac{\partial f}{\partial x}$：
 
@@ -487,7 +487,7 @@ print f([[1, 1], [1, 1]], [[2, 2], [2, 2]], [0,1])
 
     [ 2.  2.]
 
-# Theano 在 Windows 上的配置 
+## Theano 在 Windows 上的配置 
 
 <font color=red>注意：不建议在 `windows` 进行 `theano` 的配置。</font>
 
@@ -495,14 +495,14 @@ print f([[1, 1], [1, 1]], [[2, 2], [2, 2]], [0,1])
 
 我个人的电脑搭载的是 `Windows 10 x64` 系统，显卡是 `Nvidia GeForce GTX 850M`。
 
-## 安装 theano
+### 安装 theano
 
 首先是用 `anaconda` 安装 `theano`：
 
     conda install mingw libpython
     pip install theano
 
-## 安装 VS 和 CUDA
+### 安装 VS 和 CUDA
 
 按顺序安装这两个软件：
 - 安装 Visual Studio 2010/2012/2013
@@ -512,7 +512,7 @@ Cuda 的版本与电脑的显卡兼容。
 
 我安装的是 Visual Studio 2012 和 CUDA v7.0v。
 
-## 配置环境变量
+### 配置环境变量
 
 `CUDA` 会自动帮你添加一个 `CUDA_PATH` 环境变量（环境变量在 控制面板->系统与安全->系统->高级系统设置 中），表示你的 `CUDA` 安装位置，我的电脑上为：
 
@@ -596,7 +596,7 @@ import theano.tensor as T
 import numpy
 import time
 
-vlen = 10 * 30 * 768  # 10 x #cores x # threads per core
+vlen = 10 * 30 * 768  ## 10 x #cores x ## threads per core
 iters = 1000
 
 rng = numpy.random.RandomState(22)
@@ -661,7 +661,7 @@ import theano.tensor as T
 import numpy
 import time
 
-vlen = 10 * 30 * 768  # 10 x #cores x # threads per core
+vlen = 10 * 30 * 768  ## 10 x #cores x ## threads per core
 iters = 1000
 
 rng = numpy.random.RandomState(22)
@@ -705,7 +705,7 @@ else:
 !rm test_theano.py
 ```
 
-## 配置 .theanorc.txt
+### 配置 .theanorc.txt
 
 我们可以在个人文件夹下配置 .theanorc.txt 文件来省去每次都使用环境变量设置的麻烦：
 
@@ -725,7 +725,7 @@ cxxflags = -LC:\Miniconda\MinGW
 ```
 
 具体这些配置有什么作用之后可以查看官网上的教程。
-# Theano 符号图结构
+## Theano 符号图结构
 
 使用 `Theano`，首先要定义符号变量，然后是利用这写符号变量进行计算，这些符号被称为 **`variables`**，而操作 `+, -, **, sum(), tanh()` 被称为 **`ops`**，一个 `op` 操作接受某些类型的输入，并返回某些类型的输出。
 
@@ -903,7 +903,7 @@ theano.printing.pydotprint(y, outfile='apply2.png', var_with_name_simple=True)
 其图结构为
 ![结构2](apply2.png)
 
-## function 对图的优化
+### function 对图的优化
 
 
 ```python
@@ -933,13 +933,13 @@ theano.printing.pydotprint(f, outfile='apply_opti.png', var_with_name_simple=Tru
 
 ![优化](apply_opti.png)
 
-## 图结构的作用
+### 图结构的作用
 
 - 计算按照图结构来计算 
 - 优化，求导
-# Theano 配置和编译模式
+## Theano 配置和编译模式
 
-## 配置
+### 配置
 
 之前我们已经知道， `theano` 的配置可以用 `config` 模块来查看：
 
@@ -1515,7 +1515,7 @@ print theano.config
 
 http://deeplearning.net/software/theano/library/config.html
 
-### 环境变量 THEANO_FLAGS 
+#### 环境变量 THEANO_FLAGS 
 
 使用 `THEANO_FLAGS` 环境变量，运行程序的方法如下：
 
@@ -1527,7 +1527,7 @@ http://deeplearning.net/software/theano/library/config.html
     
 示例中的配置将浮点数的精度设为了 `32` 位，并将使用 `GPU 0` 和 `CUDA` 的 `fastmath` 模式进行编译和运算。
 
-### 配置文件 THEANORC
+#### 配置文件 THEANORC
 
 环境变量 `THEANORC` 的默认位置为 `$HOME/.theanorc` （`windows` 下为 `$HOME/.theanorc:$HOME/.theanorc.txt`）。
 
@@ -1544,7 +1544,7 @@ http://deeplearning.net/software/theano/library/config.html
 
 这里 `[golbal]` 对应的是 `config` 中的参数，如 `config.device, config.mode`； `config` 的子模块中的参数，如 `config.nvcc.fastmath, config.blas.ldflags` 则需要用 `[nvcc], [blas]` 的部分去设置。
 
-## 模式
+### 模式
 
 每次调用 `theano.function` 的时候，那些符号变量之间的结构会被优化和计算，而优化和计算的模式都是由 `config.mode` 所决定的。
 
@@ -1567,7 +1567,7 @@ http://deeplearning.net/software/theano/library/config.html
 
 http://deeplearning.net/software/theano/library/compile/mode.html#libdoc-compile-mode
 
-### Linkers
+#### Linkers
 
 从上面的定义可以看出，一个模式由两部分构成，`optimizer` 和 `linker`， `ProfileMode` 和 `DebugMode` 模式使用自带的 `linker`。
 
@@ -1575,7 +1575,7 @@ http://deeplearning.net/software/theano/library/compile/mode.html#libdoc-compile
 
 http://deeplearning.net/software/theano/tutorial/modes.html#linkers
 
-### 使用 DebugMode
+#### 使用 DebugMode
 
 一般在使用 `FAST_RUN` 或者 `FAST_COMPILE` 模式之前，最好先用 `DebugMode` 进行调试，不过速度会比前两个模式慢得多。
 
@@ -1636,7 +1636,7 @@ print f_2([7])
        2340                 try:
     -> 2341                     return f()
        2342                 finally:
-       2343                     # put back the filter_checks_isfinite
+       2343                     ## put back the filter_checks_isfinite
 
 
     /usr/local/lib/python2.7/dist-packages/theano/compile/debugmode.pyc in f()
@@ -1671,7 +1671,7 @@ print f_2([7])
 更多细节可以参考：
 
 http://deeplearning.net/software/theano/library/compile/debugmode.html#debugmode
-# Theano 条件语句
+## Theano 条件语句
 
 `theano` 中提供了两种条件语句，`ifelse` 和 `switch`，两者都是用于在符号变量上使用条件语句：
 
@@ -1761,7 +1761,7 @@ print 'time spent evaluating one value %f sec' % (time.clock() - tic)
     time spent evaluating both values 0.638598 sec
     time spent evaluating one value 0.461249 sec
 
-# Theano 循环：scan（详解）
+## Theano 循环：scan（详解）
 
 
 ```python
@@ -1790,7 +1790,7 @@ def floatX(X):
 - 速度比 `for` 稍微快一些
 - 降低内存使用
 
-## scan 的使用
+### scan 的使用
 
 函数的用法如下：
 
@@ -1829,7 +1829,7 @@ def floatX(X):
 - `updates`
     - 一个字典，用来记录 `scan` 过程中用到的共享变量更新规则，构造函数的时候，如果需要更新共享变量，将这个变量当作 `updates` 的参数传入。
 
-##  scan 和 map
+###  scan 和 map
 
 这里实现一个简单的 `map` 操作，将向量 $\mathbf x$ 中的所有元素变成原来的两倍：
 
@@ -1869,7 +1869,7 @@ print x_double_map(range(10))
     [  0.   2.   4.   6.   8.  10.  12.  14.  16.  18.]
 
 
-## scan 和 reduce
+### scan 和 reduce
 
 这里一个简单的 `reduce` 操作，求和：
 
@@ -1883,10 +1883,10 @@ result, _ = theano.scan(fn = lambda t, v: t + v,
                         sequences = x,
                         outputs_info = floatX(0.))
 
-# 因为每一步的输出值都会被记录到最后的 result 中，所以最后的和是 result 的最后一个元素。
+## 因为每一步的输出值都会被记录到最后的 result 中，所以最后的和是 result 的最后一个元素。
 x_sum_scan = theano.function([x], result[-1])
 
-# 计算 1 + 2 + ... + 10
+## 计算 1 + 2 + ... + 10
 print x_sum_scan(range(10))
 ```
 
@@ -1903,7 +1903,7 @@ result, _ = theano.reduce(fn = lambda t, v: t + v,
 
 x_sum_reduce = theano.function([x], result)
 
-# 计算 1 + 2 + ... + 10
+## 计算 1 + 2 + ... + 10
 print x_sum_reduce(range(10))
 ```
 
@@ -1912,9 +1912,9 @@ print x_sum_reduce(range(10))
 
 `reduce` 与 `scan` 不同的地方在于，`result` 包含的内容并不是每次输出的结果，而是最后一次输出的结果。
 
-## scan 的使用
+### scan 的使用
 
-### 输入与输出
+#### 输入与输出
 
 `fn` 是一个函数句柄，对于这个函数句柄，它每一步接受的参数是由 `sequences, outputs_info, non_sequence` 这三个参数所决定的，并且按照以下的顺序排列：
 
@@ -1944,7 +1944,7 @@ return [y1_t, y2_t], {x:x+1}
 
 两部分只需要有一个存在即可，另一个可以为空。
 
-### 例子分析
+#### 例子分析
 
 例如，在我们的第一个例子中
 
@@ -1965,7 +1965,7 @@ theano.scan(fn = lambda t, v: t + v,
 
 `fn` 接受了两个参数，初始迭代时，按照规则，`t` 接受的参数为 `x[0]`，`v` 接受的参数为我们传入 `outputs_info` 的第一个初始值即 `0` （认为是 `outputs[-1]`），他们的结果 `t+v` 将作为 `outputs[0]` 的值传入下一次迭代以及最终 `scan` 输出的 `outputs` 值中。
 
-### 输入多个序列
+#### 输入多个序列
 
 我们可以一次输入多个序列，这些序列会按照顺序传入 fn 的参数中，例如计算多项式
 $$
@@ -1975,16 +1975,16 @@ $$
 
 
 ```python
-# 变量 x
+## 变量 x
 x = T.scalar("x")
 
-# 不为 0 的系数
+## 不为 0 的系数
 A = T.vectors("A")
 
-# 对应的幂数
+## 对应的幂数
 N = T.ivectors("N")
 
-# a 对应的是 A， n 对应 N，v 对应 x
+## a 对应的是 A， n 对应 N，v 对应 x
 components, _ = theano.scan(fn = lambda a, n, v: a * (v ** n),
                             sequences = [A, N],
                             non_sequences = x)
@@ -1993,7 +1993,7 @@ result = components.sum()
 
 polynomial = theano.function([x, A, N], result)
 
-# 计算 1 + 3 * 10 ^ 2 + 2 * 10^3 = 2301
+## 计算 1 + 3 * 10 ^ 2 + 2 * 10^3 = 2301
 print polynomial(floatX(10), 
                  floatX([1, 3, 2]),
                  [0, 2, 3])
@@ -2002,7 +2002,7 @@ print polynomial(floatX(10),
     2301.0
 
 
-### 使用序列的多个值
+#### 使用序列的多个值
 
 默认情况下，我们只能使用输入序列的当前时刻的值，以及前一个输出的输出值。
 
@@ -2066,9 +2066,9 @@ W_1 = T.matrix("W_1")
 W_2 = T.matrix("W_2")
 W_3 = T.matrix("W_3")
 
-# W_yy 和 W_xy 作为不变的参数可以直接使用
+## W_yy 和 W_xy 作为不变的参数可以直接使用
 results, _ = theano.scan(fn = lambda x, x_pre, y: T.tanh(T.dot(W_1, y) + T.dot(W_2, x) + T.dot(W_3, x_pre)), 
-                         # 0 对应 x，-1 对应 x_pre
+                         ## 0 对应 x，-1 对应 x_pre
                          sequences = dict(input=X, taps=[0, -1]), 
                          outputs_info = Y)
 
@@ -2080,7 +2080,7 @@ Y_seq = theano.function(inputs = [X, Y, W_1, W_2, W_3],
 
 
 ```python
-# 测试
+## 测试
 t = 1001
 x_dim = 10
 y_dim = 20
@@ -2098,7 +2098,7 @@ y_res_theano = Y_seq(x, y, w_1, w_2, w_3)
 print "theano running time {:.4f} s".format(time.time() - tic)
 
 tic = time.time()
-# 与 numpy 的结果进行比较：
+## 与 numpy 的结果进行比较：
 y_res_numpy = np.zeros([t, y_dim])
 y_res_numpy[0] = y
 
@@ -2107,7 +2107,7 @@ for i in range(1, t):
 
 print "numpy  running time {:.4f} s".format(time.time() - tic)
 
-# 这里要从 1 开始，因为使用了 x(t-1)，所以 scan 从第 1 个位置开始计算
+## 这里要从 1 开始，因为使用了 x(t-1)，所以 scan 从第 1 个位置开始计算
 print "the max difference of the first 10 results is", np.max(np.abs(y_res_theano[0:10] - y_res_numpy[1:11]))
 ```
 
@@ -2120,7 +2120,7 @@ print "the max difference of the first 10 results is", np.max(np.abs(y_res_thean
 
 
 ```python
-# 测试
+## 测试
 t = 1001
 x_dim = 100
 y_dim = 200
@@ -2138,7 +2138,7 @@ y_res_theano = Y_seq(x, y, w_1, w_2, w_3)
 print "theano running time {:.4f} s".format(time.time() - tic)
 
 tic = time.time()
-# 与 numpy 的结果进行比较：
+## 与 numpy 的结果进行比较：
 y_res_numpy = np.zeros([t, y_dim])
 y_res_numpy[0] = y
 
@@ -2147,7 +2147,7 @@ for i in range(1, t):
 
 print "numpy  running time {:.4f} s".format(time.time() - tic)
 
-# 这里要从 1 开始，因为使用了 x(t-1)，所以 scan 从第 1 个位置开始计算
+## 这里要从 1 开始，因为使用了 x(t-1)，所以 scan 从第 1 个位置开始计算
 print "the max difference of the first 10 results is", np.max(np.abs(y_res_theano[:10] - y_res_numpy[1:11]))
 ```
 
@@ -2187,7 +2187,7 @@ for i in xrange(20):
     iter 020, max diff:0.123678
 
 
-### 控制循环次数
+#### 控制循环次数
 
 假设我们要计算方阵$A$的$A^k$，$k$ 是一个未知变量，我们可以这样通过 `n_steps` 参数来控制循环计算的次数： 
 
@@ -2197,9 +2197,9 @@ A = T.matrix("A")
 k = T.iscalar("k")
 
 results, _ = theano.scan(fn = lambda P, A: P.dot(A),
-                         # 初始值设为单位矩阵
+                         ## 初始值设为单位矩阵
                          outputs_info = T.eye(A.shape[0]),
-                         # 乘 k 次
+                         ## 乘 k 次
                          non_sequences = A,
                          n_steps = k)
 
@@ -2209,7 +2209,7 @@ test_a = floatX([[2, -2], [-1, 2]])
 
 print A_k(test_a, 10)
 
-# 使用 numpy 进行验证
+## 使用 numpy 进行验证
 a_k = np.eye(2)
 for i in range(10):
     a_k = a_k.dot(test_a)
@@ -2223,7 +2223,7 @@ print a_k
      [ -76096.  107616.]]
 
 
-### 使用共享变量
+#### 使用共享变量
 
 可以在 `scan` 中使用并更新共享变量，例如，利用共享变量 `n`，我们可以实现这样一个迭代 `k` 步的简单计数器：
 
@@ -2232,7 +2232,7 @@ print a_k
 n = theano.shared(floatX(0))
 k = T.iscalar("k")
 
-# 这里 lambda 的返回值是一个 dict，因此这个值会被传入 updates 中
+## 这里 lambda 的返回值是一个 dict，因此这个值会被传入 updates 中
 _, updates = theano.scan(fn = lambda n: {n:n+1},
                          non_sequences = n,
                          n_steps = k)
@@ -2257,7 +2257,7 @@ print n.get_value()
 
 这里 `fn` 函数返回的是一个字典，因此自动被放入了 `update_dictionary` 中，然后传入 `function` 的 `updates` 参数中进行迭代。
 
-### 使用条件语句结束循环
+#### 使用条件语句结束循环
 
 我们可以将 `scan` 设计为 `loop-until` 的模式，具体方法是在 `scan` 中，将 `fn` 的返回值增加一个参数，使用 `theano.scan_module` 来设置停止条件。
 
@@ -2272,9 +2272,9 @@ results, _ = theano.scan(fn = lambda v_pre, max_v: (v_pre * 2, theano.scan_modul
                          non_sequences = max_value,
                          n_steps = 1000)
 
-# 注意，这里不能取 results 的全部
-# 例如在输入值为 40 时，最后的输出可以看成 (64, False)
-# scan 发现停止条件满足，停止循环，但是不影响 64 被输出到 results 中，因此要将 64 去掉
+## 注意，这里不能取 results 的全部
+## 例如在输入值为 40 时，最后的输出可以看成 (64, False)
+## scan 发现停止条件满足，停止循环，但是不影响 64 被输出到 results 中，因此要将 64 去掉
 power_of_2 = theano.function(inputs = [max_value], outputs = results[:-1])
 
 print power_of_2(40)
@@ -2282,9 +2282,9 @@ print power_of_2(40)
 
     [  2.   4.   8.  16.  32.]
 
-# Theano 实例：线性回归
+## Theano 实例：线性回归
 
-## 基本模型
+### 基本模型
 
 在用 `theano` 进行线性回归之前，先回顾一下 `theano` 的运行模式。
 
@@ -2329,15 +2329,15 @@ multiply = theano.function(inputs=[a, b], outputs=y)
 
 
 ```python
-print multiply(3, 2) # 6
-print multiply(4, 5) # 20
+print multiply(3, 2) ## 6
+print multiply(4, 5) ## 20
 ```
 
     6.0
     20.0
 
 
-## 线性回归
+### 线性回归
 
 回到线性回归的模型，假设我们有这样的一组数据：
 
@@ -2361,7 +2361,7 @@ plt.show()
     
 
 
-### 定义符号变量
+#### 定义符号变量
 
 我们使用线性回归的模型对其进行模拟：
 $$\bar{y} = wx + b$$
@@ -2436,7 +2436,7 @@ updates = [[w, w - grads[0] * lr],
            [b, b - grads[1] * lr]]
 ```
 
-### 编译训练模型
+#### 编译训练模型
 
 每运行一次，参数 $w, b$ 的值就更新一次：
 
@@ -2448,7 +2448,7 @@ train_model = theano.function(inputs=[X,Y],
                               allow_input_downcast=True)
 ```
 
-### 将训练函数应用到数据上
+#### 将训练函数应用到数据上
 
 训练模型，迭代 100 次：
 
@@ -2463,8 +2463,8 @@ for i in xrange(100):
 
 
 ```python
-print w.get_value()  # 接近 2
-print b.get_value()  # 接近 1
+print w.get_value()  ## 接近 2
+print b.get_value()  ## 接近 1
 
 plt.scatter(train_X, train_Y)
 plt.plot(train_X, w.get_value() * train_X + b.get_value(), 'r')
@@ -2481,7 +2481,7 @@ plt.show()
 ![png](09.08-linear-regression_files/09.08-linear-regression_37_1.png)
     
 
-# Theano 实例：Logistic 回归
+## Theano 实例：Logistic 回归
 
 
 ```python
@@ -2495,7 +2495,7 @@ import theano.tensor as T
     Using gpu device 0: GeForce GTX 850M
 
 
-## sigmoid 函数
+### sigmoid 函数
 
 一个 `logistic` 曲线由 `sigmoid` 函数给出：
 $$s(x) = \frac{1}{1+e^{-x}}$$
@@ -2536,7 +2536,7 @@ plt.figure(figsize=(12,5))
 
 plt.plot(X.flatten(), sigmoid(X).flatten(), linewidth=2)
 
-# 美化图像的操作
+## 美化图像的操作
 #=========================
 plt.grid('on')
 plt.yticks([0,0.5,1])
@@ -2560,7 +2560,7 @@ plt.show()
     
 
 
-## sigmoid 函数与 tanh 函数的关系
+### sigmoid 函数与 tanh 函数的关系
 
 `sigmoid` 函数与 `tanh` 之间有如下的转化关系：
 $$s(x)=\frac{1}{1+e^{-x}}=\frac{1+\tanh(x/2)}{2}$$
@@ -2583,7 +2583,7 @@ sigmoid2([[ 0, 1],
 
 
 
-## logistic 回归
+### logistic 回归
 
 简单的二元逻辑回归问题可以这样描述：我们要对数据点 $x = (x_1, ..., x_n)$ 进行 0-1 分类，参数为 $w = (w_1, ..., w_n), b$，我们的假设函数如下：
 
@@ -2612,7 +2612,7 @@ $$- y \log(h_{w,b}(x)) - (1-y) \log(1-h_{w,b}(x))$$
 
 对于一组数据，我们定义损失函数为所有差异的均值，然后通过梯度下降法来优化损失函数，得到最优的参数 $w, b$。
 
-## 实例
+### 实例
 
 生成随机数据：
 
@@ -2620,11 +2620,11 @@ $$- y \log(h_{w,b}(x)) - (1-y) \log(1-h_{w,b}(x))$$
 ```python
 rng = np.random
 
-# 数据大小和规模
+## 数据大小和规模
 N = 400
 feats = 784
 
-# D = (X, Y)
+## D = (X, Y)
 D = (rng.randn(N, feats), rng.randint(size=N, low=0, high=2))
 ```
 
@@ -2635,7 +2635,7 @@ D = (rng.randn(N, feats), rng.randint(size=N, low=0, high=2))
 x = T.matrix('x')
 y = T.vector('y')
 
-# 要更新的变量：
+## 要更新的变量：
 w = theano.shared(rng.randn(feats), name='w')
 b = theano.shared(0., name='b')
 ```
@@ -2658,7 +2658,7 @@ prediction = h > 0.5
 
 
 ```python
-cost = - T.mean(y * T.log(h) + (1 - y) * T.log(1 - h)) + 0.01 * T.sum(w ** 2)  # 正则项，防止过拟合
+cost = - T.mean(y * T.log(h) + (1 - y) * T.log(1 - h)) + 0.01 * T.sum(w ** 2)  ## 正则项，防止过拟合
 gw, gb = T.grad(cost, [w, b])
 ```
 
@@ -2734,9 +2734,9 @@ print predict(D[0])
      0 1 0 0 0 0 0 1 1 0 1 1 0 1 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 1 1 1 0 1 0 0 1
      0 1 0 1 0 0 1 0 0 1 1 1 0 1 1 0 0 1 0 1 1 0 1 0 1 0 0 1 1 0]
 
-# Theano 实例：Softmax 回归
+## Theano 实例：Softmax 回归
 
-## MNIST 数据集的下载和导入
+### MNIST 数据集的下载和导入
 
 [MNIST 数据集](http://yann.lecun.com/exdb/mnist/) 是一个手写数字组成的数据集，现在被当作一个机器学习算法评测的基准数据集。
 
@@ -2837,7 +2837,7 @@ def mnist(ntrain=60000,ntest=10000,onehot=True):
     Overwriting load.py
 
 
-## softmax 回归
+### softmax 回归
 
 `Softmax` 回归相当于 `Logistic` 回归的一个一般化，`Logistic` 回归处理的是两类问题，`Softmax` 回归处理的是 `N` 类问题。
 
@@ -2887,7 +2887,7 @@ b = test_softmax(a)
 
 print b.shape
 
-# 行和
+## 行和
 print b.sum(1)
 ```
 
@@ -3058,7 +3058,7 @@ for i in range(100):
     098 0.9246
     099 0.9248
 
-# Theano 实例：人工神经网络
+## Theano 实例：人工神经网络
 
 神经网络的模型可以参考 UFLDL 的教程，这里不做过多描述。 
 
@@ -3098,9 +3098,9 @@ def model(X, w_h, w_o):
     output:
         Y: probability of y given x
     """
-    # 隐层
+    ## 隐层
     h = T.nnet.sigmoid(T.dot(X, w_h))
-    # 输出层
+    ## 输出层
     pyx = T.nnet.softmax(T.dot(h, w_o))
     return pyx
 ```
@@ -3305,7 +3305,7 @@ for i in range(100):
     098 0.9557
     099 0.9562
 
-# Theano 随机数流变量
+## Theano 随机数流变量
 
 
 ```python
@@ -3364,7 +3364,7 @@ print f_rand(range(5))[2]
     [ 0.23193923  0.71880513  0.03122572  0.97318739  0.99260223]
     [0 1 0 1 1]
 
-# Theano 实例：更复杂的网络
+## Theano 实例：更复杂的网络
 
 
 ```python
@@ -3497,13 +3497,13 @@ def RMSprop(cost, params, accs, lr=0.001, rho=0.9, epsilon=1e-6):
 
 
 ```python
-# 有 dropout，用来训练
+## 有 dropout，用来训练
 noise_h1, noise_h2, noise_py_x = model(X, w_h1, w_h2, w_o, 0.2, 0.5)
 cost = T.mean(T.nnet.categorical_crossentropy(noise_py_x, Y))
 params = [w_h1, w_h2, w_o]
 accs = [theano.shared(p.get_value() * 0.) for p in params]
 updates = RMSprop(cost, params, accs, lr=0.001)
-# 训练函数
+## 训练函数
 train = theano.function(inputs=[X, Y], outputs=cost, updates=updates, allow_input_downcast=True)
 ```
 
@@ -3511,9 +3511,9 @@ train = theano.function(inputs=[X, Y], outputs=cost, updates=updates, allow_inpu
 
 
 ```python
-# 没有 dropout，用来预测
+## 没有 dropout，用来预测
 h1, h2, py_x = model(X, w_h1, w_h2, w_o, 0., 0.)
-# 预测的结果
+## 预测的结果
 y_x = T.argmax(py_x, axis=1)
 predict = theano.function(inputs=[X], outputs=y_x, allow_input_downcast=True)
 ```
@@ -3581,7 +3581,7 @@ for i in range(50):
     iter 049 accuracy: 0.9862
     iter 050 accuracy: 0.9856
 
-# Theano 实例：卷积神经网络
+## Theano 实例：卷积神经网络
 
 
 ```python
@@ -3671,48 +3671,48 @@ teX = teX.reshape(-1, 1, 28, 28)
 ```python
 def model(X, w, w2, w3, w4, p_drop_conv, p_drop_hidden):
     
-    # X:  128 * 1 * 28 * 28
-    # w:  32 * 1 * 3 * 3
-    # full mode
-    # l1a: 128 * 32 * (28 + 3 - 1) * (28 + 3 - 1)
+    ## X:  128 * 1 * 28 * 28
+    ## w:  32 * 1 * 3 * 3
+    ## full mode
+    ## l1a: 128 * 32 * (28 + 3 - 1) * (28 + 3 - 1)
     l1a = rectify(conv2d(X, w, border_mode='full'))
-    # l1a: 128 * 32 * 30 * 30
-    # ignore_border False
-    # l1:  128 * 32 * (30 / 2) * (30 / 2)
+    ## l1a: 128 * 32 * 30 * 30
+    ## ignore_border False
+    ## l1:  128 * 32 * (30 / 2) * (30 / 2)
     l1 = max_pool_2d(l1a, (2, 2), ignore_border=False)
     l1 = dropout(l1, p_drop_conv)
 
-    # l1:  128 * 32 * 15 * 15
-    # w2:  64 * 32 * 3 * 3
-    # valid mode
-    # l2a: 128 * 64 * (15 - 3 + 1) * (15 - 3 + 1)
+    ## l1:  128 * 32 * 15 * 15
+    ## w2:  64 * 32 * 3 * 3
+    ## valid mode
+    ## l2a: 128 * 64 * (15 - 3 + 1) * (15 - 3 + 1)
     l2a = rectify(conv2d(l1, w2))    
-    # l2a: 128 * 64 * 13 * 13
-    # l2:  128 * 64 * (13 / 2 + 1) * (13 / 2 + 1)
+    ## l2a: 128 * 64 * 13 * 13
+    ## l2:  128 * 64 * (13 / 2 + 1) * (13 / 2 + 1)
     l2 = max_pool_2d(l2a, (2, 2), ignore_border=False)
     l2 = dropout(l2, p_drop_conv)
 
-    # l2:  128 * 64 * 7 * 7
-    # w3:  128 * 64 * 3 * 3
-    # l3a: 128 * 128 * (7 - 3 + 1) * (7 - 3 + 1)
+    ## l2:  128 * 64 * 7 * 7
+    ## w3:  128 * 64 * 3 * 3
+    ## l3a: 128 * 128 * (7 - 3 + 1) * (7 - 3 + 1)
     l3a = rectify(conv2d(l2, w3))
-    # l3a: 128 * 128 * 5 * 5
-    # l3b: 128 * 128 * (5 / 2 + 1) * (5 / 2 + 1)
+    ## l3a: 128 * 128 * 5 * 5
+    ## l3b: 128 * 128 * (5 / 2 + 1) * (5 / 2 + 1)
     l3b = max_pool_2d(l3a, (2, 2), ignore_border=False)    
-    # l3b: 128 * 128 * 3 * 3
-    # l3:  128 * (128 * 3 * 3)
+    ## l3b: 128 * 128 * 3 * 3
+    ## l3:  128 * (128 * 3 * 3)
     l3 = T.flatten(l3b, outdim=2)
     l3 = dropout(l3, p_drop_conv)
     
-    # l3: 128 * (128 * 3 * 3)
-    # w4: (128 * 3 * 3) * 625
-    # l4: 128 * 625
+    ## l3: 128 * (128 * 3 * 3)
+    ## w4: (128 * 3 * 3) * 625
+    ## l4: 128 * 625
     l4 = rectify(T.dot(l3, w4))
     l4 = dropout(l4, p_drop_hidden)
 
-    # l5:  128 * 625
-    # w5:  625 * 10
-    # pyx: 128 * 10
+    ## l5:  128 * 625
+    ## w5:  625 * 10
+    ## pyx: 128 * 10
     pyx = softmax(T.dot(l4, w_o))
     return l1, l2, l3, l4, pyx
 ```
@@ -3819,7 +3819,7 @@ for i in range(50):
     iter 049, 0.994
     iter 050, 0.995
 
-# Theano tensor 模块：基础
+## Theano tensor 模块：基础
 
 张量是向量在数学上的一种推广，具体内容可以参考维基百科：
 https://en.wikipedia.org/wiki/Tensor
@@ -3835,7 +3835,7 @@ import theano.tensor as T
     Using gpu device 1: Tesla C2075 (CNMeM is disabled)
 
 
-## 构造符号变量
+### 构造符号变量
 
 可以用 `tensor` 模块创造符号变量：
 
@@ -3909,9 +3909,9 @@ dtensor5 = T.TensorType('float64', (False,)*5)
 x = dtensor5()
 ```
 
-## 变量方法
+### 变量方法
 
-### .dim
+#### .dim
 
 维度：
 
@@ -3923,7 +3923,7 @@ print x.ndim
     5
 
 
-### .type
+#### .type
 
 类型：
 
@@ -3935,7 +3935,7 @@ print x.type
     TensorType(float64, 5D)
 
 
-### .dtype
+#### .dtype
 
 包含的变量类型：
 
@@ -3947,7 +3947,7 @@ print x.dtype
     float64
 
 
-### .reshape
+#### .reshape
 
 传入一个变量对 x 进行 `reshape`，通常需要指定 `shape` 的 `ndim`：
 
@@ -3968,7 +3968,7 @@ print x.ndim, y.ndim
     5 3
 
 
-### .dimshuffle
+#### .dimshuffle
 
 `dimshuffle` 改变维度的顺序，返回原始变量的一个 `view`：
 
@@ -3998,7 +3998,7 @@ print z.ndim
     4
 
 
-### .flatten
+#### .flatten
 
 `flatten(ndim=1)` 返回原始变量的一个 `view`，将变量降为 `ndim` 维：
 
@@ -4012,15 +4012,15 @@ print z.ndim
     2
 
 
-### .ravel
+#### .ravel
 
 与 `flatten` 一样。
 
-### .T
+#### .T
 
 转置，注意，一维数组或者变量的转置是其本身，要想将行列向量互相转换，需要使用 `reshape` 或者 `dimshuffle`。
 
-### 其他方法
+#### 其他方法
 
 
 ```python
@@ -4030,11 +4030,11 @@ print filter(lambda t: t.isalpha(), dir(x))
     ['T', 'all', 'any', 'arccos', 'arccosh', 'arcsin', 'arcsinh', 'arctan', 'arctanh', 'argmax', 'argmin', 'argsort', 'astype', 'broadcastable', 'ceil', 'choose', 'clip', 'clone', 'compress', 'conj', 'conjugate', 'copy', 'cos', 'cosh', 'cumprod', 'cumsum', 'diagonal', 'dimshuffle', 'dot', 'dtype', 'eval', 'exp', 'fill', 'flatten', 'floor', 'imag', 'index', 'log', 'max', 'mean', 'min', 'name', 'ndim', 'nonzero', 'norm', 'owner', 'prod', 'ptp', 'ravel', 'real', 'repeat', 'reshape', 'round', 'shape', 'sin', 'sinh', 'size', 'sort', 'sqrt', 'squeeze', 'std', 'sum', 'swapaxes', 'tag', 'take', 'tan', 'tanh', 'trace', 'transpose', 'trunc', 'type', 'var']
 
 
-## 模块函数
+### 模块函数
 
 为了与 `numpy` 兼容，`tensor`
 
-### T.shape
+#### T.shape
 
 `shape(x)` 返回一个存储变量 `x` 形状的变量：
 
@@ -4046,7 +4046,7 @@ print T.shape(x)
     Shape.0
 
 
-### T.shape_padleft, T.shape_padright
+#### T.shape_padleft, T.shape_padright
 
 在最左边/右边加上 n 个大小为 1 的 1 个维度：
 
@@ -4062,7 +4062,7 @@ print T.shape_padright(x)
     DimShuffle{0,1,2,x}.0
 
 
-### T.shape_padaxis
+#### T.shape_padaxis
 
 在指定位置插入大小为 1 的 1 个维度：
 
@@ -4080,52 +4080,52 @@ print T.shape_padaxis(x, -1)
 
 插入这些大小为 `1` 的维度，主要目的是 `broadcast` 化。
 
-### T.unbroadcast
+#### T.unbroadcast
 
 可以使用 `unbroadcast(x, *axes)` 使得 `x` 的某些维度不可 `broadcast`。
 
-### T.tile
+#### T.tile
 
 `tile(x, reps)` 按照规则重复 `x`
 
-## 产生张量
+### 产生张量
 
-### T.zeros_like(x), T.ones_like(x)
+#### T.zeros_like(x), T.ones_like(x)
 
 产生一个与 x 形状相同的全 0 或全 1 变量
 
-### T.fill(a, b)
+#### T.fill(a, b)
 
 使用 `b` 的值去填充 `a`，`b` 是一个数值或者 `theano scalar`。
 
-### T.alloc(value, *shape)
+#### T.alloc(value, *shape)
 
 返回指定形状的变量，并初始化为 `value`
 
-### T.eye(n, m=None, k=0, dtype=theano.config.floatX)
+#### T.eye(n, m=None, k=0, dtype=theano.config.floatX)
 
 单位矩阵
 
-### T.basic.choose(a, choices)
+#### T.basic.choose(a, choices)
 
 `a` 是一个 `index` 数组变量，对应于 `choices` 中的位置。
 
-## 降维
+### 降维
 
-### T.max(x), T.argmax(x), T.max_and_argmax(x)
+#### T.max(x), T.argmax(x), T.max_and_argmax(x)
 
 最大值，最大值位置，最大值和最大值位置。
 
-### T.min(x), T.argmin(x)
+#### T.min(x), T.argmin(x)
 
 最小值，最小值位置。
 
-### T.sum(x), T.prod(x), T.mean(x), T.var(x), T.std(x)
+#### T.sum(x), T.prod(x), T.mean(x), T.var(x), T.std(x)
 
 和，积，均值，方差，标准差
 
-### T.all(x), T.any(x)
-# Theano tensor 模块：索引
+#### T.all(x), T.any(x)
+## Theano tensor 模块：索引
 
 
 ```python
@@ -4137,7 +4137,7 @@ import numpy as np
     Using gpu device 1: Tesla C2075 (CNMeM is disabled)
 
 
-## 简单索引
+### 简单索引
 
 `tensor` 模块完全支持 `numpy` 中的简单索引：
 
@@ -4163,7 +4163,7 @@ print n[1::2]
     [1 3 5 7]
 
 
-## mask 索引
+### mask 索引
 
 `tensor` 模块虽然支持简单索引，但并不支持 `mask` 索引，例如这样的做法是<font color="red">错误</font>的：
 
@@ -4209,13 +4209,13 @@ print t[(t > 4).nonzero()].eval()
     [5 6 7 8]
 
 
-## 使用索引进行赋值
+### 使用索引进行赋值
 
 `tensor` 模块不支持直接使用索引赋值，例如 `a[5] = b, a[5]+=b` 等是不允许的。
 
 不过可以考虑用 `set_subtensor` 和 `inc_subtensor` 来实现类似的功能：
 
-### T.set_subtensor(x, y)
+#### T.set_subtensor(x, y)
 
 实现类似 r[10:] = 5 的功能：
 
@@ -4226,7 +4226,7 @@ r = T.vector()
 new_r = T.set_subtensor(r[10:], 5)
 ```
 
-### T.inc_subtensor(x, y)
+#### T.inc_subtensor(x, y)
 
 实现类似 r[10:] += 5 的功能：
 
@@ -4236,9 +4236,9 @@ r = T.vector()
 
 new_r = T.inc_subtensor(r[10:], 5)
 ```
-# Theano tensor 模块：操作符和逐元素操作
+## Theano tensor 模块：操作符和逐元素操作
 
-## 操作符
+### 操作符
 
 
 ```python
@@ -4253,22 +4253,22 @@ from theano import tensor as T
 
 
 ```python
-# 两个整形三维张量
+## 两个整形三维张量
 
 a, b = T.itensor3("a"), T.itensor3("b")
 ```
 
-### 算术操作
+#### 算术操作
 
 
 ```python
-print theano.pp(a + 3)      # T.add(a, 3) -> itensor3
-print theano.pp(3 - a)      # T.sub(3, a)
-print theano.pp(a * 3.5)    # T.mul(a, 3.5) -> ftensor3 or dtensor3 (depending on casting)
-print theano.pp(2.2 / a)    # T.truediv(2.2, a)
-print theano.pp(2.2 // a)   # T.intdiv(2.2, a)
-print theano.pp(2.2**a)     # T.pow(2.2, a)
-print theano.pp(b % a)      # T.mod(b, a)
+print theano.pp(a + 3)      ## T.add(a, 3) -> itensor3
+print theano.pp(3 - a)      ## T.sub(3, a)
+print theano.pp(a * 3.5)    ## T.mul(a, 3.5) -> ftensor3 or dtensor3 (depending on casting)
+print theano.pp(2.2 / a)    ## T.truediv(2.2, a)
+print theano.pp(2.2 // a)   ## T.intdiv(2.2, a)
+print theano.pp(2.2**a)     ## T.pow(2.2, a)
+print theano.pp(b % a)      ## T.mod(b, a)
 ```
 
     (a + TensorConstant{3})
@@ -4280,14 +4280,14 @@ print theano.pp(b % a)      # T.mod(b, a)
     mod(b, a)
 
 
-### 比特操作
+#### 比特操作
 
 
 ```python
-print theano.pp(a & b)      # T.and_(a,b)    bitwise and (alias T.bitwise_and)
-print theano.pp(a ^ 1)      # T.xor(a,1)     bitwise xor (alias T.bitwise_xor)
-print theano.pp(a | b)      # T.or_(a,b)     bitwise or (alias T.bitwise_or)
-print theano.pp(~a)         # T.invert(a)    bitwise invert (alias T.bitwise_not)
+print theano.pp(a & b)      ## T.and_(a,b)    bitwise and (alias T.bitwise_and)
+print theano.pp(a ^ 1)      ## T.xor(a,1)     bitwise xor (alias T.bitwise_xor)
+print theano.pp(a | b)      ## T.or_(a,b)     bitwise or (alias T.bitwise_or)
+print theano.pp(~a)         ## T.invert(a)    bitwise invert (alias T.bitwise_not)
 ```
 
     and_(a, b)
@@ -4296,13 +4296,13 @@ print theano.pp(~a)         # T.invert(a)    bitwise invert (alias T.bitwise_not
     invert(a)
 
 
-### 原地操作
+#### 原地操作
 
 `Theano` 不支持原地操作如 `+=` 等，`Theano` 的图优化解构会自动决定是否使用原地操作。如果需要更新变量的值，可以考虑使用共享变量 `theano.shared`。
 
-## 逐元素操作
+### 逐元素操作
 
-### 类型转换
+#### 类型转换
 
 `T.cast(x, dtype)` 用于类型转换：
 
@@ -4331,7 +4331,7 @@ print T.cast(x, theano.config.floatX) is x
 - `T.angle(a)`
 - `T.abs_(a)`
 
-### 比较
+#### 比较
 
 `Theano` 的比较操作也是逐元素的：
 
@@ -4361,7 +4361,7 @@ print theano.pp(T.le(x, y))
 - `T.isclose(a, b)` ：浮点数是否接近
 - `T.allclose(a, b)` ：浮点数是否很接近
 
-### 条件
+#### 条件
 
 `T.switch(cond, ift, iff)` 选择 `ift (if ture)` 和 `iff (if false)`。
 
@@ -4369,40 +4369,40 @@ print theano.pp(T.le(x, y))
 
 `T.clip(x, min, max)` 低于 `min` 的部分变成 `min`，超过 `max` 的部分变成 `max`。
 
-### 数学操作
+#### 数学操作
 
 
 ```python
 a, b = T.matrices("a", "b")
 
 
-print theano.pp(T.maximum(a, b))  # max(a, b)
-print theano.pp(T.minimum(a, b))  # min(a, b)
+print theano.pp(T.maximum(a, b))  ## max(a, b)
+print theano.pp(T.minimum(a, b))  ## min(a, b)
 
-print theano.pp(T.neg(a)) # -a
-print theano.pp(T.inv(a)) # 1.0/a
+print theano.pp(T.neg(a)) ## -a
+print theano.pp(T.inv(a)) ## 1.0/a
 
 print theano.pp(T.exp(a)) 
-print theano.pp(T.log(a)), theano.pp(T.log2(a)), theano.pp(T.log10(a))       # log10(a)
+print theano.pp(T.log(a)), theano.pp(T.log2(a)), theano.pp(T.log10(a))       ## log10(a)
 
-print theano.pp(T.sgn(a))       # sgn(a)
-print theano.pp(T.floor(a))     # floor(a)
-print theano.pp(T.ceil(a))      # ceil(a)
-print theano.pp(T.round(a))     # round(a)
-print theano.pp(T.iround(a))    # iround(a)
+print theano.pp(T.sgn(a))       ## sgn(a)
+print theano.pp(T.floor(a))     ## floor(a)
+print theano.pp(T.ceil(a))      ## ceil(a)
+print theano.pp(T.round(a))     ## round(a)
+print theano.pp(T.iround(a))    ## iround(a)
 
-print theano.pp(T.sqr(a))   # sqr(a)
-print theano.pp(T.sqrt(a))  # sqrt(a)
+print theano.pp(T.sqr(a))   ## sqr(a)
+print theano.pp(T.sqrt(a))  ## sqrt(a)
 
 print theano.pp(T.cos(a)), theano.pp(T.sin(a)), theano.pp(T.tan(a))
-print theano.pp(T.cosh(a)), theano.pp(T.sinh(a)), theano.pp(T.tanh(a))         # tan(a)
+print theano.pp(T.cosh(a)), theano.pp(T.sinh(a)), theano.pp(T.tanh(a))         ## tan(a)
 
-print theano.pp(T.erf(a)), theano.pp(T.erfc(a)) # erf(a), erfc(a)
+print theano.pp(T.erf(a)), theano.pp(T.erfc(a)) ## erf(a), erfc(a)
 print theano.pp(T.erfinv(a)), theano.pp(T.erfcinv(a))
 
-print theano.pp(T.gamma(a))    # gamma(a)
-print theano.pp(T.gammaln(a))  # log(gamma(a))
-print theano.pp(T.psi(a))      # digamma(a)
+print theano.pp(T.gamma(a))    ## gamma(a)
+print theano.pp(T.gammaln(a))  ## log(gamma(a))
+print theano.pp(T.psi(a))      ## digamma(a)
 ```
 
     maximum(a, b)
@@ -4444,13 +4444,13 @@ $$
 `erfinv, erfcinv` 为其反函数：1
 https://en.wikipedia.org/wiki/Error_function#Inverse_functions
 
-### Broadcasting
+#### Broadcasting
 
 ![](http://deeplearning.net/software/theano/_images/bcast.png)
 
 图示如上。
 
-## 线性代数
+### 线性代数
 
 矩阵乘法：`T.dot(x, y)`
 
@@ -4496,7 +4496,7 @@ print c.shape
     (2, 3, 4) (5, 6, 4, 3)
     (2, 5, 6)
 
-# Theano tensor 模块：nnet 子模块
+## Theano tensor 模块：nnet 子模块
 
 `nnet` 是 `tensor` 模块中与神经网络 `Neural Networks` 相关的子模块。
 
@@ -4509,7 +4509,7 @@ from theano import tensor as T
     Using gpu device 1: Tesla C2075 (CNMeM is disabled)
 
 
-## Sigmoid 函数
+### Sigmoid 函数
 
 共有三种 `sigmoid`：
 
@@ -4537,7 +4537,7 @@ print theano.pprint(y)
     sigmoid(((W \dot x) + b))
 
 
-## 其他
+### 其他
 
 `T.nnet.softplus(x)` 返回 
 
@@ -4595,7 +4595,7 @@ x_i, & \ x_i > 0 \\
 \end{aligned}\right.
 $$
 
-## 损失函数
+### 损失函数
 
 `T.nnet.binary_crossentropy(output, target)` 二类交叉熵：
 
@@ -4618,11 +4618,11 @@ recon_cost = T.nnet.binary_crossentropy(x_recons, x).mean()
 $$
 H(p,q) = - \sum_x p(x) \log(q(x))
 $$
-# Theano tensor 模块：conv 子模块
+## Theano tensor 模块：conv 子模块
 
 `conv` 是 `tensor` 中处理卷积神经网络的子模块。
 
-## 卷积
+### 卷积
 
 这里只介绍二维卷积：
 
@@ -4649,7 +4649,7 @@ $$
 
   `[b, oc, i0 + f0 - 1, i1 + f1 - 1]`
 
-## 池化
+### 池化
 
 池化操作：
 
@@ -4661,53 +4661,53 @@ $$
 
 `ignore_border` 设为 `Ture` 时，`(5, 5)` 在 `(2, 2)` 的池化下会变成 `(2, 2)`（5 % 2 == 1，多余的 1 个被舍去了），否则是 `(3, 3)`。
 
-## MNIST 卷积神经网络形状详解
+### MNIST 卷积神经网络形状详解
 
 ```python
 def model(X, w, w2, w3, w4, p_drop_conv, p_drop_hidden):
     
-    # X:  128 * 1 * 28 * 28
-    # w:  32 * 1 * 3 * 3
-    # full mode
-    # l1a: 128 * 32 * (28 + 3 - 1) * (28 + 3 - 1)
+    ## X:  128 * 1 * 28 * 28
+    ## w:  32 * 1 * 3 * 3
+    ## full mode
+    ## l1a: 128 * 32 * (28 + 3 - 1) * (28 + 3 - 1)
     l1a = rectify(conv2d(X, w, border_mode='full'))
-    # l1a: 128 * 32 * 30 * 30
-    # ignore_border False
-    # l1:  128 * 32 * (30 / 2) * (30 / 2)
+    ## l1a: 128 * 32 * 30 * 30
+    ## ignore_border False
+    ## l1:  128 * 32 * (30 / 2) * (30 / 2)
     l1 = max_pool_2d(l1a, (2, 2), ignore_border=False)
     l1 = dropout(l1, p_drop_conv)
 
-    # l1:  128 * 32 * 15 * 15
-    # w2:  64 * 32 * 3 * 3
-    # valid mode
-    # l2a: 128 * 64 * (15 - 3 + 1) * (15 - 3 + 1)
+    ## l1:  128 * 32 * 15 * 15
+    ## w2:  64 * 32 * 3 * 3
+    ## valid mode
+    ## l2a: 128 * 64 * (15 - 3 + 1) * (15 - 3 + 1)
     l2a = rectify(conv2d(l1, w2))    
-    # l2a: 128 * 64 * 13 * 13
-    # l2:  128 * 64 * (13 / 2 + 1) * (13 / 2 + 1)
+    ## l2a: 128 * 64 * 13 * 13
+    ## l2:  128 * 64 * (13 / 2 + 1) * (13 / 2 + 1)
     l2 = max_pool_2d(l2a, (2, 2), ignore_border=False)
     l2 = dropout(l2, p_drop_conv)
 
-    # l2:  128 * 64 * 7 * 7
-    # w3:  128 * 64 * 3 * 3
-    # l3a: 128 * 128 * (7 - 3 + 1) * (7 - 3 + 1)
+    ## l2:  128 * 64 * 7 * 7
+    ## w3:  128 * 64 * 3 * 3
+    ## l3a: 128 * 128 * (7 - 3 + 1) * (7 - 3 + 1)
     l3a = rectify(conv2d(l2, w3))
-    # l3a: 128 * 128 * 5 * 5
-    # l3b: 128 * 128 * (5 / 2 + 1) * (5 / 2 + 1)
+    ## l3a: 128 * 128 * 5 * 5
+    ## l3b: 128 * 128 * (5 / 2 + 1) * (5 / 2 + 1)
     l3b = max_pool_2d(l3a, (2, 2), ignore_border=False)    
-    # l3b: 128 * 128 * 3 * 3
-    # l3:  128 * (128 * 3 * 3)
+    ## l3b: 128 * 128 * 3 * 3
+    ## l3:  128 * (128 * 3 * 3)
     l3 = T.flatten(l3b, outdim=2)
     l3 = dropout(l3, p_drop_conv)
     
-    # l3: 128 * (128 * 3 * 3)
-    # w4: (128 * 3 * 3) * 625
-    # l4: 128 * 625
+    ## l3: 128 * (128 * 3 * 3)
+    ## w4: (128 * 3 * 3) * 625
+    ## l4: 128 * 625
     l4 = rectify(T.dot(l3, w4))
     l4 = dropout(l4, p_drop_hidden)
 
-    # l5:  128 * 625
-    # w5:  625 * 10
-    # pyx: 128 * 10
+    ## l5:  128 * 625
+    ## w5:  625 * 10
+    ## pyx: 128 * 10
     pyx = softmax(T.dot(l4, w_o))
     return l1, l2, l3, l4, pyx
 ```

@@ -1,6 +1,6 @@
-# 简介
+## 简介
 
-## 使用 Python 和另一种语言混编的好处
+### 使用 Python 和另一种语言混编的好处
 
 至少有以下四个原因：
 
@@ -9,9 +9,9 @@
 - `Speed up Python` - 使用一个更快的语言帮助加速 **Python**
 - `Division of labor` - 各司其职，让各个语言做各自更擅长的事情，例如 **Fortran** 进行数组计算，**Python** 处理测试，文件读写，文本处理，数据整理，GUI 生成，HTTP 服务等等。
 
-## 语言扩展工具
+### 语言扩展工具
 
-### 打包已有的代码和其他语言的库
+#### 打包已有的代码和其他语言的库
 
 - 使用手写的扩展模块
 - `Cython` - **C/C++**
@@ -19,15 +19,15 @@
 - `f2py` - **Fortran**
 - `ctypes` - 其他语言库
 
-### 加速 Python
+#### 加速 Python
 
 - 使用手写的扩展模块
 - `Cython`
 - `Weave`
 - `Shedskin` 和其他模块
-# Python 扩展模块
+## Python 扩展模块
 
-## 简介
+### 简介
 
 C Library | Interface | Python
 ---|---|---
@@ -35,7 +35,7 @@ C Library | Interface | Python
 
 **Python** 扩展模块将 `PyInt(10)` 转化为 `CInt(10)` 然后调用 `C` 程序中的 `fact()` 函数进行计算，再将返回的结果转换回 `PyInt`。
 
-## 产生一个扩展模块
+### 产生一个扩展模块
 
 假设我们有这样的一个头文件和程序：
 
@@ -106,7 +106,7 @@ initexample(void)
     Writing fact_wrap.c
 
 
-## 手动编译扩展模块
+### 手动编译扩展模块
 
 手动使用 `gcc` 编译，`Windows` 下如果没有 `gcc`，可以通过 `conda` 进行安装：
 
@@ -162,7 +162,7 @@ print 'factorial of 10:', example.fact(10)
     factorial of 10: 3628800
 
 
-## 使用 setup.py 进行编译
+### 使用 setup.py 进行编译
 
 清理刚才生成的文件：
 
@@ -211,7 +211,7 @@ setup(name='example', ext_modules=[ext])
     C:\Miniconda\Scripts\gcc.bat -DMS_WIN64 -shared -s build\temp.win-amd64-2.7\Release\fact_wrap.o build\temp.win-amd64-2.7\Release\fact.o build\temp.win-amd64-2.7\Release\example.def -LC:\Miniconda\libs -LC:\Miniconda\PCbuild\amd64 -lpython27 -lmsvcr90 -o "C:\Users\Jin\Documents\Git\python-tutorial\07. interfacing with other languages\example.pyd"
 
 
-## 使用编译的模块
+### 使用编译的模块
 
 进行测试：
 
@@ -312,9 +312,9 @@ f.close()
 !rm -f setup*.*
 !rm -rf build
 ```
-# Cython：Cython 基础，将源代码转换成扩展模块
+## Cython：Cython 基础，将源代码转换成扩展模块
 
-## Cython 基础
+### Cython 基础
 
 之前使用了手动的方法对 `C` 程序进行编译，而 `Cython` 则简化了这个过程。
 
@@ -363,9 +363,9 @@ def fib(int n):
 - 将 Python 程序转化为 C 程序
 - 包装 C/C++ 程序
 
-## 将源代码转换成扩展模块
+### 将源代码转换成扩展模块
 
-### ipython 中使用 Cython 命令
+#### ipython 中使用 Cython 命令
 
 导入 `Cython` `magic` 命令：
 
@@ -399,7 +399,7 @@ cyfib(10)
 
 
 
-### 使用 distutils 编译 Cython
+#### 使用 distutils 编译 Cython
 
 `Cython` 代码以 `.pyx` 结尾，先通过 cython 转化为 `.c` 文件，再用 `gcc` 转化为 `.so(.pyd)` 文件。
 
@@ -479,7 +479,7 @@ for name in names:
 f.close()
 ```
 
-## 使用 pyximport
+### 使用 pyximport
 
 清理之前生成的文件：
 
@@ -526,11 +526,11 @@ fib.cyfib(10)
 !rm -f fib.*
 !rm -rf build
 ```
-# Cython：Cython 语法，调用其他C库
+## Cython：Cython 语法，调用其他C库
 
-## Cython 语法
+### Cython 语法
 
-### cdef 关键词
+#### cdef 关键词
 
 `cdef` 定义 `C` 类型变量。 
 
@@ -563,7 +563,7 @@ cdef class Particle(object):
 
 注意函数的参数不需要使用 cdef 的定义。
 
-### def, cdef, cpdef 函数
+#### def, cdef, cpdef 函数
 
 `Cython` 一共有三种定义方式，`def, cdef, cpdef` 三种：
 
@@ -571,7 +571,7 @@ cdef class Particle(object):
 - `cdef` - 更快，只能 Cython 调用，可以使用指针
 - `cpdef` - Python, Cython 都可以调用，不能使用指针
 
-### cimport
+#### cimport
 
 
 ```python
@@ -593,7 +593,7 @@ from libc.math cimport sin
 from libc.stdlib cimport malloc, free
 ```
 
-### cimport 和 pxd 文件
+#### cimport 和 pxd 文件
 
 如果想在多个文件中复用 `Cython` 代码，可以定义一个 `.pxd` 文件（相当于头文件 `.h`）定义方法，这个文件对应于一个 `.pyx` 文件（相当于源文件 `.c`），然后在其他的文件中使用 `cimport` 导入：
 
@@ -608,7 +608,7 @@ from libcpp.vector cimport vector
 cimport numpy as cnp
 ```
 
-## 调用其他C库
+### 调用其他C库
 
 从标准库 `string.h` 中调用 `strlen`：
 
@@ -815,9 +815,9 @@ f.close()
 !rm -f time_extern.*
 !rm -rf build
 ```
-# Cython：class 和 cdef class，使用 C++
+## Cython：class 和 cdef class，使用 C++
 
-## class 和 cdef class
+### class 和 cdef class
 
 `class` 定义属性变量比较自由，`cdef class` 可以定义 `cdef`
 
@@ -837,7 +837,7 @@ property name:
         set_something
 ```
 
-## 使用 C++ 类
+### 使用 C++ 类
 
 使用 `C++` 类时要加上 `cppclass` 关键词，在编译时 `setup` 中要加上 `language="c++"` 的选项。
 
@@ -929,7 +929,7 @@ cdef extern from "particle_extern.h":
 
 
 cdef class Particle:
-    cdef _Particle *thisptr # ptr to C++ instance
+    cdef _Particle *thisptr ## ptr to C++ instance
 
     def __cinit__(self, m, c, float[::1] p, float[::1] v):
         if p.shape[0] != 3 or v.shape[0] != 3:
@@ -951,7 +951,7 @@ cdef class Particle:
         def __get__(self):
             return self.thisptr.getCharge()
 
-    property mass:  # Cython-style properties.
+    property mass:  ## Cython-style properties.
         def __get__(self):
             return self.thisptr.getMass()
 
@@ -1174,9 +1174,9 @@ f.close()
 !rm -f particle*.*
 !rm -rf build
 ```
-# Cython：Typed memoryviews
+## Cython：Typed memoryviews
 
-## 例子
+### 例子
 
 这里 `double[::1]` 是一种 `memoryview` 方法，效率跟 `Numpy` 数组差不多，可以给 `C` 数组赋值，可以给 `Numpy` 数组赋值，可以像 `Numpy` 一样切片：
 
@@ -1335,7 +1335,7 @@ f.close()
 !rm -f cython_sum*.*
 !rm -rf build
 ```
-# 生成编译注释
+## 生成编译注释
 
 
 ```python
@@ -1371,9 +1371,9 @@ open fib_orig.html
 ![界面](fib_orig.png)
 
 点击某一行可以查看该 `Python` 代码对应的 `C` 代码。
-# ctypes
+## ctypes
 
-## 基本用法
+### 基本用法
 
 `ctypes` 是一个方便 `Python` 调用本地已经编译好的外部库的模块。
 
@@ -1382,7 +1382,7 @@ open fib_orig.html
 from ctypes import util, CDLL
 ```
 
-## 标准 C 库
+### 标准 C 库
 
 使用 `util` 来找到标准 `C` 库：
 
@@ -1390,7 +1390,7 @@ from ctypes import util, CDLL
 ```python
 libc_name = util.find_library('c')
 
-# on WINDOWS
+## on WINDOWS
 print libc_name
 ```
 
@@ -1434,7 +1434,7 @@ libc.printf("%s, %d\n", "hello", 5)
 
 这里显示的 `9` 是 `printf` 的返回值表示显示的字符串的长度（包括结尾的 `'\0'`），但是并没有显示结果，原因是 `printf` 函数默认是写在标准输出流上的，与 `IPython` 使用的输出流不一样，所以没有显示结果。
 
-## C 数学库
+### C 数学库
 
 找到数学库：
 
@@ -1512,7 +1512,7 @@ atan2(1.0, 2.0)
 
 
 
-## Numpy 和 ctypes
+### Numpy 和 ctypes
 
 假设我们有这样的一个函数：
 ```c
