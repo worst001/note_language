@@ -1,15 +1,3 @@
-# 语言与编程
-
-收集了一些语言相关的笔记、文档与官方手册
-
-公网资料、笔记地址请访问这里 
-
-- 文档地址: [http://mkdocs.grft.top/语言与编程/](http://mkdocs.grft.top/语言与编程/)
-
-其他相关技术可以访问我的博客，主页地址请访问这里
-
-- 访问入口：[https://mkdocs.grft.top](https://mkdocs.grft.top)
-
 <!-- PROJECT SHIELDS -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -20,6 +8,18 @@
 <!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- PROJECT LOGO -->
+
+# 语言与编程
+
+收集了一些语言相关的笔记、文档与官方手册
+
+公网资料、笔记地址请访问这里 
+
+- 文档地址: [http://mkdocs.grft.top/语言与编程/](http://mkdocs.grft.top/语言与编程/)
+
+其他相关技术可以访问我的博客，主页地址请访问这里
+
+- 访问入口：[http://mkdocs.grft.top](http://mkdocs.grft.top)
 
 --------------------
 
