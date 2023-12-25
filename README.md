@@ -17,7 +17,7 @@
     <img src="https://xiyou-oss.oss-cn-shanghai.aliyuncs.com/mkdocs/logo.png" alt="Logo" width="480" height="270">
   </a>
 
-  <h3 align="center">各类语言</h3>
+  <h3 align="center">语言与编程</h3>
 
   <p align="center">
     <br />
