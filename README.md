@@ -1,3 +1,4 @@
+<a name="readme-top"></a>
 <!-- PROJECT SHIELDS -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -9,9 +10,39 @@
 
 <!-- PROJECT LOGO -->
 
-# 语言与编程
+<!-- 项目LOGO -->
+<br />
+<div align="center">
+  <a href="http://mkdocs.grft.top">
+    <img src="https://xiyou-oss.oss-cn-shanghai.aliyuncs.com/mkdocs/logo.png" alt="Logo" width="480" height="270">
+  </a>
 
-收集了一些语言相关的笔记、文档与官方手册
+  <h3 align="center">各类语言</h3>
+
+  <p align="center">
+    <br />
+    <a href="http://mkdocs.grft.top/语言与编程/"><strong>探索文档 »</strong></a>
+    <br />
+  </p>
+</div>
+
+<!-- 目录 -->
+<details>
+  <summary>目录</summary>
+  <ol>
+    <li><a href="#关于项目">关于项目</a></li>
+    <li><a href="#什么是计算机语言">什么是计算机语言</a></li>
+    <li><a href="#技术目录">技术目录</a></li>
+    <li><a href="#贡献">贡献</a></li>
+    <li><a href="#许可证">许可证</a></li>
+    <li><a href="#联系方式">联系方式</a></li>
+    <li><a href="#鸣谢">鸣谢</a></li>
+  </ol>
+</details>
+
+## 关于项目
+
+收集了一些计算机语言相关的笔记、文档与官方手册
 
 公网资料、笔记地址请访问这里 
 
@@ -21,9 +52,10 @@
 
 - 访问入口：[http://mkdocs.grft.top](http://mkdocs.grft.top)
 
---------------------
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
 
-## 基本概念
+## 什么是计算机语言
+计算机语言是一种用于编写程序的形式化语言。它们是指令的集合，旨在控制计算机的操作和行为。
 计算机中的语言可以分为几种不同的类型，包括机器语言、汇编语言、高级编程语言、脚本语言和标记语言。每种语言都具有不同的用途和特点，适用于不同的编程领域和环境。
 
 ### 机器语言（Machine Language）
@@ -65,13 +97,14 @@
 + 基于形式逻辑，如Prolog。
 + 用于解决涉及复杂关系和约束的问题。
 
---------------------
 
-## 目录
+<p align="right">(<a href="#readme-top">回到顶部</a>)</p>
+
+## 技术目录
 
 [目录与大纲](index.md)
 
-## C 语言
+### C 语言
 
 + [C语言文档](http://c.biancheng.net/c/)
 
@@ -90,12 +123,12 @@
 + [2.8 二叉平衡树](C/learn-data-structures/2.8二叉平衡树/README.md)
 
 
-## C Sharp
+### C Sharp
 
 + [C Sharp 文档](http://c.biancheng.net/csharp/)
 
 
-## C++
+### C++
 
 + [C++ 语言文档](http://c.biancheng.net/cplus/)
 + [C++11新特新](http://c.biancheng.net/cplus/11/)
@@ -125,7 +158,7 @@
 + [特殊工具与技术](Cpp/Cpp-Primer-5th-Notes-CN/Chapter-19%20Specialized%20Tools%20and%20Techniques/README.md)
 
 
-## Golang
+### Golang
 
 + [Go 语言文档](http://c.biancheng.net/golang/)
 + [全技术栈索引](https://github.com/unknwon/go-study-index)
@@ -147,7 +180,7 @@
 + [底层编程](GO/GO语言圣经/ch13/ch13.md)
 
 
-## JAVA
+### JAVA
 
 + [Java 语言文档](http://c.biancheng.net/java/)
 + [Maven](http://c.biancheng.net/maven2/)
@@ -175,19 +208,19 @@
 + [垃圾回收器](Java/JVM/JVM系列-第12章-垃圾回收器.md)
 
 
-## Scala
+### Scala
 
 + [Scala 官方文档](https://docs.scala-lang.org/zh-cn/scala3/book/introduction.html)
 + [Scala 文档](Scala/Scala.md)
 + [尚硅谷_Scala_pdf](/Scala/笔记/尚硅谷大数据技术之Scala.pdf)
 
 
-## Lua
+### Lua
 
 + [Lua 详细笔记](https://github.com/52fhy/lua-book)
 
 
-## PHP
+### PHP
 
 + [官方手册](https://www.php.net/manual/zh/index.php)
 + [Composer](https://getcomposer.org/)
@@ -195,7 +228,7 @@
 + [Swoole](https://wiki.swoole.com/#/)
 
 
-## Python
+### Python
 
 + [Python 语言文档]( http://c.biancheng.net/python/)
 + [NumPy]( http://c.biancheng.net/numpy/)
@@ -218,31 +251,46 @@
 + [数据分析库pandas]( Python/notes-python/12-pandas/12-pandas.md)
 
 
-## Ruby
+### Ruby
 
 + [Ruby 完整手册](https://wang1212.github.io/the-book-of-ruby/#/0-homepage.html)
 
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
--------------------
+<!-- 贡献 -->
+
+## 贡献
+
+贡献是使开源社区成为一个如此令人惊叹的地方，以学习、激励和创造。您所做的任何贡献都将非常感谢。
+
+如果您对使这个项目变得更好有建议，请 fork 该仓库并创建 pull request。您也可以打开一个带有“enhancement”标签的问题。不要忘记给这个项目点个星！再次感谢！
+
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
 
-## 版本控制
+<!-- 许可证 -->
+## 许可证
 
-该项目使用Git进行版本管理。您可以在repository参看当前可用版本。
+根据 MIT 许可证进行分发。更多信息请参见 [LICENSE.txt](LICENSE)。
 
-<!-- ## 作者 -->
-<!--  -->
-<!-- [小昊子](https://github.com/worst001) -->
-<!--  -->
-<!-- 制做不易，如果有帮到你就请作者喝杯咖啡吧! -->
-<!--  -->
-<!-- ![支付宝加微信](https://xiyou-oss.oss-cn-shanghai.aliyuncs.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%8E%E6%94%AF%E4%BB%98/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%8A%A0%E5%BE%AE%E4%BF%A1.jpg) -->
-<!--  -->
-<!-- 作者无聊时做的测试游戏，完全免费哦！ -->
-<!--  -->
-<!-- ![公众号](https://xiyou-oss.oss-cn-shanghai.aliyuncs.com/%E5%85%AC%E4%BC%97%E5%8F%B7%E4%B8%8E%E6%94%AF%E4%BB%98/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%B0%8F.jpg) -->
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-## 参考资料
+<!-- 联系方式 -->
+## 联系方式
+
+关注我: [小昊子](https://github.com/worst001)
+
+博客地址: [http://mkdocs.grft.top](http://mkdocs.grft.top)
+
+项目链接: [https://github.com/worst001/mkdocs_language](https://github.com/worst001/mkdocs_language)
+
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
+
+## 鸣谢
+
+因为仓库与文档的数量比较大，有些借鉴资料忘了在`参考文档`部分提及原作者与原仓库，若有疏漏请告诉，我及时补上。
+
+所有引用的原资料都确认是开源认证，若有侵权请告知。
 
 [https://github.com/austin2035/learn-data-structures](https://github.com/austin2035/learn-data-structures)
 
@@ -254,12 +302,10 @@
 
 [https://jupyter-docs-cn.readthedocs.io/zh-cn/latest/index.html](https://jupyter-docs-cn.readthedocs.io/zh-cn/latest/index.html)
 
+[https://openai.com/chatgpt](https://openai.com/chatgpt)
 
-### 写在最后的话
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-因为仓库与文档的数量比较大，有些借鉴资料忘了在`参考文档`部分提及原作者与原仓库，若有疏漏请告诉，我及时补上。
-
-所有引用的原资料都确认是开源认证，若有侵权请告知。
 
 <!-- links -->
 [your-project-path]:shaojintian/Best_README_template
