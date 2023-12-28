@@ -282,7 +282,7 @@
 
 博客地址: [http://mkdocs.grft.top](http://mkdocs.grft.top)
 
-项目链接: [https://github.com/worst001/mkdocs_language](https://github.com/worst001/mkdocs_language)
+项目链接: [https://github.com/worst001/note_language](https://github.com/worst001/note_language)
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
@@ -309,15 +309,15 @@
 
 <!-- links -->
 [your-project-path]:shaojintian/Best_README_template
-[contributors-shield]: https://img.shields.io/github/contributors/worst001/mkdocs_language.svg?style=flat-square
-[contributors-url]: https://github.com/worst001/mkdocs_language/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/worst001/mkdocs_language.svg?style=flat-square
-[forks-url]: https://github.com/worst001/mkdocs_language/network/members
-[stars-shield]: https://img.shields.io/github/stars/worst001/mkdocs_language.svg?style=flat-square
-[stars-url]: https://github.com/worst001/mkdocs_language/stargazers
-[issues-shield]: https://img.shields.io/github/issues/worst001/mkdocs_language.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/worst001/mkdocs_language.svg
-[license-shield]: https://img.shields.io/github/license/worst001/mkdocs_language.svg?style=flat-square
-[license-url]: https://github.com/worst001/mkdocs_language/blob/main/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/worst001/note_language.svg?style=flat-square
+[contributors-url]: https://github.com/worst001/note_language/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/worst001/note_language.svg?style=flat-square
+[forks-url]: https://github.com/worst001/note_language/network/members
+[stars-shield]: https://img.shields.io/github/stars/worst001/note_language.svg?style=flat-square
+[stars-url]: https://github.com/worst001/note_language/stargazers
+[issues-shield]: https://img.shields.io/github/issues/worst001/note_language.svg?style=flat-square
+[issues-url]: https://img.shields.io/github/issues/worst001/note_language.svg
+[license-shield]: https://img.shields.io/github/license/worst001/note_language.svg?style=flat-square
+[license-url]: https://github.com/worst001/note_language/blob/main/LICENSE.txt
 <!-- [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555 -->
 <!-- [linkedin-url]: https://linkedin.com/in/shaojintian -->
